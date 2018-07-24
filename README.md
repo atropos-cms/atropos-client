@@ -4,18 +4,24 @@
 
 This us the user interface for the Atropos Comminity Software.
 
+
+## Setup
+
+After cloning this repo, run `npm install`.
+
+Then copy the .env.example file and rename it to .env. Review all settings in the env file and make sure to configure api endpoint to your atropos-server.
+
+
 ## Build Setup
 
 ``` bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm start
+npm run build
+npm start
 ```
 
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+## Development
+
+```sh
+npm run dev
+```
+
