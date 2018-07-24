@@ -1,0 +1,73 @@
+/*
+ * Note: We use triple-class css definitions here.
+ * This allows us to override with heigher specificity withour having to use !important.
+ */
+.--flex-grow {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+/*
+ * Alignment
+*/
+.--flex-align-start.--flex-align-start.--flex-align-start {
+  display: flex;
+  align-items: flex-start;
+}
+.--flex-align-center.--flex-align-center.--flex-align-center {
+    display: flex;
+    align-items: center;
+}
+.--flex-align-end.--flex-align-end.--flex-align-end {
+  display: flex;
+  align-items: flex-end;
+}
+.--flex-justify-center.--flex-justify-center.--flex-justify-center {
+  display: flex;
+  justify-content: center;
+}
+.--flex-wrap.--flex-wrap.--flex-wrap {
+  flex-wrap: wrap;
+}
+.--flex-row.--flex-row.--flex-row {
+  flex-direction: row;
+}
+.--flex-column.--flex-column.--flex-column {
+  flex-direction: column;
+}
+
+/*
+ * Text
+ */
+.--text-align-end {
+  text-align: end;
+}
+.--text-align-center {
+  text-align: center;
+}
+.--text-underlined {
+  text-decoration: underline;
+}
+
+
+/*
+ * Shadow and Boxes
+ */
+.--has-shadow {
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+}
+.--box-has-margin-bottom {
+  margin-bottom: 1em;
+}
+
+
+/*
+ * Selection & Cursor
+ */
+.--is-selectable {
+  user-select: text;
+}
+.--has-pointer-cursor {
+  cursor: pointer;
+}

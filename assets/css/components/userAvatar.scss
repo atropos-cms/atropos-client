@@ -1,0 +1,33 @@
+.user-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: $--color-body;
+}
+
+.user-avatar.small {
+  width: 30px;
+  height: 30px;
+
+  &.border-white {
+    border: 1px solid $--color-white;
+  }
+}
+
+.user-avatar.large {
+  width: 100px;
+  height: 100px;
+
+  font-size: 2.8em;
+  font-weight: 100;
+
+  &.border-white {
+    border: 5px solid $--color-white;
+  }
+}

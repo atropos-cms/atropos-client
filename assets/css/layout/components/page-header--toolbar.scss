@@ -1,0 +1,34 @@
+.page-header--toolbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  .vue-portal-target {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+
+.page-header--toolbar-options,
+.page-header--toolbar-options-separated {
+  display: inline-block;
+  margin-right: 1em;
+  padding-top: 7px;
+
+  .el-button {
+    font-size: 1.5em;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.page-header--toolbar-options-separated {
+  border-right: 1px solid $--color-separation-border;
+  padding-right: 1em;
+
+  .el-button {
+    margin-right: 10px;
+  }
+}

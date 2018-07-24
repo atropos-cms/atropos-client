@@ -1,0 +1,20 @@
+@import "./page-header--toolbar.scss";
+
+.page-header {
+  margin: 0;
+  padding: 1rem 1.8rem;
+  background-color: $--color-body-darker;
+  border-bottom: 1px solid $--color-body-darkest;
+  border-top: solid 1px transparent;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 300;
+  padding: 0;
+  margin: 0 0 4px;
+}
+
+.page-header .force-breadcrumbs {
+  min-height: 1em;
+}

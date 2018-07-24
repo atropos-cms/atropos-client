@@ -1,0 +1,18 @@
+.no-content--wrapper {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  margin: -1.8rem;
+  padding: 1.8rem;
+
+  background: linear-gradient(180deg, rgba($--color-secondary, 0), rgba($--color-secondary, 0.6));
+}
+
+.no-content--illustration {
+  width: 20vw;
+  min-width: 200px;
+  margin-bottom: 2em;
+}

@@ -1,0 +1,68 @@
+.modules-files-objects--page {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
+  .--flexed-row {
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-start;
+
+    > .el-col {
+      flex-grow: 0;
+      flex-shrink: 0;
+    }
+    .--growing-col {
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+.modules-files-objects--file-icon,
+.modules-files-objects--folder-icon,
+.modules-files-objects--loading-icon,
+.modules-files-objects--upload-icon {
+  height: 24px;
+  width: 24px;
+}
+
+.modules-files-objects--loading-icon, .modules-files-objects--upload-icon {
+  top: 0;
+  height: 24px;
+  margin-top: 0;
+  text-align: center;
+  position: relative;
+  margin-right: 0.7em;
+
+   .circular {
+    height: 24px;
+    width: 24px;
+  }
+}
+
+.modules-files-objects--file-icon,
+.modules-files-objects--folder-icon {
+  margin-right: 0.5em;
+  color: $--color-text-secondary;
+}
+
+.modules-files-objects--folder-icon {
+  color: $--color-text-regular;
+}
+
+.modules-files-objects--move-dialog {
+  .el-dialog__body{
+    height: 37vh;
+    max-height: 23em;
+    overflow-y: auto;
+    padding: 0 30px;
+  }
+
+  .--back-button {
+    padding: 7px;
+    padding-right: 9px;
+    margin-right: 1em;
+  }
+}

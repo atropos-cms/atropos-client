@@ -1,0 +1,68 @@
+
+.modules-files-objects--list-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.modules-files-objects--list {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  border: 2px solid transparent;
+  transition: background-color $--transition-speed-fast ease-in-out, border-color $--transition-speed-fast ease-in-out;
+
+  >.el-card__body {
+    padding-top: 10px;
+  }
+}
+
+.modules-files-objects--list-header {
+  font-weight: 600;
+  margin-top: 0.5em;
+  padding-bottom: 0.8em;
+  border-bottom: 1px solid rgba(45, 47, 51, .1);
+}
+
+.modules-files-objects--list-item {
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  border-bottom: 1px solid $--color-separation-border;
+  cursor: default;
+  user-select: none;
+  transition: background-color $--transition-speed-fast, color $--transition-speed-fast;
+
+  .--is-stared .material-icons {
+    margin-left: 1em;
+    font-size: 0.8em;
+  }
+}
+
+.modules-files-objects--list-item.--selected {
+  background-color: $--color-primary;
+  color: $--color-white;
+
+  .text-secondary,
+  .modules-files-objects--file-icon,
+  .modules-files-objects--folder-icon {
+    color: $--color-white;
+  }
+
+  .el-loading-spinner .path,
+  .el-progress-circle .el-progress-circle__path {
+    stroke: $--color-white;
+  }
+  .el-progress-circle .el-progress-circle__track {
+    stroke: $--color-primary-light-2;
+  }
+}
+
+// Objects dragged
+.--is-drag-over-page .--can-upload .modules-files-objects--list {
+  border: 2px dashed $--color-primary;
+}
+.--is-drag-over-target.--can-upload .modules-files-objects--list {
+  border: 2px solid $--color-primary;
+  background-color: rgba($--color-primary, $--background-transparency);
+}

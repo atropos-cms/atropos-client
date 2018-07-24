@@ -1,0 +1,647 @@
+{
+  "administration": {
+    "roles": {
+      "create-new-role": "Neue Rolle erstellen",
+      "name": "Name",
+      "permission-groups": {
+        "administration": "Administration",
+        "default": "Standard",
+        "modules": "Module"
+      },
+      "permissions": "Berechtigungen",
+      "required-by": "Benötigt von",
+      "requires": "Benötigt",
+      "role": "Rolle",
+      "users": "Benutzer"
+    },
+    "settings": {
+      "api-url": "Api Url",
+      "branding": "Branding",
+      "branding_abbreviation": "Abk.",
+      "branding_name": "Markenname",
+      "contacts": "Kontakte",
+      "admin-contact": "Admin Kontakt",
+      "user-contact": "Benutzer Kontakt",
+      "user-contact-public-access": "Öffentlicher Zugang zum Benutzer Kontakt erlauben",
+      "clear-cache": "Server Cache leeren",
+      "clear-cache-now": "Server Cache jetzt leeren",
+      "developer-info": "Informationen",
+      "developer-mode": "Entwickler Modus",
+      "enable-developer-mode": "Entwickler Modus aktivieren",
+      "locale": "Sprache",
+      "locales": {
+        "de": "Deutsch",
+        "en": "Englisch"
+      },
+      "tenant": "Tenant ID"
+    },
+    "user": {
+      "account": "Konto",
+      "activate": "Aktivieren",
+      "activated": "Aktiviert",
+      "activation": "Aktivierung",
+      "add-roles": "Add Roles",
+      "address": "Adresse",
+      "city": "Stadt",
+      "password_confirmation": "Passwort bestätigen",
+      "country": "Land",
+      "create-new-user": "Einen neuen Benutzer erstellen",
+      "created_at": "Erstellt am",
+      "old_password": "Aktuelles Passwort",
+      "deactivate": "Deaktivieren",
+      "email": "E-Mail",
+      "email-verified": "E-Mail Adresse wurde bestätigt",
+      "email-not-verified": "E-Mail Adresse nicht bestätigt",
+      "first_name": "Vorname",
+      "full_name": "Name",
+      "last_login": "Zuletzt Angemeldet",
+      "last_name": "Nachname",
+      "password": "Neues Passwort",
+      "postal_code": "Postleitzahl",
+      "role": "Rolle",
+      "roles": "Rollen",
+      "security": "Sicherheit",
+      "send_notification": "Benutzer über Passwortänderung informieren",
+      "notify_account_created": "Benutzer über neues Konto informieren.",
+      "street": "Strasse",
+      "updated_at": "Aktualisiert am"
+    }
+  },
+  "app-status": {
+    "api": "Api",
+    "connected": "OK",
+    "disconnected": "Nicht verbunden",
+    "status": "Status",
+    "api-version": "Api Version",
+    "ui-version": "UI Version"
+  },
+  "auth": {
+    "demo-accounts": "Demo Accounts",
+    "email": "E-Mail",
+    "forgot-password": "Passwort vergessen",
+    "login": "Anmelden",
+    "logout": "Du wirst abgemeldet...",
+    "password_confirmation": "Neues Passwort bestätigen",
+    "password": "Passwort",
+    "remember-me": "Anmeldedaten merken",
+    "remembered-password": "Ich erinnere mich wieder an mein Passwort",
+    "reset-password": "Passwort ändern",
+    "send-reset-link": "Link zum Passwort zurücksetzen senden",
+    "two-fa": "Zwei-Faktor Authentifizierung",
+    "two-fa-code": "Authentifizierungscode"
+  },
+  "background-task": {
+    "background-task": "Hintergrund Aufgaben",
+    "preparing-downloads": "Downloads werden vorbereitet",
+    "mail-sending": "Versende E-Mails...",
+    "mail-delivered": "E-Mails versendet",
+    "uploading-files": "Dateien Hochladen",
+    "uploading-file": "Lade hoch: {name}",
+    "zipping": "Komprimiere '{name}'"
+  },
+  "dashboard": {
+    "events": {
+      "events": "Aktivitäten",
+      "loading-events": "Lade Aktivitäten...",
+      "no-events": "Es haben noch keine Aktivitäten stattgefunden."
+    },
+    "profile": {
+      "complete-profile": {
+        "city": "In welcher Stadt wohnst du?",
+        "country": "In welchem Land lebst du?",
+        "postalcode": "Was ist die Postleitzahl deines Wohnortes?",
+        "street": "In welcher Strasse wohnst du?",
+        "title": "Vervollständige dein Profil",
+        "verify-email": "Bestätige deine E-Mail Adresse"
+      },
+      "info": {
+        "address": "Adresse",
+        "created_at": "Mitglied seit",
+        "email": "E-Mail",
+        "last_login": "Letzter Login"
+      }
+    },
+    "welcome": {
+      "atropos": "Willkommen bei Atropos",
+      "image-of-the-day": "Bilder des Tages",
+      "afternoon": {
+        "1": "Guten Nachmittag, {name}"
+      },
+      "general": {
+        "1": "Hallo, {name}",
+        "2": "Willkommen zurück, {name}",
+        "3": "Guten Tag, {name}",
+        "4": "Wie geht's, {name}?"
+      },
+      "morning": {
+        "1": "Guten Morgen, {name}",
+        "2": "Einen schönen Tag, {name}"
+      },
+      "night": {
+        "1": "Guten Abend, {name}"
+      }
+    }
+  },
+  "editor": {
+    "sizes": {
+      "large": "Gross",
+      "normal": "Normal",
+      "small": "Klein"
+    }
+  },
+  "error-page": {
+    "error": "Error",
+    "logout": "Abmelden",
+    "oops": "Oops",
+    "return-to-dashboard": "Zurück zum Dashboard"
+  },
+  "errors": {
+    "error-upload-file-to-large": "Diese Datei ist zu gross. Die maximale Dateigrösse liegt bei 500MB.",
+    "error-while-processing-upload": "Bei der Verarbeitung der Datei ist ein unerarteter Fehler aufgetreten. Bitte versuche es später noch einmal.",
+    "error-while-preparing-download": "Beim Vorbereiten des Downloads ist ein Fehler aufgetreten. Bitte versuche es später noch einmal.",
+    "login-account-not-activated": "Dein Konto ist nicht aktiviert.",
+    "login-password-mismatch": "Wir konnten kein Konto mit diesen Anmeldedaten finden.",
+    "login-permission-denied": "Du besitzen nicht die benötigten Berechtigungen um dich anzumelden.",
+    "no-tenant-found": "Wir konneten keine App mit dieser Domain finden.",
+    "permission-to-page-denied": "Du hast keine Berechtigung zu dieser Seite.",
+    "reset-token-invalid": "Dieser Reset-Token ist abgelaufen oder ungültig. Bitte fordere einen neuen an.",
+    "too-many-requests": "Du hast die Limitierung für Anfragen erreicht. Bitte versuche es erneut in {retryAfter} Sekunden.",
+    "verify-email-token-invalid": "Es ist ein Fehler beim validieren deiner E-Mail Adresse aufgetreten.",
+    "javascript-disabled": "Du hast javascript deaktiviert in deinem Browser. Du musst javascript aktivieren, um Atropos zu verwenden."
+  },
+  "events": {
+    "auth": {
+      "new-password": "Du hast dein Passwort geändert."
+    },
+    "modules-blog-article": {
+      "new": "{owner} hat einen neuen Blogbeitrag geschrieben:",
+      "update": "{owner} hat diesen Blogeintrag aktualisiert:"
+    },
+    "modules-blog-category": {
+      "new": "{owner} hat eine neue Kategorie erstellt:",
+      "update": "{owner} hat diese Kategorie aktualisiert:"
+    },
+    "modules-content-block": {
+      "new": "{owner} hat einen neuen Block erstellt:",
+      "update": "{owner} hat diesen Block aktualisiert:"
+    },
+    "modules-content-gallery": {
+      "new": "{owner} hat ein neues Fotoalbum erstellt:",
+      "update": "{owner} hat dieses Fotoalbum aktualisiert:"
+    },
+    "modules-files-file": {
+      "new": "{owner} hat folgende Datei hochgeladen:"
+    },
+    "modules-mails-mail": {
+      "new": "{owner} hat dir eine Nachricht gesendet: "
+    }
+  },
+  "general": {
+    "add": "Hinzufügen",
+    "cancel": "Abbrechen",
+    "close": "Schliessen",
+    "copied": "Kopiert!",
+    "create": "Erstellen",
+    "danger-zone": "Gefahrenzone",
+    "delete": "Löschen",
+    "developer-tools": "Entwickler Werkzeuge",
+    "edit": "Bearbeiten",
+    "id": "ID",
+    "info": "Info",
+    "no": "Nein",
+    "ok": "Ok",
+    "remove": "Entfernen",
+    "save": "Speichern",
+    "status": {
+      "draft": "Entwurf",
+      "published": "Veröffentlicht",
+      "scheduled": "Geplant"
+    },
+    "upload": "Hochladen",
+    "warning": "Warnung",
+    "yes": "Ja"
+  },
+  "header": {
+    "logout": "Abmelden",
+    "profile": "Benutzerkonto",
+    "saving-ellipsis": "Speichern...",
+    "tasks": {
+      "no-notifications": "Keine Benachrichtigungen",
+      "notifications": "Benachrichtigungen"
+    }
+  },
+  "help": {
+    "administration": {
+      "settings": {
+        "admin-contact": "Diese E-Mail Adresse wird verwendet, falls Atropos mit dir kontakt aufnehmen muss. <br>Du wirst Benachrichtigungen über wichtige Aktualisierungen erhalten oder wenn ein Fehler gefunden wurde, der nicht automatisch behoben werden kann.",
+        "user-contact": "Der Benutzer Kontakt ist eine zusätzliche Kontaktadresse. Idealerweise sollte sie eine Person sein, die die Verantwortung für die Inhalte auf der Seite übernimmt.",
+        "user-contact-public-access": "Zusätzlich kann über die öffentliche API zugang zu dem Benutzer Kontakt gegeben werden. <br> Damit kann beispielsweise ein Kontaktformular auf der Webseite bereitgestellt werden, ohne dass eine öffentliche E-Mail Adresse angegeben werden muss.",
+        "branding": "Hier kannst du das Aussehen von Atropos anpassen. Als erstes kannst du die Farbe bestimmen, welche für das Logo verwendet wird. Achte aber darauf, eine Farbe zu verwenden, welche sowohl auf dunklen, wie auch auf hellen Hintergründen gut lesbar ist. <br> Als nächstes kann eine Abkürzung festgelet werden. Diese wird unter anderem für den Betreff in Mails verwendet. <br>Wenn du ein Feld leed lässt, wird der Standardwert von Artopos verwendet.",
+        "clear-cache": "Atropos verwendet einen Cache um die Anfragen an die Seite zu beschleunigen. <br>Es werden diverse Inhalte wie Blogbeiträge, Fotoalben und Bilder gecached, aber auch Benutzer und Berechtigungen werden zwischengespeichert. <br>Wenn du vor kurzem viele Änderungen vorgenommen hast, kannst du hier den Cache leeren.",
+        "developer-info": "Die folgenden Informationen werden benötigt, damit sich deine Webseite mit der Atropos-API verbinden kann.",
+        "developer-mode": "Wenn der Entwickler Modus aktiviert ist erhälst du Zugang zu zusätzlichen Informationen, die hilfreich sein können beim entwickeln einer Webseite.<br>Beispielsweise kannst du die ID für Blöcke einsehen oder ein anderes Erstelldatum für Blogbeiträge setzen. Ebenfals ist die Caching-Schicht für die Frontend-Api deaktiviert.<br><b><small>Du solltest dieses Setting ausschalten, bevor die Seite veröffentlicht wird.</small></b>",
+        "last-update": "Zuletzt aktualisiert: {date}",
+        "locale": "Wähle die Sprache, welche für die Benutzeroberfläche, sowie für alle Kommunikation mir den Mitgliedern verwendet wird.",
+        "stats-storage": "Sie verwenden {space} an Speicherplatz.",
+        "stats-storage-update-infrequent": "Es kann einige Zeit dauern, bis Änderungen angezeigt werden."
+      }
+    },
+    "auth": {
+      "two-fa": "Öffne die Zwei-Faktor Authentifizierungs App auf deinem Mobiltelefon und gib den Code ein, um deine Identität zu bestätigen."
+    },
+    "modules": {
+      "blog": {
+        "articles": {
+          "create-fist-article-content": "Klicke diesen Button, um deinen ersten Blogbeitrag zu erstellen.",
+          "create-fist-article-title": "Erstelle deinen ersten Blogbeitrag"
+        }
+      },
+      "content": {
+        "blocks": {
+          "create-fist-block-content": "Klicke diesen Button, um deinen ersten Block zu erstellen.",
+          "create-fist-block-title": "Erstelle deinen ersten Block"
+        },
+        "galleries": {
+          "create-fist-gallery-content": "Erstelle dein ersts Fotoalbum in wenigen Sekungen.",
+          "create-fist-gallery-title": "Nur 2 Klickes von deinem Fotoalbum entfernt"
+        }
+      }
+    }
+  },
+  "message": {
+    "accept-gdpr-title": "Privatsphäre",
+    "accept-gdpr-message": "Wir verwenden Cookies, um eine einfache Benutzung zu ermöglichen. Durch die Verwendung von Atropos erlaubst du den Gebrauch von Cookies.",
+    "changes-successfully-saved": "Änderungen wurden erfolgreich gespeichert.",
+    "click-here-to-add-a-photo": "Klicke hier, um ein Foto hinzuzufügen",
+    "delete-role": "Dies wird die Rolle dauerhaft löschen. Fortfahren?",
+    "delete-user": "Dies wird den Benutzer dauerhaft löschen. Fortfahren?",
+    "drag-a-photo-here": "Ziehe ein Foto hier hin",
+    "drag-multiple-photos-here": "Ziehe eines oder mehrere Fotos hier hin",
+    "loading-user": "Lade Benutzer...",
+    "auth-email-is-not-verified-message": "Um sicher zu stellen, dass du eine aktuelle und gültige E-Mail Adresse hinzerlegt hast, haben wir dir eine E-Mail an die hiterleget Adresse gesendet. Bitten bestätige deine Adresse durch klicken auf den darin enthaltenen Link.",
+    "auth-email-is-not-verified-title": "Bitte bestätige deine E-Mail Adresse",
+    "auth-email-is-not-verified-link": "Klick hier, um eine neue E-Mail zu senden",
+    "modules-blog-articles-create-article": "Bitte gib den Namen für den neuen Blogeintrag ein:",
+    "modules-blog-articles-delete-article": "Das Löschen eines Blogeintrags kann nicht rückgängig gemacht werden. Bist du dir sicher, dass du fortfahren willst?",
+    "modules-blog-categories-create-category": "Bitte gib den Namen für die neue Kategorie ein:",
+    "modules-blog-categories-delete-category": "Wenn du eine Kategorie löschst, wird diese aus allen Blogeinträgen entfernt, in denen sie verwendet wird.",
+    "modules-content-blocks-create-block": "Bitte gib den Namen für den neuen Block ein:",
+    "modules-content-blocks-delete-block": "Wenn du einen Block löschst, kann dies nicht rückgängig gemacht werden.",
+    "modules-content-galleries-create-gallery": "Bitte gib den Namen für das neue Fotoalbum ein:",
+    "modules-content-galleries-delete-gallery": "Wenn du das Fotoalbum löschst, kann dies nicht rückgängig gemacht werden.",
+    "modules-content-gallery-delete-images": "Du hast keine Bilder markiert | Bist du dir sicher, dass du das markierte Bild löschen willst? | Bist du dir sicher, dass du die markierten {number} Bilder löschen willst?",
+    "modules-files-objects-create-folder": "Bitte gib den Namen für den Ordner ein:",
+    "modules-files-objects-delete-file": "Bist du dir sicher, dass du diese Datei löschen willst?",
+    "modules-files-objects-delete-folder": "Bist du dir sicher, dass du diesen Ordner und alle darin enthaltenen Dateien löschen willst?",
+    "modules-files-objects-delete-selected": "Bist du dir sicher, dass du alle ausgewählter Elemente löschen willst?",
+    "modules-files-objects-rename-object": "Bitte gib den neuen Namen ein:",
+    "modules-files-teams-create-team": "Bitte gib den Namen für das neue Team ein:",
+    "modules-files-teams-delete": "Bist du dir absolut sicher, dass du das Team löschen willst? Alle Dateien dieses Teams werden somit gelöscht.",
+    "modules-mails-lists-create-list": "Bitte gib den Namen für die neue E-Mail Liste ein:",
+    "modules-mails-lists-delete": "Bist du dir sicher, dass du diese Liste löschen willst?",
+    "modules-media-browser-no-multiple-message": " Bitte ziehe nur das Photo, das du verwenden möchten.",
+    "modules-media-browser-no-multiple-title": "Oops, Du hast mehr als ein Photo hinein gezogen.",
+    "modules-media-browser-type-not-supported-message": "Lade bitte nur Bilder hoch. Diese Datei ist nicht unterstützt.",
+    "modules-media-browser-type-not-supported-title": "Oops, dies ist kein Photo.",
+    "modules-media-files-delete-file": "Du bist dabei eine Mediendatei zu löschen. Die Datei wird aus der Bibliothek entfernt, so wie aus allen Inhalten, welche die Datei verwenden. Bist du dir sicher?",
+    "or-if-you-prefere": "Oder wenn du möchtest...",
+    "password-reset-sent-message": "Wenn du das Passwort vergessen hast, klicke auf den Link in der E-Mail. Du kannst dann ein neues Passwort setzen. Der Link in der E-Mail ist nur für kurze Zeit gültig.",
+    "password-reset-sent-title": "Wir haben eine E-Mail an {email} gesendet, mit weiteren Anweisungen.",
+    "record-successfully-deleted": "Der Datensatz wurde erfolgreich gelöscht",
+    "upload-file-button--file-too-large": "Diese Datei ist zu gross. Es sind maximal {size} erlaubt.",
+    "ws-connection-closed-message": "Die Verbindung zum Server wurde unterbrochen. <br>Bitte warte einen Moment, während wir versuchen die Verbindun wiederherzustellen...",
+    "ws-connection-closed-title": "Verbindung zum Server unterbrochen.",
+    "ws-connection-failed-message": "Die Verbindung zum Server wurde geschlossen. Bitte melde dich ab und versuche es später nochmals.<br>Das Problem sollte bald behoben sein.",
+    "ws-connection-failed-title": "Verbindung zum Server geschlossen.",
+    "ws-connection-recovered-title": "Verbindung widerhergestellt."
+  },
+  "mime-types": {
+    "music": "Musik",
+    "image": "Bild",
+    "pdf": "PDF",
+    "archive": "Archiv"
+  },
+  "modules": {
+    "blog": {
+      "articles": {
+        "article": "Blogeintrag",
+        "attachments": "Anhänge",
+        "author": "Autor",
+        "cover": "Titelbild",
+        "create-new-article": "Neuen Blogeintrag erstellen",
+        "created_at": "Erstelldatum",
+        "delete-article": "Diesen Blogeintrag löschen",
+        "event_at": "Datum des Ereignisses",
+        "no-article": "Du hast noch keine Blogeinträge erstellt.",
+        "published_at": "Datum der Veröffentlichung",
+        "slug": "Slug",
+        "title": "Titel",
+        "type": "Darstellungsart",
+        "types": {
+          "text": "Text",
+          "image": "Bild"
+        }
+      },
+      "categories": {
+        "categories": "Kategorien",
+        "create-new-category": "Neue Kategorie erstellen",
+        "delete-category": "Diese Kategorie löschen",
+        "last_updated": "Zuletzt bearbeitet",
+        "title": "Titel",
+        "used-in-these-articles": "Diese Kategorie wird in den folgenden Blogeinträgen verwendet"
+      }
+    },
+    "content": {
+      "blocks": {
+        "author": "Autor",
+        "block": "Block",
+        "create-new-block": "Neuen Block erstellen",
+        "delete-block": "Diesen Block löschen",
+        "no-blocks": "Du hast noch keine Blöcke erstellt.",
+        "published": "Veröffentlicht",
+        "title": "Titel",
+        "update_at": "Zuletzt bearbeitet"
+      },
+      "galleries": {
+        "author": "Autor",
+        "clear-selection": "Markierung entfernen",
+        "create-new-gallery": "Neues Fotoalbum erstellen",
+        "created_at": "Erstelldatum",
+        "delete-gallery": "Dieses Fotoalbum löschen",
+        "delete-selection": "Markierte Bilder löschen",
+        "gallery": "Fotoalbum",
+        "image-count": "Keine Bilder | Ein Bild | {count} Bilder",
+        "is-cover": "Ist Titelbild",
+        "no-galleries": "Du hast noch keine Fotoalben erstellt.",
+        "published": "Veröffentlicht",
+        "select": "Markieren",
+        "set-as-cover": "Als Titelbild festlegen",
+        "title": "Titel",
+        "update_at": "Zuletzt bearbeitet"
+      }
+    },
+    "files": {
+      "files": {
+        "add-folder": "Ordner",
+        "create-new-folder": "Neuen Ordner erstellen",
+        "download": "Herunterladen",
+        "file": "Datei",
+        "file-size": "Dateigrösse",
+        "files": "Dateien",
+        "folder": "Ordner",
+        "folders": "Ordner",
+        "grid-view": "Raster Ansicht",
+        "info": "Info",
+        "kind": "Type",
+        "list-view": "Listen Ansicht",
+        "name": "Name",
+        "no-teams": "Du hast noch zu keinem Team Zugang erhalten.",
+        "owner": "Besitzer",
+        "preview": "Vorschau",
+        "recent": "Kürzlich",
+        "rename": "Umbenennen",
+        "move": "Verschieben",
+        "move-here": "Hierher verschieben",
+        "show-info": "Details anzeigen",
+        "star": "Markieren",
+        "stared": "Markiert",
+        "trash": "Papierkorb",
+        "unstar": "Markierung entfernen",
+        "update_at": "Bearbeitet",
+        "uploaded_at": "Hochgeladen",
+        "upload-file": "Datei hochladen",
+        "select-object-to-view-info": "Markiere eine Datei oder einen Ordner um die Details einzusehen."
+      },
+      "teams": {
+        "add-roles": "Rolle hinzufügen",
+        "add-users": "Benutzer hinzufügen",
+        "available-tags": "Verfügbare Tags",
+        "create-new-team": "Ein neues Team erstellen",
+        "manage": "Teams verwalten",
+        "name": "Name",
+        "permission": "Berächtigung",
+        "read-only": "Nur lesen",
+        "read-write": "Lesen & Schreiben",
+        "role": "Rolle",
+        "roles": "Rollen",
+        "tags": "Tags",
+        "team": "Team",
+        "updated_at": "Aktualisiert am",
+        "user": "Benutzer",
+        "users": "Benutzer",
+        "storage-used": "Verwendeter Speicherplatz"
+      }
+    },
+    "mails": {
+      "lists": {
+        "add-roles": "Rolle hinzufügen",
+        "add-users": "Benutzer hinzufügen",
+        "create-new-list": "Eine neue E-Mail Liste erstellen",
+        "list": "Liste",
+        "mailinglists": "E-Mail Listen",
+        "name": "Name",
+        "role": "Rolle",
+        "roles": "Rollen",
+        "updated_at": "Aktualisiert am",
+        "user": "Benutzer",
+        "users": "Benutzer"
+      },
+      "send": {
+        "manage-lists": "Listen verwalten",
+        "mail": "E-Mail",
+        "members-count": "Keine Mitglieder | Ein Mitglied | {count} Mitglieder",
+        "select-recipient": "Empfänger wählen",
+        "send": "Senden",
+        "subject": "Betreff:",
+        "to": "An:",
+        "attachments": "Anhänge:"
+      }
+    },
+    "media": {
+      "browser": {
+        "media": "Medien",
+        "gallery": "Galerie",
+        "select-file": "Wähle ein Foto auf deinem Computer aus",
+        "title": "Media Browser",
+        "upload": "Hochladen"
+      },
+      "button": {
+        "add-attachment": "Anhang hinzufügen"
+      },
+      "files": {
+        "date": "Datum",
+        "creation-date": "Aufgenommen am",
+        "dimensions": "Dimensionen",
+        "dimensions-pixels": "{width} x {height} Pixel",
+        "filename": "Dateiname",
+        "file-size": "Grösse",
+        "owner": "Besitzer",
+        "delete-file": "Mediendatei löschen"
+      }
+    }
+  },
+  "permissions": {
+    "administration-roles": {
+      "description": "Diese Berechtigung erlaubt es Rollen und Berechtigungen zu verwalten.<br><b>Vergib diese Berechtigung nur an Administratoren.</b>",
+      "name": "Rollen"
+    },
+    "administration-settings": {
+      "description": "Diese Berechtung erlaubt es grundlegende Einstellungen anzupassen.<br><b>Vergib diese Berechtigung nur an Administratoren.</b>",
+      "name": "Einstellungen"
+    },
+    "administration-users": {
+      "description": "Mit dieser Berechtigung können neue Benutzer erstellt und bestehende Benutzer verwaltet werden.<br><b>Vergib diese Berechtigung nur an Administratoren.</b>",
+      "name": "Benutzer"
+    },
+    "events": {
+      "description": "Wird benötigt, um Aktivitäten auf der Startseite zu sehen.",
+      "name": "Aktivitäten"
+    },
+    "login": {
+      "description": "Diese Berechtigung wird benötigt, damit sich der Benutzer anmelden kann.",
+      "name": "Anmelden"
+    },
+    "modules-blog-articles": {
+      "description": "Erlaubt das erstellen und bearbeiten von Blogbeiträgen.<br>Der Benutzer kann ebenfalls bestehende Beiträge bearbeiten und veröffentlichen, die von anderen Benutzern geschrieben wurden.",
+      "name": "Blogbeiträge"
+    },
+    "modules-blog-categories": {
+      "description": "Erlaubt das erstellen, bearbeiten und löschen von Kategorien.",
+      "name": "Kategorien"
+    },
+    "modules-content-blocks": {
+      "description": "Erlaubt das erstellen, bearbeiten und löschen von Blöcken.",
+      "name": "Blöcke"
+    },
+    "modules-content-galleries": {
+      "description": "Erlaubt das erstellen, bearbeiten und löschen von Fotoalben.",
+      "name": "Fotoalben"
+    },
+    "modules-files-objects": {
+      "description": "Diese Berechtigung ermöglicht den Zugang zum Datei-Modul. Diese Berechtigung wird benötigt, damit der Benutzer das Modul sehen kann, es reicht jedoch noch nicht aus um Zugriff auf hochgeladene Dateien zu erhalten.<br>Zugriffsberechtigungen auf Dateien werden über die Teams verwaltet.",
+      "name": "Dateien"
+    },
+    "modules-files-teams": {
+      "description": "Mit dieser Berechtigung kann ein Benutzer die Mitglieder eines Teams festlegen und Lese- und Schreibberechtigungen vergeben.",
+      "name": "Teams"
+    },
+    "modules-mails-lists": {
+      "description": "Erlaubt es der Benutzer E-Mail Listen zu verwalten.",
+      "name": "E-Mail Listen"
+    },
+    "modules-mails-send": {
+      "description": "Diese Berechtigung erlaubt es dem Benutzer E-Mails andere Benutzer und vordefinierte E-Mail Listen zu senden.",
+      "name": "E-Mails senden"
+    },
+    "modules-media-browser": {
+      "description": "Diese Berechtigung wird benötigt um den Medien-Browser zu verwenden. Mit dem Medien-Browser können Bilder hochgeladen werden, welche dann in Blogbeiträgen und Fotoalben verwendet werden.",
+      "name": "Medien-Browser"
+    },
+    "modules-media-files": {
+      "description": "Diese Berechtigung wird benötigt um den Medien dateien zu verwalten.",
+      "name": "Medien Bibliothek"
+    },
+    "profile": {
+      "description": "Ermöglicht es dem Benutzer sein Benutzerkonto zu bearbeiten.<br>Ohne diese Berechtigung kann der Benutzer werde seinen Namen, E-Mailadresse noch das Passwort ändern.",
+      "name": "Benutzerkonto"
+    }
+  },
+  "profile": {
+    "account": "Benutzerkonto",
+    "security": "Sicherheit"
+  },
+  "routes": {
+    "administration": "Administration",
+    "administration-roles": "Rollen",
+    "administration-roles-id": "Rolle bearbeiten",
+    "administration-settings": "Einstellungen",
+    "administration-settings-general": "Allgemeine Einstellungen",
+    "administration-settings-statistics": "Statistiken & Speicherplatz",
+    "administration-settings-developer": "Entwickler Einstellungen",
+    "administration-users": "Benutzer",
+    "administration-users-id": "Benutzer bearbeiten",
+    "auth-login": "Anmelden",
+    "auth-logout": "Abmelden",
+    "auth-verify-email-all": "E-Mail Adresse wird bestätigt...",
+    "index": "Dashboard",
+    "modules": "Module",
+    "modules-blog-articles": "Blogeinträge",
+    "modules-blog-articles-id": "Blogeintrag bearbeiten",
+    "modules-blog-categories": "Kategorien",
+    "modules-blog-categories-id": "Kategorie bearbeiten",
+    "modules-blog-comments": "Kommentare",
+    "modules-content-blocks": "Blöcke",
+    "modules-content-blocks-id": "Block bearbeiten",
+    "modules-content-galleries": "Fotoalben",
+    "modules-content-galleries-id": "Fotoalbum bearbeiten",
+    "modules-events-events": "Ereignisse",
+    "modules-files": "Dateien",
+    "modules-files-team-parent": "Dateien",
+    "modules-files-teams": "Teams",
+    "modules-files-teams-id": "Team bearbeiten",
+    "modules-mails-lists": "E-Mail Listen",
+    "modules-mails-lists-id": "E-Mail Liste bearbeiten",
+    "modules-mails-send": "E-Mail senden",
+    "modules-mails-send-delivery": "Versende E-Mails...",
+    "modules-media-files": "Medien Bibliothek",
+    "modules-media-files-id": "Mediendatei",
+    "profile": "Mein Benutzerkonto"
+  },
+  "validation": {
+    "password_confirmation": {
+      "match": "Die Passwortbetätigung stimmt nicht überein",
+      "required": "Bitte bestätige dein neues Passwort"
+    },
+    "old_password": {
+      "required": "Bitte gib das aktuelle Passwort ein"
+    },
+    "email": {
+      "required": "Bitte gib eine E-Mail Adresse an",
+      "type": "Dies ist keine gültige E-Mail Adresse"
+    },
+    "first_name": {
+      "required": "Bitte gib einen Vornamen ein"
+    },
+    "last_name": {
+      "required": "Bitte gib einen Nachnamen ein"
+    },
+    "login-email": {
+      "required": "Es wird eine E-Mail Adresse benötigt um dich anzumelden"
+    },
+    "login-password": {
+      "required": "Bitte gib dein Passwort ein"
+    },
+    "modules-files-files--object-name": {
+      "required": "Bitte gib einen Namen ein"
+    },
+    "modules-files-teams--name": {
+      "required": "Bitte gib dem Team einen Namen"
+    },
+    "modules-mails-lists--name": {
+      "required": "Bitte gib einen Namen für diese E-Mail Liste ein"
+    },
+    "modules-mails-send--subject": {
+      "required": "Bitte gib einen Betreff ein"
+    },
+    "modules-mails-send--content": {
+      "required": "Deine E-Mail hat noch keinen Inhalt"
+    },
+    "modules-mails-send--to": {
+      "required": "Bitte gib den Empfänger der E-Mail an"
+    },
+    "password": {
+      "min": "Dein Passwort muss mindestens 6 Zeichen lang sein",
+      "required": "Bitte gib ein neues Passwort ein",
+      "weak": "Dein Passwort ist zu schwach"
+    },
+    "reset-email": {
+      "required": "Gib deine E-Mail Adresse ein, damit wir dir den Link zusenden können."
+    },
+    "roles-name": {
+      "required": "Eine Rolle benötigt einen Namen"
+    },
+    "title": {
+      "required": "Bitte gib einen Titel ein"
+    }
+  }
+}

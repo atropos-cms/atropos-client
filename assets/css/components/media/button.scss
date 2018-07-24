@@ -1,0 +1,17 @@
+.modules-media-browser--upload-button {
+  padding: 0.2em;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: background-color $--transition-speed-fast ease-in-out, border-color $--transition-speed-fast ease-in-out;
+}
+.--is-drag-over-page .modules-media-browser--upload-button {
+  border: 2px dashed $--color-primary;
+}
+.--is-drag-over-target.modules-media-browser--upload-button {
+  border: 2px solid $--color-primary;
+  background-color: rgba($--color-primary, $--background-transparency);
+}
+
+.modules-media-browser--button-upload-progress {
+  margin-top: 1em;
+}

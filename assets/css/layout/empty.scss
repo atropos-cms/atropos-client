@@ -1,0 +1,12 @@
+.container--empty {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  
+  .main-wrapper {
+    margin: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+  }
+}

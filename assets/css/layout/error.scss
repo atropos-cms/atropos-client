@@ -1,0 +1,107 @@
+.layout-error.layout-error {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  background-color: $--color-body-darkest;
+  overflow: hidden;
+  font-size: 14px;
+  margin: -1.8rem;
+  min-height: 75vh;
+
+  @media only screen and (min-width: 768px) {
+    .layout-error.layout-error {
+      font-size: 28px;
+    }
+  }
+
+  .left, .right {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+
+  .divider {
+    display: flex;
+    flex-grow: 0;
+  }
+
+  .left {
+    align-items: center;
+    justify-content: center;
+    flex-grow: 2;
+  }
+
+  @media only screen and (max-width: 1199px) {
+    .right {
+      display: none;
+    }
+  }
+  @media only screen and (max-height: 450px) {
+    .right {
+      display: none;
+    }
+  }
+
+
+  .error-oops {
+      font-size: 1.5em;
+  }
+  .error-code {
+    font-weight: bold;
+    font-size: 6em;
+    line-height: 1;
+  }
+  .error-error {
+    margin-bottom: 0.5em;
+    font-size: 1.5em;
+    text-transform: capitalize;
+    border-bottom: 1px solid $--color-text-placeholder;
+  }
+  .error-message {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    font-size: 1em;
+    color: $--color-text-secondary;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .layout-error.layout-error {
+      font-size: 28px;
+    }
+  }
+
+
+  /*
+  * Right side color styles
+  */
+  .right {
+    background-color: $--color-secondary;
+    background: linear-gradient(-110deg, $--color-primary, $--color-secondary);
+    box-shadow: 0 5px 5px 5px rgba(0, 0, 0, .1);
+    transform: rotate(-30deg) scale(2) translateX(30%);
+  }
+
+  .right.error-404 {
+    background-color: $--color-secondary;
+    background: linear-gradient(-110deg, $--color-primary, $--color-secondary);
+  }
+
+  .right.error-403 {
+    background-color: $--color-secondary;
+    background: linear-gradient(-110deg, mix($--color-secondary, $--color-warning, 50%) 0%, $--color-secondary 80%);
+  }
+
+  .right.error-500,
+  .right.error-503 {
+    background-color: $--color-secondary;
+    background: linear-gradient(-110deg,  mix($--color-secondary, $--color-danger, 50%) 0%, $--color-secondary 80%);
+  }
+
+  .right.error-TypeError {
+    background-color: $--color-danger;
+    background: linear-gradient(-110deg,  mix($--color-secondary, $--color-danger, 10%) 0%, $--color-secondary 100%);
+  }
+
+}

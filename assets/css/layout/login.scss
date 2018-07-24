@@ -1,0 +1,48 @@
+.guest-wrapper {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    flex-direction: column;
+    z-index: 1;
+    overflow-x: auto;
+
+    .logo {
+      margin-bottom: 1em;
+    }
+
+    .login-form-notification {
+        max-width: 600px;
+    }
+
+    .login-form {
+      min-width: 20vw;
+    }
+
+    .login--password-reset-link  {
+      font-size: 14px;
+      color: $--color-primary;
+    }
+
+    .login-submit-button {
+      width: 100%;
+      margin-bottom: 10px;
+      margin-top: 30px;
+    }
+}
+
+.login-title {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.logo .logo-text {
+  display: flex;
+  margin-left: 1em;
+}

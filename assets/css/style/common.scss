@@ -1,0 +1,13 @@
+/*
+ * Common styles shared with multiple views
+*/
+.button-container {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  display: flex;
+  justify-content: flex-end;
+
+  .el-button {
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  }
+}

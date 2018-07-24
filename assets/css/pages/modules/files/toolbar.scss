@@ -1,0 +1,65 @@
+.breadcrumb--file-team-name {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+
+  .material-icons {
+    font-size: 1em;
+    margin-right: 0.3em;
+  }
+}
+.breadcrumb--file-folder-name {
+  span {
+    cursor: pointer;
+  }
+  .--is-collapsed {
+    cursor: default;
+  }
+
+  &.el-breadcrumb__item:last-child .el-breadcrumb__inner,
+  &.el-breadcrumb__item:last-child .el-breadcrumb__inner a,
+  &.el-breadcrumb__item:last-child .el-breadcrumb__inner a:hover,
+  &.el-breadcrumb__item:last-child .el-breadcrumb__inner:hover {
+    color: $--color-primary;
+    cursor: default;
+  }
+}
+
+.modules-files-objects--toolbar-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.modules-files-objects--context-menu {
+  position: absolute;
+
+  .el-menu {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+.modules-files-objects--context-menu-popper {
+  .el-menu .el-menu-item, .el-menu .el-submenu__title, .el-menu-item i, .el-menu-item.is-active i {
+    color: $--color-text-regular;
+  }
+
+  .el-menu-item:not(.is-disabled):focus,
+  .el-menu-item:not(.is-disabled):hover {
+    background-color: $--color-primary-light-8;
+
+    &, i {
+      color: $--color-primary;
+    }
+  }
+}
+
+.page-header--toolbar-options-dropdown.--is-separated,
+.modules-files-objects--context-menu-popper .--is-separated {
+  display: block;
+  border-bottom: 1px solid $--color-separation-border;
+  padding-top: 0.3em;
+  margin-bottom: 0.3em;
+}

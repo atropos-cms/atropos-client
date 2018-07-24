@@ -1,0 +1,52 @@
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.is-large {
+    font-size: 2em;
+  }
+
+  .logo--icon {
+    color: $--color-primary;
+    border: 0.2em solid $--color-primary;
+
+    font-weight: 700;
+
+    height: 2em;
+    width: 2em;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo--icon + .logo--text {
+    margin-left: 1em;
+  }
+
+  .logo--text {
+    color: $--color-primary;
+    font-weight: bold;
+    max-width: 100px;
+  }
+
+  /*
+   * Animation
+   */
+  .slide-fade-enter-active, .slide-fade-leave-active {
+    transition: all .3s cubic-bezier(0.29, 0.76, 0.39, 0.93);
+    .--is-not-initial {
+      transition: all .3s cubic-bezier(0.29, 0.76, 0.39, 0.93);
+    }
+  }
+
+  .slide-fade-enter, .slide-fade-leave-to {
+    transform: translateX(-2.5em);
+    max-width: 1px;
+
+    .--is-not-initial {
+      opacity: 0;
+    }
+  }
+}

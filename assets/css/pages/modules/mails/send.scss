@@ -1,0 +1,28 @@
+.modules-mails-send--header-form {
+  padding: 20px 20px 0;
+  box-shadow: 0 10px 10px -5px rgba(0, 0, 0, .1);
+}
+
+.modules-mails-send--content-form {
+  padding: 20px;
+  border-top: 1px solid $--color-separation-border;
+}
+
+
+.modules-mails-send--select-recipient {
+  .el-select-dropdown__item.selected::after {
+    display: none;
+  }
+}
+
+.modules-mails-send--flex-editor-box {
+  .el-form-item__content {
+    margin-left: 0 !important;
+  }
+}
+
+.modules-mails-send--attachements {
+  .el-tag {
+    margin-right: 1em;
+  }
+}

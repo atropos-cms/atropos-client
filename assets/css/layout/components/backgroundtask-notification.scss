@@ -1,0 +1,49 @@
+.backgroundtask-notification {
+  .el-notification__group {
+    width: 100%;
+  }
+  .el-notification__title {
+    margin-bottom: 1em;
+  }
+
+  .el-notification__content {
+    max-height: 15em;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .backgroundtask-notification--row {
+    margin-bottom: 1em;
+  }
+
+  .backgroundtask-notification--loading-icon {
+    top: 0;
+    height: 24px;
+    margin-top: 0;
+    text-align: center;
+    position: relative;
+    margin-right: 0.7em;
+
+     .circular {
+      height: 24px;
+      width: 24px;
+    }
+  }
+
+  .backgroundtask-notification--progress {
+    display: flex;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+
+    .material-icons {
+      font-size: 1.8em;
+    }
+  }
+
+  .backgroundtask-notification--text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+  }
+}

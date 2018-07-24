@@ -1,0 +1,652 @@
+{
+  "administration": {
+    "roles": {
+      "create-new-role": "Create a new role",
+      "name": "Name",
+      "permission-groups": {
+        "administration": "Administration",
+        "default": "Basic",
+        "modules": "Modules"
+      },
+      "permissions": "Permissions",
+      "required-by": "Required by",
+      "requires": "Requires",
+      "role": "Role",
+      "users": "Users"
+    },
+    "settings": {
+      "api-url": "Api Url",
+      "branding": "Branding",
+      "branding_abbreviation": "Abbr.",
+      "branding_name": "Brand name",
+      "contacts": "Contacts",
+      "admin-contact": "Admin contact",
+      "user-contact": "User contact",
+      "user-contact-public-access": "Allow public access to user contact",
+      "clear-cache": "Clear Server Cache",
+      "clear-cache-now": "Clear the Server Cache Now",
+      "developer-info": "Information",
+      "developer-mode": "Developer Mode",
+      "enable-developer-mode": "Enable Developer Mode",
+      "locale": "Locale",
+      "locales": {
+        "de": "German",
+        "en": "English"
+      },
+      "tenant": "Tenant ID"
+    },
+    "user": {
+      "account": "Account",
+      "activate": "Activate",
+      "activated": "Activated",
+      "activation": "Activation",
+      "add-roles": "Add Roles",
+      "address": "Address",
+      "city": "City",
+      "password_confirmation": "Verify password",
+      "country": "Country",
+      "create-new-user": "Create a new user",
+      "created_at": "Created At",
+      "old_password": "Current password",
+      "deactivate": "Deactivate",
+      "email": "Email",
+      "email-verified": "Email address is verified",
+      "email-not-verified": "Email address not verified",
+      "first_name": "First Name",
+      "full_name": "Name",
+      "last_login": "Last Login",
+      "last_name": "Last Name",
+      "password": "New password",
+      "postal_code": "Postal Code",
+      "role": "Role",
+      "roles": "Roles",
+      "security": "Security",
+      "send_notification": "Notify user about password change",
+      "notify_account_created": "Notify the user about the new account and send link to set password",
+      "street": "Street",
+      "updated_at": "Updated At"
+    }
+  },
+  "app-status": {
+    "api": "Api",
+    "connected": "OK",
+    "disconnected": "Disconnected",
+    "status": "Status",
+    "api-version": "Api Version",
+    "ui-version": "UI Version"
+  },
+  "auth": {
+    "demo-accounts": "Demo Accounts",
+    "email": "Email",
+    "forgot-password": "Forgot password",
+    "login": "Login",
+    "logout": "Loggin out...",
+    "password_confirmation": "Confirm your new password",
+    "password": "Password",
+    "remember-me": "Remember me",
+    "remembered-password": "I remembered my password",
+    "reset-password": "Change password",
+    "send-reset-link": "Send password reset link",
+    "two-fa": "Two-factor authentication",
+    "two-fa-code": "Authentication code"
+  },
+  "background-task": {
+    "background-task": "Background Tasks",
+    "preparing-downloads": "Preparing Downloads",
+    "mail-sending": "Sending Mail...",
+    "mail-delivered": "Mails delivered",
+    "uploading-files": "Uploading Files",
+    "uploading-file": "Uploading {name}",
+    "zipping": "Zipping '{name}'"
+  },
+  "dashboard": {
+    "events": {
+      "events": "Events",
+      "loading-events": "Loading events...",
+      "no-events": "There are no events yet."
+    },
+    "profile": {
+      "complete-profile": {
+        "city": "In which city are you living?",
+        "country": "What country are you in?",
+        "postalcode": "What is your postal code?",
+        "street": "What is your street address?",
+        "title": "Complete your profile",
+        "verify-email": "Verify your email address"
+      },
+      "info": {
+        "address": "Address",
+        "created_at": "Member since",
+        "email": "Email",
+        "last_login": "Last login"
+      }
+    },
+    "welcome": {
+      "atropos": "Welcome to Atropos",
+      "image-of-the-day": "Images of the day",
+      "afternoon": {
+        "1": "Good afternoon, {name}"
+      },
+      "general": {
+        "1": "Hi, {name}",
+        "2": "Welcome back, {name}",
+        "3": "What’s up, {name}?",
+        "4": "Good to see you, {name}?"
+      },
+      "morning": {
+        "1": "Good morning, {name}",
+        "2": "Have a nice day, {name}"
+      },
+      "night": {
+        "1": "Good evening, {name}"
+      }
+    }
+  },
+  "editor": {
+    "sizes": {
+      "large": "Large",
+      "normal": "Normal",
+      "small": "Small"
+    }
+  },
+  "error-page": {
+    "error": "Error",
+    "logout": "Logout",
+    "oops": "Oops",
+    "return-to-dashboard": "Return to the dashboard"
+  },
+  "errors": {
+    "error-upload-file-to-large": "This file ist too large. The maximum filesize allowed is 500MB.",
+    "error-while-processing-upload": "There was an unexpected error on the server while processing your upload. Please try again later.",
+    "error-while-preparing-download": "There was an unexpected error on the server while preparing your download. Please try again later.",
+    "login-account-not-activated": "Your account is not activated.",
+    "login-password-mismatch": "We could not find an account that mached these credentials.",
+    "login-permission-denied": "You do not have the permission to login.",
+    "no-tenant-found": "We could not find an app for this domain.",
+    "permission-to-page-denied": "You do not have permission to this page.",
+    "reset-token-invalid": "This reset token is expired or invalid. Please request a new token.",
+    "too-many-requests": "You reached the limit for requests. Please try again in {retryAfter} seconds.",
+    "verify-email-token-invalid": "There was an error while validating your email address.",
+    "javascript-disabled": "Javascript is disabled in your Browser. You need to enable javascript to use Atropos."
+  },
+  "events": {
+    "auth": {
+      "new-password": "You changed your password."
+    },
+    "modules-blog-article": {
+      "new": "{owner} created a new blog post:",
+      "update": "{owner} has updated this blog post:"
+    },
+    "modules-blog-category": {
+      "new": "{owner} created a new category:",
+      "update": "{owner} has updated this category:"
+    },
+    "modules-content-block": {
+      "new": "{owner} created a new block:",
+      "update": "{owner} has updated this block:"
+    },
+    "modules-content-gallery": {
+      "new": "{owner} created a new gallery:",
+      "update": "{owner} has updated this gallery:"
+    },
+    "modules-files-file": {
+      "new": "{owner} uploaded: "
+    },
+    "modules-mails-mail": {
+      "new": "{owner} has sent you a message: "
+    }
+  },
+  "general": {
+    "add": "Add",
+    "cancel": "Cancel",
+    "close": "Close",
+    "copied": "Copied!",
+    "create": "Create",
+    "danger-zone": "Danger Zone",
+    "delete": "Delete",
+    "developer-tools": "Developer tools",
+    "edit": "Edit",
+    "filters": {
+      "published": "Published",
+      "title": "Title",
+      "search": "Search"
+    },
+    "id": "ID",
+    "info": "Info",
+    "no": "No",
+    "ok": "Ok",
+    "remove": "Remove",
+    "save": "Save",
+    "status": {
+      "draft": "Draft",
+      "published": "Published",
+      "scheduled": "Scheduled"
+    },
+    "upload": "Upload",
+    "warning": "Warning",
+    "yes": "Yes"
+  },
+  "header": {
+    "logout": "Logout",
+    "profile": "Profile",
+    "saving-ellipsis": "Saving...",
+    "tasks": {
+      "no-notifications": "No notifications",
+      "notifications": "Notifications"
+    }
+  },
+  "help": {
+    "administration": {
+      "settings": {
+        "admin-contact": "This email address will be used if Atropos ever needs to get in contact with you. <br>You will resceive notifications about important updates or if we detected something that does not seem right.",
+        "user-contact": "The user contact can be used as an additional contact address. Ideally it should be someone that takes resonsibility for the content on your site.",
+        "user-contact-public-access": "You can also allow public access to this contact via the public api. <br> This allows you to setup a contact form on your website and allow visitors to contact you without exposing an email address.",
+        "branding": "Here you can customize to look of Atropos. Fist you can choose a color that will be applied to the logo. Make sure you choose a color that is legible on a bright and a dark background. <br> You can also set a custom name and abreviation for your brand. This will also be used in the subject of mails sent by Atropos. <br>If you leave a field empty, the default value of Atropos will be used for that field.",
+        "clear-cache": "Atropos uses a cache to accelerate pageloads for your website. <br>It caches content like blogposts, pages and galleries, as well as users and their permissions. <br>If you made a lot of changes, you can clear the cache and force all content to be reloaded.",
+        "developer-info": "The following information may be required in order to connect your website to the Atropos-API.",
+        "developer-mode": "When Developer Mode is enabled, you will have access to some additional information that can be usefull during the development of a website. <br>For example you can see the id for content-blocks or set a custom created_at date for blog posts. Also, the caching-layer for the frontend will be disabled.<br><b><small>You should disable this setting before going live.</small></b>",
+        "last-update": "Last updated: {date}",
+        "locale": "Chooose the language that will be used for the user interface, as well as all communication to your users.",
+        "stats-storage": "You are using {space} of storage.",
+        "stats-storage-update-infrequent": "It can take a while until the statistics reflect changes."
+      }
+    },
+    "auth": {
+      "two-fa": "Open the two-factor authentication app on your device to view your authentication code and verify your identity."
+    },
+    "modules": {
+      "blog": {
+        "articles": {
+          "create-fist-article-content": "Click this button to create your first blog post.",
+          "create-fist-article-title": "Create your first blog post"
+        }
+      },
+      "content": {
+        "blocks": {
+          "create-fist-block-content": "Click this button to create your first content block.",
+          "create-fist-block-title": "Create your first block"
+        },
+        "galleries": {
+          "create-fist-gallery-content": "Create your first gallery in just a few seconds. Start by clicking this button.",
+          "create-fist-gallery-title": "Only 3 Clicks away from your first gallery"
+        }
+      }
+    }
+  },
+  "message": {
+    "accept-gdpr-title": "Privacy",
+    "accept-gdpr-message": "We use cookies to create a rich user experience. By using Atropos, you consent to cookies.",
+    "changes-successfully-saved": "Changes were successfully saved.",
+    "click-here-to-add-a-photo": "Click here to add a photo",
+    "delete-role": "This will permanently delete the role. Continue?",
+    "delete-user": "This will permanently delete the user. Continue?",
+    "drag-a-photo-here": "Drag a photo here",
+    "drag-multiple-photos-here": "Drag one or more photos here",
+    "loading-user": "Loading user...",
+    "auth-email-is-not-verified-message": "To ensure that our mailing list contains only those who wish to be on it, we have sent a confirmation link to your email address. Pleas click on the link it cantains to validate your email address.",
+    "auth-email-is-not-verified-title": "Please Verify Your Email Address",
+    "auth-email-is-not-verified-link": "Click this link, to send a new email",
+    "modules-blog-articles-create-article": "Please enter the name for the new post:",
+    "modules-blog-articles-delete-article": "Once you delete a blog post, there is no going back. Please be certain.",
+    "modules-blog-categories-create-category": "Please enter the name for the new category:",
+    "modules-blog-categories-delete-category": "When you delete a category it will be removed from all posts that use it.",
+    "modules-content-blocks-create-block": "Please enter the name for the new block:",
+    "modules-content-blocks-delete-block": "Once you delete a block, there is no going back. Please be certain.",
+    "modules-content-galleries-create-gallery": "Please enter the name for the new gallery:",
+    "modules-content-galleries-delete-gallery": "Once you delete a gallery, there is no going back. Please be certain.",
+    "modules-content-gallery-delete-images": "You have not images seleted to delete | Are you sure you want to delete the selected image? | Are you sure you want to delete these {number} images?",
+    "modules-files-objects-create-folder": "Please enter the name for the new folder:",
+    "modules-files-objects-delete-file": "Do you really want to delete this file?",
+    "modules-files-objects-delete-folder": "Do you really want to delete this folder and all files it contains?",
+    "modules-files-objects-delete-selected": "Do you really want to delete all selected elements?",
+    "modules-files-objects-rename-object": "Please enter a new name for the item:",
+    "modules-files-teams-create-team": "Please enter the name for the new team:",
+    "modules-files-teams-delete": "Are you absolutely sure you want to delete this team? All files that are stored in this team are going to be deleted.",
+    "modules-mails-lists-create-list": "Please enter the name for the new mailing list:",
+    "modules-mails-lists-delete": "Are you sure you want to delete this mailing list?",
+    "modules-media-browser-no-multiple-message": " Please drag only the photo you would like to upload.",
+    "modules-media-browser-no-multiple-title": "Oops, you are dragging more than one photo.",
+    "modules-media-browser-type-not-supported-message": " Please make sure to upload an image. This file is not supported.",
+    "modules-media-browser-type-not-supported-title": "Oops, this is not a photo.",
+    "modules-media-files-delete-file": "You are about to delete a media item. It will disapear from the media library and all content that uses this item. Are you sure?",
+    "or-if-you-prefere": "Or, if you prefere...",
+    "password-reset-sent-message": "If you have lost your password, you should click the link in the email. You will be able to choose a new password. The email link must be clicked within a limited time.",
+    "password-reset-sent-title": "We have sent an email to {email} with further instruction.",
+    "record-successfully-deleted": "The record was successfully deleted",
+    "upload-file-button--file-too-large": "This File is too large. Only files smaller than {size} are allowed.",
+    "ws-connection-closed-message": "The connection to the backend server was interupted.<br>Please wait while we try to reconnect...",
+    "ws-connection-closed-title": "Connection to server lost.",
+    "ws-connection-failed-message": "The connection to the backend server was closed. Please logout and try again later.<br>The problem should be resolved soon.",
+    "ws-connection-failed-title": "Connection to server closed.",
+    "ws-connection-recovered-title": "Connection recovered."
+  },
+  "mime-types": {
+    "music": "Music",
+    "image": "Image",
+    "pdf": "PDF",
+    "archive": "Archive"
+  },
+  "modules": {
+    "blog": {
+      "articles": {
+        "article": "Post",
+        "attachments": "Attachments",
+        "author": "Author",
+        "cover": "Cover",
+        "create-new-article": "Create a new post",
+        "created_at": "Date of creation",
+        "delete-article": "Delete this blog post",
+        "event_at": "Date of the event",
+        "no-article": "You have not created any blog posts yet.",
+        "published_at": "Date of publication",
+        "slug": "Slug",
+        "title": "Title",
+        "type": "Display type",
+        "types": {
+          "text": "Text",
+          "image": "Image"
+        }
+      },
+      "categories": {
+        "categories": "Categories",
+        "create-new-category": "Create a new category",
+        "delete-category": "Delete this category",
+        "last_updated": "Last updated",
+        "title": "Title",
+        "used-in-these-articles": "This category is used in these blog posts"
+      }
+    },
+    "content": {
+      "blocks": {
+        "author": "Author",
+        "block": "Block",
+        "create-new-block": "Create a new block",
+        "delete-block": "Delete this block",
+        "no-blocks": "You have not created any blocks yet.",
+        "published": "Published",
+        "title": "Title",
+        "update_at": "Last updated"
+      },
+      "galleries": {
+        "author": "Author",
+        "clear-selection": "Clear selection",
+        "create-new-gallery": "Create a new gallery",
+        "created_at": "Date of creation",
+        "delete-gallery": "Delete this gallery",
+        "delete-selection": "Delete selected images",
+        "gallery": "Gallery",
+        "image-count": "No images | One image | {count} Images",
+        "is-cover": "Is cover",
+        "no-galleries": "You have not created any galleries yet.",
+        "published": "Published",
+        "select": "Select",
+        "set-as-cover": "Set as cover",
+        "title": "Title",
+        "update_at": "Last updated"
+      }
+    },
+    "files": {
+      "files": {
+        "add-folder": "Folder",
+        "create-new-folder": "Create a new folder",
+        "download": "Download",
+        "file": "File",
+        "file-size": "Filesize",
+        "files": "Files",
+        "folder": "Folder",
+        "folders": "Folders",
+        "grid-view": "Grid view",
+        "info": "Info",
+        "kind": "Type",
+        "list-view": "List view",
+        "name": "Name",
+        "no-teams": "You do not have access to any teams.",
+        "owner": "Owner",
+        "preview": "Preview",
+        "recent": "Recent",
+        "rename": "Rename",
+        "move": "Move",
+        "move-here": "Move here",
+        "show-info": "Show details",
+        "star": "Star",
+        "stared": "Starred",
+        "trash": "Trash",
+        "unstar": "Unstar",
+        "update_at": "Modified",
+        "uploaded_at": "Uploaded",
+        "upload-file": "File upload",
+        "select-object-to-view-info": "Select a file or folder to view its details."
+      },
+      "teams": {
+        "add-roles": "Add Roles",
+        "add-users": "Add Users",
+        "available-tags": "Available tags",
+        "create-new-team": "Create a new team",
+        "manage": "Manage teams",
+        "name": "Name",
+        "permission": "Permission",
+        "read-only": "Read only",
+        "read-write": "Read & Write",
+        "role": "Role",
+        "roles": "Roles",
+        "tags": "Tags",
+        "team": "Team",
+        "updated_at": "Updated At",
+        "user": "User",
+        "users": "Users",
+        "storage-used": "Used storage"
+      }
+    },
+    "mails": {
+      "lists": {
+        "add-roles": "Add Roles",
+        "add-users": "Add Users",
+        "create-new-list": "Create a new list",
+        "list": "List",
+        "mailinglists": "Mailinglists",
+        "name": "Name",
+        "role": "Role",
+        "roles": "Roles",
+        "updated_at": "Updated At",
+        "user": "User",
+        "users": "Users"
+      },
+      "send": {
+        "mail": "Mail",
+        "manage-lists": "Manage List",
+        "members-count": "No Users | One User | {count} Users",
+        "select-recipient": "Select Recipient",
+        "send": "Send",
+        "subject": "Subject:",
+        "to": "To:",
+        "attachments": "Attachments:"
+      }
+    },
+    "media": {
+      "browser": {
+        "media": "Media",
+        "gallery": "Gallery",
+        "select-file": "Select a photo from your computer",
+        "title": "Media Browser",
+        "upload": "Upload"
+      },
+      "button": {
+        "add-attachment": "Add attachment"
+      },
+      "files": {
+        "date": "Date",
+        "creation-date": "Created On",
+        "dimensions": "Dimensions",
+        "dimensions-pixels": "{width} x {height} pixels",
+        "filename": "Filename",
+        "file-size": "Size",
+        "owner": "Owner",
+        "delete-file": "Delete this media item"
+      }
+    }
+  },
+  "permissions": {
+    "administration-roles": {
+      "description": "This permission gives access to the role and permission administration.<br><b>Only grant this permission to trusted administrators.</b>",
+      "name": "Roles"
+    },
+    "administration-settings": {
+      "description": "This permission allows the user to manage general application settings.<br><b>Only grant this permission to trusted administrators.</b>",
+      "name": "Settings"
+    },
+    "administration-users": {
+      "description": "This permission gives access to the user administration.<br><b>Only grant this permission to trusted administrators.</b>",
+      "name": "Users"
+    },
+    "events": {
+      "description": "Allows a user to see public and private events.",
+      "name": "Events"
+    },
+    "login": {
+      "description": "Users with this permission are allowed to login.",
+      "name": "Login"
+    },
+    "modules-blog-articles": {
+      "description": "Allow the user to create, update and delete blog posts.<br>The user can also publish and edit existing posts written by other users.",
+      "name": "Articles"
+    },
+    "modules-blog-categories": {
+      "description": "Allow the user to create, update and delete categories used to tag blog posts.",
+      "name": "Categories"
+    },
+    "modules-content-blocks": {
+      "description": "Allow the user to create, update and delete blocks.",
+      "name": "Blocks"
+    },
+    "modules-content-galleries": {
+      "description": "Allow the user to create, update and delete galleries.",
+      "name": "Galleries"
+    },
+    "modules-files-objects": {
+      "description": "Granting this permission gives the user access to the file module. This permission is needed for the user to see the module, but it does not mean the user has access to any files.<br>Permission to files are handles separately per team.",
+      "name": "Files"
+    },
+    "modules-files-teams": {
+      "description": "With this permission the user is allowed to create teams and manage who has access to files.",
+      "name": "Teams"
+    },
+    "modules-mails-lists": {
+      "description": "Allow the user to create edit and delete mailinglists.",
+      "name": "Mailinglists"
+    },
+    "modules-mails-send": {
+      "description": "This allows a user to send mails to other users and to predefined mailinglists.",
+      "name": "Send an Email"
+    },
+    "modules-media-browser": {
+      "description": "This permission is required to browse the media library and upload new images for galleries and blog posts.",
+      "name": "Media"
+    },
+    "modules-media-files": {
+      "description": "This permission is required to manage the media library.",
+      "name": "Media-Library"
+    },
+    "profile": {
+      "description": "Allow the user to edit their profile.<br>Without this permission the user can not change their name, email or password.",
+      "name": "Profile"
+    }
+  },
+  "profile": {
+    "account": "Account",
+    "security": "Security"
+  },
+  "routes": {
+    "administration": "Administration",
+    "administration-roles": "Roles",
+    "administration-roles-id": "Edit Role",
+    "administration-settings": "Settings",
+    "administration-settings-general": "General settings",
+    "administration-settings-statistics": "Statistics & Storage",
+    "administration-settings-developer": "Developer settings",
+    "administration-users": "Users",
+    "administration-users-id": "Edit User",
+    "auth-login": "Login",
+    "auth-logout": "Logout",
+    "auth-verify-email-all": "Verifing email address...",
+    "index": "Dashboard",
+    "modules": "Modules",
+    "modules-blog-articles": "Blog posts",
+    "modules-blog-articles-id": "Edit blog post",
+    "modules-blog-categories": "Categories",
+    "modules-blog-categories-id": "Edit category",
+    "modules-blog-comments": "Comments",
+    "modules-content-blocks": "Blocks",
+    "modules-content-blocks-id": "Edit Block",
+    "modules-content-galleries": "Galleries",
+    "modules-content-galleries-id": "Edit Gallery",
+    "modules-events-events": "Events",
+    "modules-files": "Files",
+    "modules-files-team-parent": "Files",
+    "modules-files-teams": "Teams",
+    "modules-files-teams-id": "Edit Team",
+    "modules-mails-lists": "Mailinglists",
+    "modules-mails-lists-id": "Edit mailinglist",
+    "modules-mails-send": "Send an Email",
+    "modules-mails-send-delivery": "Sending Emails...",
+    "modules-media-files": "Media Library",
+    "modules-media-files-id": "Media item",
+    "profile": "My Profile"
+  },
+  "validation": {
+    "password_confirmation": {
+      "match": "Your password confirmation does not match",
+      "required": "You have to confirm your new password"
+    },
+    "old_password": {
+      "required": "Please provide your current password"
+    },
+    "email": {
+      "required": "You need to provide an email address",
+      "type": "This is not a valid email address"
+    },
+    "first_name": {
+      "required": "You need to provide a firstname"
+    },
+    "last_name": {
+      "required": "You need to provide a lastname"
+    },
+    "login-email": {
+      "required": "An Email address is required to login"
+    },
+    "login-password": {
+      "required": "Please provide the password to login"
+    },
+    "modules-files-files--object-name": {
+      "required": "Please provide a name"
+    },
+    "modules-files-teams--name": {
+      "required": "Please provide a name for this team"
+    },
+    "modules-mails-lists--name": {
+      "required": "Please specify a name for this mailinglist"
+    },
+    "modules-mails-send--subject": {
+      "required": "Please give your mail a subject"
+    },
+    "modules-mails-send--content": {
+      "required": "Your mail does not contain any text"
+    },
+    "modules-mails-send--to": {
+      "required": "Please specify the recipient for this mail"
+    },
+    "password": {
+      "min": "Your password needs to be at least 6 characters long",
+      "required": "Please input your new password",
+      "weak": "This password is to weak"
+    },
+    "reset-email": {
+      "required": "Please provide your email address, so we can send you a reset link."
+    },
+    "roles-name": {
+      "required": "A role is required to have a name"
+    },
+    "title": {
+      "required": "You need to provide a title"
+    }
+  }
+}

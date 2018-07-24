@@ -1,0 +1,48 @@
+.administration-users--security-send-reset-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media only screen and (min-width: 768px) {
+    .el-button {
+      font-size: 1.2rem;
+    }
+  }
+  @media only screen and (min-width: 992px) {
+    .el-button {
+      font-size: 1rem;
+    }
+  }
+  @media only screen and (min-width: 1920px) {
+    .el-button {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.administration-users--security-vertical-border {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    margin-top: 1em;
+    margin-bottom: 2em;
+    flex-grow: 1;
+    border-top: 1px solid $--color-separation-border;
+  }
+}
+
+
+@media only screen and (min-width: 992px) {
+  .administration-users--security-vertical-border {
+    flex-direction: column;
+
+    span {
+      margin: 0;
+      flex-grow: 1;
+      border-top:none;
+      border-left: 1px solid $--color-separation-border;
+    }
+  }
+}

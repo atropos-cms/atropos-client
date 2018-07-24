@@ -1,0 +1,41 @@
+.administration-settings-branding {
+  display: flex;
+}
+
+.administration-settings-branding--color-abbreviation-group {
+  display: flex;
+  flex: 1;
+  margin-right: 1em;
+}
+.administration-settings-branding_color {
+  margin-right: 1em;
+}
+.administration-settings-branding_abbreviation {
+  min-width: 5em;
+}
+.administration-settings-branding_name {
+  flex: 5;
+}
+
+.administration-settings-stats-storage--progressbar {
+  border-radius: 0;
+
+  & + & {
+    border-left: 1px solid $--color-white;
+  }
+
+  &.--progressbar-1 {
+    background-color: $--color-primary;
+  }
+  &.--progressbar-2 {
+    background-color: $--color-success;
+  }
+}
+
+.administration-settings-stats-storage--progressbar-legend {
+  padding-top: 1em;
+
+  .el-tag + .el-tag {
+    margin-left: 1em;
+  }
+}

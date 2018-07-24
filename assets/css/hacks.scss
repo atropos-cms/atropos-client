@@ -1,0 +1,48 @@
+/*
+ * This file contains hacks and code that I'm not super happy with.
+ * If anyone has better solutions, PRs are welcome.
+ */
+
+ // This is a bit of a hack, but required to get the editor not ot overflow the box
+.modules-blog-articles--flex-content-box,
+.modules-content-blocks--flex-content-box,
+.modules-mails-send--flex-content-box {
+  display: flex;
+  flex-grow: 1;
+
+  .el-card__body {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+  }
+
+  .el-card__body .el-form {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .modules-blog-articles--flex-editor-box,
+  .modules-content-blocks--flex-editor-box,
+  .modules-mails-send--flex-editor-box {
+    margin: 0;
+    display: flex;
+    flex-grow: 1;
+
+    .el-form-item__content, .quill-editor {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .ql-container {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .ql-editor {
+      flex-grow: 1;
+    }
+  }
+
+}

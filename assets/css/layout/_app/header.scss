@@ -1,0 +1,86 @@
+.header-enter-active, .header-leave-active {
+    transition: margin-top $--transition-speed, opacity $--transition-speed;
+    opacity: 1;
+}
+.header-enter, .header-leave-active {
+    margin-top: -60px;
+    opacity: 0;
+}
+
+.header-save-indicator {
+    color: $--color-primary;
+    vertical-align: middle;
+
+    .saving-text {
+        margin-left: 0.3em;
+        font-size: 0.8em;
+    }
+}
+
+/* Navigation Menu */
+.el-header {
+    background-color: $--color-white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 5px -5px rgba($--color-black,.1);
+    z-index: 1;
+    min-height: 60px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header--notifications, .header--notifications:hover {
+    color: $--color-text-regular;
+    font-size: 1.3em;
+}
+
+.header--notifications.is-focused {
+  color: $--color-primary;
+}
+
+.header--notifications-count {
+  margin-right: 1em;
+  .el-badge__content.is-fixed.is-dot {
+    top: 12px;
+    right: 12px;
+    height: 12px;
+    width: 12px;
+    border: 2px solid #fff;
+  }
+}
+
+.header--profile {
+  display: flex;
+}
+
+.header--profile-dropdown {
+    cursor: pointer;
+}
+.header--profile-dropdown .user-avatar.avatar {
+  margin-right: 0.3em;
+}
+
+// Tasks
+.task-wrapper {
+    max-height: 500px;
+    overflow-y: auto;
+    display: block;
+}
+
+.task-card {
+    margin-bottom: 1em;
+
+    .el-card__body {
+        padding: 5px;
+        display: flex;
+        align-items: center;
+    }
+
+    .task--name {
+        margin-left: 1em;
+    }
+}

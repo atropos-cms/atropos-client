@@ -1,0 +1,24 @@
+#Idea
+.idea
+.vscode
+
+# Node modules
+node_modules
+
+# logs
+npm-debug.log
+
+# Nuxt build
+.nuxt
+
+# Nuxt generate
+dist
+
+# Nuxt PWA Module
+sw.*
+
+# Nuxt Webpackmonitor Module
+.monitor
+
+# Environment variables, never commit this file
+.env

@@ -1,0 +1,25 @@
+.publish-status-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: default;
+
+    .material-icons {
+        margin: 0.3em;
+    }
+
+    &.--is-draft {
+        color: $--color-white;
+        background-color: $--color-warning-light-1;
+    }
+    &.--is-published {
+        color: $--color-white;
+        background-color: $--color-primary-light-1;
+    }
+    &.--is-scheduled {
+        color: $--color-white;
+        background-color: $--color-danger-light-1;
+    }
+}

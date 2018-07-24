@@ -1,0 +1,43 @@
+@import "./_app/container";
+@import "./_app/content";
+@import "./_app/aside";
+@import "./_app/header";
+@import "./_app/scrollbar";
+@import "./_app/atropos-credits";
+
+@import "components/logo";
+@import "components/backgroundtask-notification";
+
+body {
+  user-select: none;
+}
+
+body, #__nuxt, #__layout, .app-wrapper {
+  display: flex;
+  width: 100vw;
+  max-width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: $--color-body;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.main-wrapper > div {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+
+/* Page animation */
+.page-enter-active, .page-leave-active {
+  transition: opacity .2s;
+}
+
+.page-enter, .page-leave-to {
+  opacity: 0;
+}

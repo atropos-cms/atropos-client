@@ -1,0 +1,121 @@
+
+// prevent input to get a green border
+.el-form-item.is-success .el-input__inner, .el-form-item.is-success .el-input__inner:focus, .el-form-item.is-success .el-textarea__inner, .el-form-item.is-success .el-textarea__inner:focus {
+  border-color: $--color-input-border;
+}
+
+// Card
+.el-card {
+  border: none;
+}
+.el-col > .el-card {
+  height: 100%;
+}
+.box-card.--danger {
+  border: 1px solid $--color-danger;
+}
+.box-card + .box-card {
+  margin-top: 1em;
+}
+
+.box-card--panel {
+  padding: 20px
+}
+.box-card--panel + .box-card--panel {
+  border-top: 1px solid $--color-separation-border;
+}
+
+// Inputs / Form
+.el-form--label-top .el-form-item__label {
+  padding: 0;
+}
+
+.el-form--label-top .el-form-item__label {
+  line-height: 26px;
+}
+
+.el-date-editor.el-input,
+.el-date-editor.el-input__inner,
+.el-select {
+  width: 100%;
+}
+
+.el-form--label-narrow {
+  .el-form-item {
+    margin-bottom: 12px;
+  }
+  .el-form-item__label, .el-form-item__content {
+    line-height: normal;
+  }
+}
+
+// Dropdown
+.el-dropdown-menu__item--icon {
+  display: flex;
+  align-items: center;
+
+  &.el-dropdown-menu__item--divided:before {
+    margin: 0;
+  }
+
+  .material-icons {
+    margin-right: 0.8em;
+  }
+}
+.el-dropdown-menu__item--divided {
+  margin-top: 0;
+}
+
+// Menu
+.el-menu {
+  border-right: none;
+}
+
+.el-menu-item .material-icons {
+    margin-right: 0.3em;
+}
+
+// Dialog
+.el-dialog {
+  width: 80%;
+}
+
+@media only screen and (min-width: 768px) {
+  .el-dialog {
+    width: 60%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .el-dialog {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .el-dialog {
+    width: 30%;
+  }
+}
+
+// Button
+.el-button-icon {
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+.el-button.el-button--text {
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+// Alert
+.el-alert--primary {
+    background-color: $--color-primary-light-9;
+    color: $--color-primary;
+}
+
+// Tooltip
+.tooltip-not-enterable {
+  pointer-events: none;
+}

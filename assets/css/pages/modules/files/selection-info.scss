@@ -1,0 +1,78 @@
+.modules-files-objects--selection-info {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+
+  .el-card__body {
+    display: flex;
+    flex-grow: 1;
+  }
+}
+
+.modules-files-objects--no-selection-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  align-self: center;
+
+
+  .material-icons {
+    font-size: 4em;
+    margin-bottom: 1rem;
+  }
+}
+.modules-files-objects--has-selection-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: hidden;
+
+  .--file-name {
+    margin-bottom: 0.5em;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    word-break: break-word;
+  }
+
+  .material-icons {
+    height: auto;
+    width: auto;
+  }
+}
+
+.modules-files-objects--info-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  width: 260px;
+  height: 220px;
+  
+
+  img {
+    border-radius: 4px;
+    overflow: hidden;
+    max-width: 260px;
+    max-height: 220px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+  }
+}
+
+.modules-files-objects--info-row {
+  display: flex;
+  margin: 0.8em 0;
+  align-items: center;
+
+  .modules-files-objects--info-title {
+    color: $--color-text-secondary;
+    flex: 1;
+  }
+
+  .modules-files-objects--info-content {
+    flex: 2;
+    padding-left: 1em;
+  }
+}

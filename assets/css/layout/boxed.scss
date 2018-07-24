@@ -1,0 +1,10 @@
+.container--boxed {
+  .main-wrapper {
+    margin: 1.8rem;
+    padding: 2rem;
+    background-color: $--color-white;
+    border: 1px solid #e6ebf5;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+    border-radius: 4px;
+  }
+}

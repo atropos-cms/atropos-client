@@ -1,0 +1,28 @@
+/*
+** Login
+*/
+.login-container .login-form-box {
+  transform-origin: center 100px;
+  transform: perspective(900px);
+  opacity: 1;
+  transition: opacity 0.1s ease-in-out, transform 0.5s ease-in-out;
+}
+.login-container .hide-login-form-box {
+  transform: perspective(900px) rotateX(90deg);
+  opacity: 0;
+}
+
+/*
+** Logout
+*/
+.logout-loader {
+  background-color: transparent;
+}
+.logout-loader .el-loading-spinner .el-loading-text,.logout-loader .el-loading-spinner i {
+  color: #fff;
+  font-size: 2em;
+}
+
+.logout-loader .el-loading-spinner .path {
+  stroke: #fff;
+}

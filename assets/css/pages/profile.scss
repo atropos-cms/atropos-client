@@ -1,0 +1,53 @@
+.profile-card {
+  .profile-background {
+    background-color: $--color-secondary;
+    height: 100px;
+    margin-bottom: -72px;
+    width: 100%;
+  }
+
+  .author {
+    text-align: center;
+    text-transform: none;
+    margin-top: -65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .title {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .email {
+    margin-bottom: 2em;
+    font-size: 0.8em;
+  }
+}
+
+.profile-image {
+  font-size: 3em;
+  border: 3px solid $--color-black;
+  border-radius: 100%;
+  width: 2em;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .material-icons {
+    margin: 0;
+  }
+}
+
+.profile-page-switch {
+  margin-top: 20px;
+}
+
+.box-card.profile-security-tab {
+  margin-top: 0;
+}
+
+.dashboard-complete-profile--wrapper {
+  margin-bottom: 1.2em;
+}

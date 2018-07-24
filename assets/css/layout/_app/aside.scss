@@ -1,0 +1,120 @@
+/* transition */
+.aside-enter-active, .aside-leave-active {
+  transition: margin-left $--transition-speed;
+}
+
+.aside-enter, .aside-leave-active {
+  &.el-aside.el-aside--collapsed {
+    margin-left: -64px;
+  }
+  &.el-aside:not(.el-aside--collapsed) {
+    margin-left: -250px;
+  }
+}
+
+.el-aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+  flex-grow: 0;
+  overflow: visible;
+  will-change: margin-left;
+
+  .logo-wrapper {
+    height: 60px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $--color-white;
+    background-color: mix($--color-white, $--color-aside-background, 10%);
+  }
+  .logo-text {
+    margin: 0;
+    padding: 0;
+  }
+
+  .material-icons {
+    margin-right: 0.3em;
+  }
+
+  &, .el-menu {
+    background-color: $--color-aside-background;
+    color: $--color-text-regular;
+  }
+  .el-menu {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+  }
+  .el-menu.sidebar {
+    margin-top: 1.2em;
+  }
+
+  .el-menu-item-group {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .el-submenu__title, .el-menu-item, .el-submenu__icon-arrow {
+    color: $--color-text-light;
+  }
+  .el-menu-item-group__title {
+    color: $--color-text-secondary;
+  }
+
+  .el-menu-item:focus, .el-menu-item:hover, .el-menu-item.is-active, .el-submenu__title:hover {
+    background-color: mix(mix($--color-white, $--color-aside-background, 10%), $--color-primary, 96%);
+  }
+  .el-menu--collapse .el-submenu .el-menu {
+    border-color: mix(mix($--color-white, $--color-aside-background, 10%), $--color-primary, 96%);
+  }
+}
+
+.el-menu.sidebar:not(.el-menu--collapse) {
+  width: 250px;
+}
+
+.el-menu--collapse {
+  &>.el-menu-item span,
+  &> .el-menu-item-group > ul >.el-menu-item span,
+ .el-submenu>.el-submenu__title span {
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    visibility: hidden;
+    display: inline-block;
+  }
+  .el-menu-item-group__title {
+    overflow: hidden;
+    visibility: hidden;
+  }
+  .el-submenu__icon-arrow {
+    right: 5px;
+    margin-top: -4px;
+  }
+}
+
+.atropos-credits {
+  padding-left: 20px;
+  padding-bottom: 5px;
+  font-size: 0.8em;
+}
+
+.atropos-logo--wrapper {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.branding--icon, .branding-text {
+  color: $--color-primary;
+  font-weight: 700;
+  font-size: 1.2em;
+  transition: color 1s;
+}
+
+.credits-link {
+  color: $--color-text-secondary;
+}

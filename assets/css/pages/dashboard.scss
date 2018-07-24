@@ -1,0 +1,143 @@
+.dashboard {
+  .el-carousel__container {
+    height: 40vh;
+    min-height: 400px;
+  }
+
+  .el-carousel__item {
+    display: flex;
+  }
+
+  .box-card {
+    margin-bottom: 20px;
+  }
+
+  .carousel-item-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-grow: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 1em 3.5em;
+  }
+
+  .el-carousel__item .title-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .el-carousel__item .title {
+    display: block;
+    color: $--color-white;
+    font-size: 2.6em;
+
+    background-color: rgba($--color-aside-background, 0.7);
+    padding: 10px 30px;
+  }
+
+  .el-carousel__item .subtitle {
+    display: block;
+    color: $--color-white;
+    font-size: 1em;
+
+    background-color: rgba($--color-aside-background, 0.6);
+    padding: 10px 30px;
+  }
+}
+
+.dashboard-complete-profile {
+  display: flex;
+  justify-content: center;
+
+  .material-icons {
+    margin-right: 0.3em;
+  }
+}
+
+.dashboard--events {
+  transition: .5s;
+
+  &.is-loading .el-card__body {
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
+}
+
+.dashboard--events-loading {
+  min-height: 4em
+}
+
+.dashboard--event {
+  display: flex;
+  transition: .3s;
+
+  .el-card {
+    border: 1px solid $--color-separation-border;
+
+    .el-card__header, &.no-content .el-card__body {
+      display: flex;
+      background-color: rgba($--color-text-secondary, $--background-transparency);
+
+      .material-icons {
+        margin-right: 0.3em;
+      }
+    }
+  }
+}
+
+/*
+ * Event Types
+ */
+.dashboard--event.--is-private {
+  .el-card {
+    border: 1px solid $--color-primary;
+
+    .el-card__header, &.no-content {
+      background-color: rgba($--color-primary, $--background-transparency);
+    }
+  }
+}
+
+.dashboard--event.--is-restricted {
+  .el-card {
+    border: 1px solid $--color-primary-light-4;
+  }
+}
+
+/*
+ * Event Styles
+ */
+.dashboard--event-meta {
+  padding-right: 1em;
+  display: none;
+  flex: 1;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+
+  .dashboard--event-meta-line {
+    border-left: 1px solid $--color-separation-border;
+    flex-grow: 1;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .dashboard--event-meta {
+    display: flex;
+  }
+}
+
+.dashboard--event-content {
+  flex: 4;
+  padding-bottom: 2em;
+}
+
+.dashboard--event:last-child {
+  .dashboard--event-meta-line, .dashboard--event-content {
+    border: none;
+  }
+}

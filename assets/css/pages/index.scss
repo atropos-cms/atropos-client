@@ -1,0 +1,25 @@
+@import "./auth";
+@import "./dashboard";
+
+@import "pages/profile";
+@import "pages/modules/blog/articles";
+@import "pages/modules/blog/categories";
+
+@import "pages/modules/content/blocks";
+@import "pages/modules/content/galleries";
+@import "pages/modules/content/galleries-toolbar";
+
+@import "pages/modules/files/toolbar";
+@import "pages/modules/files/teams";
+@import "pages/modules/files/objects";
+@import "pages/modules/files/view-grid";
+@import "pages/modules/files/view-list";
+@import "pages/modules/files/selection-info";
+
+@import "pages/modules/media/files";
+
+@import "pages/modules/mails/send";
+
+@import "pages/administration/roles";
+@import "pages/administration/users";
+@import "pages/administration/settings";
