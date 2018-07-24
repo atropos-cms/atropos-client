@@ -2,7 +2,7 @@
 
 ## This project is still in development, do not use in production yet.
 
-This us the user interface for the Atropos Comminity Software.
+This us the user interface for the Atropos Community Software.
 
 
 ## Setup
