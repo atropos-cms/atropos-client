@@ -54,6 +54,7 @@
       "email-not-verified": "E-Mail Adresse nicht bestätigt",
       "first_name": "Vorname",
       "full_name": "Name",
+      "last_action": "Zuletzt Online",
       "last_login": "Zuletzt Angemeldet",
       "last_name": "Nachname",
       "password": "Neues Passwort",

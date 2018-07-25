@@ -23,7 +23,7 @@ import PageHeader from './components/PageHeader'
 export default {
   name: 'LayoutEmpty',
 
-  middleware: ['authenticated', 'permission'],
+  middleware: ['authenticated', 'permission', 'update-presence'],
 
   components: {
     App,

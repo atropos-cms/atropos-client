@@ -37,6 +37,14 @@
           label-position="top"
           size="small">
 
+            <!-- Last Action -->
+            <el-form-item
+            :label="$t('administration.user.last_action')"
+            style="margin: 0;">
+              <div v-if="user.last_action">{{ user.last_action | moment("from") }}</div>
+              <div v-else>--</div>
+            </el-form-item>
+
             <!-- Last Login -->
             <el-form-item
             :label="$t('administration.user.last_login')"

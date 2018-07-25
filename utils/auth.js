@@ -1,6 +1,7 @@
 import CookieParser from 'cookie'
 import Cookies from 'js-cookie'
 import Raven from 'raven-js'
+import EventBus from '~/utils/event-bus.js'
 
 const AuthKey = 'user-auth'
 const rememberMeExpiration = 180
@@ -26,11 +27,18 @@ export function getAuthFromRequest (req) {
 }
 
 export function setAuth (auth, rememberMe = false) {
+  // When the user loggs in, emit an event after 10ms
+  // This allows the authentication process to finish first.
+  setTimeout(() => {
+    EventBus.$emit('auth--user-logged-in')
+  }, 10)
+
   let options = { expires: rememberMe ? rememberMeExpiration : noRememberExpiration }
   return Cookies.set(AuthKey, auth, options)
 }
 
 export function removeAuth () {
+  EventBus.$emit('auth--user-logged-out')
   cachedAuth = null
   return Cookies.remove(AuthKey)
 }

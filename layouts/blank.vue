@@ -12,7 +12,7 @@ import App from './_app'
 export default {
   name: 'LayoutBlank',
 
-  middleware: ['authenticated', 'permission'],
+  middleware: ['authenticated', 'permission', 'update-presence'],
 
   components: {
     App
