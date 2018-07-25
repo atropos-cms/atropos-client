@@ -65,6 +65,7 @@ export default {
       this.isLoadingObjects = true
 
       await this.$store.dispatch('modules/files/index/GetObjects')
+      await this.selectObjectFromQuery()
 
       this.isLoadingObjects = false
     },
@@ -85,7 +86,7 @@ export default {
       } else if (event.ctrlKey) {
         this.selectToggleOne({event, id})
       } else {
-        this.selectOne({event, id})
+        this.selectFromArray({ids: [id]})
       }
     },
     async selectToggleOne ({event, id}) {
@@ -100,9 +101,9 @@ export default {
 
       await this.$store.dispatch('modules/files/index/SelectObject', selection)
     },
-    async selectOne ({event, id}) {
-      await this.$store.dispatch('modules/files/index/SelectObject', [id])
-      this.lastSelected = id
+    async selectFromArray ({ids}) {
+      await this.$store.dispatch('modules/files/index/SelectObject', [...ids])
+      this.lastSelected = ids.slice(-1).pop()
     },
     async selectMultiple ({event, id}) {
       let startIndex = this.objects.findIndex(o => o.id === id)
@@ -123,6 +124,11 @@ export default {
     },
     stopRefreshInterval () {
       clearInterval(this.refreshInterval)
+    },
+    selectObjectFromQuery () {
+      if (!this.$route.query.selected) return
+      let selection = this.$route.query.selected.split(',')
+      this.selectFromArray({ids: selection})
     }
   }
 }

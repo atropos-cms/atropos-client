@@ -226,26 +226,27 @@ export const actions = {
   },
 
   // Objects
-  async GetObjects ({commit, state, getters}, {force, parent} = {}) {
+  async GetObjects ({commit, state, getters}, {force, parent, team} = {}) {
     if (!force && getters.objects(parent)) return getters.objects(parent)
 
     if (!state.selectedTeam) return
 
     let parentId = parent !== undefined ? parent : state.parent
+    let teamId = parent !== undefined ? team : state.selectedTeam
 
-    let data = await GetObjects(state.selectedTeam, parentId)
-    commit('SET_OBJECTS', { team: state.selectedTeam, parent: parentId, data })
+    let data = await GetObjects(teamId, parentId)
+    commit('SET_OBJECTS', { team: teamId, parent: parentId, data })
 
     return data
   },
-  async GetObject ({commit, dispatch, state, getters}, {id, preview} = {preview: false}) {
+  async GetObject ({commit, dispatch, state, getters}, {id, team, preview} = {preview: false}) {
     let object = getters.object(id)
 
     // check for preview
     if (object && !object.has_preview) return object
     if (object && preview && object.preview) return object
 
-    await dispatch('GetObjects', state.selectedTeam)
+    await dispatch('GetObjects', {team})
     let data = await GetObject(state.selectedTeam, id, {preview})
     commit('UPDATE_OBJECT', data)
     return data
