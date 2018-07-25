@@ -37,6 +37,14 @@
   .--file-name {
     display: flex;
     align-items: center;
+    overflow: hidden;
+
+    span {
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
   .--is-stared .material-icons {
