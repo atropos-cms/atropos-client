@@ -30,16 +30,6 @@
       </el-table-column>
 
       <el-table-column
-        :label="$t('administration.user.created_at')"
-        property="created_at"
-        min-width="200"
-        sortable>
-        <template slot-scope="scope">
-          <span>{{ scope.row.created_at | moment("from") }}</span>
-        </template>
-      </el-table-column>
-
-      <el-table-column
         :label="$t('administration.user.last_login')"
         property="last_login"
         min-width="200"

@@ -13,7 +13,8 @@
         label-position="top">
 
         <el-form-item
-          prop="activated">
+          prop="activated"
+          style="margin: 0;">
 
           <el-switch
             v-model="user.activated"
