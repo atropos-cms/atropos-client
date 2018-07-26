@@ -30,13 +30,13 @@
       </el-table-column>
 
       <el-table-column
-        :label="$t('administration.user.last_login')"
-        property="last_login"
+        :label="$t('administration.user.last_action')"
+        property="last_action"
         min-width="200"
-        :sort-method="sortByLastLogin"
+        :sort-method="sortByLastAction"
         sortable>
         <template slot-scope="scope">
-          <span v-if="scope.row.last_login">{{ scope.row.last_login | moment("from") }}</span>
+          <span v-if="scope.row.last_action">{{ scope.row.last_action | moment("from") }}</span>
         </template>
       </el-table-column>
 
@@ -139,11 +139,11 @@ export default {
         message: this.$t('message.record-successfully-deleted')
       })
     },
-    sortByLastLogin (a, b) {
-      if (a.last_login === b.last_login) return 0
-      if (a.last_login === null) return 1
-      if (b.last_login === null) return -1
-      return a.last_login < b.last_login ? 1 : -1
+    sortByLastAction (a, b) {
+      if (a.last_action === b.last_action) return 0
+      if (a.last_action === null) return 1
+      if (b.last_action === null) return -1
+      return a.last_action < b.last_action ? 1 : -1
     }
   }
 }
