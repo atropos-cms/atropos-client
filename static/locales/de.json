@@ -370,6 +370,7 @@
         "created_at": "Erstelldatum",
         "delete-gallery": "Dieses Fotoalbum löschen",
         "delete-selection": "Markierte Bilder löschen",
+        "description": "Beschreibung",
         "gallery": "Fotoalbum",
         "image-count": "Keine Bilder | Ein Bild | {count} Bilder",
         "is-cover": "Ist Titelbild",

@@ -375,6 +375,7 @@
         "created_at": "Date of creation",
         "delete-gallery": "Delete this gallery",
         "delete-selection": "Delete selected images",
+        "description": "Description",
         "gallery": "Gallery",
         "image-count": "No images | One image | {count} Images",
         "is-cover": "Is cover",

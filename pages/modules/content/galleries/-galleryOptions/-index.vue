@@ -11,10 +11,19 @@
         :label="$t('modules.content.galleries.title')"
         prop="title">
         <el-input
-          :placeholder="$t('modules.content.galleries.title')"
           v-model="gallery.title"
           @input="galleryChanged"/>
       </el-form-item>
+
+      <el-form-item
+        :label="$t('modules.content.galleries.description')"
+        prop="description">
+        <el-input
+          v-model="gallery.description"
+          type="textarea"
+          @input="galleryChanged"/>
+      </el-form-item>
+
     </el-form>
 
     <el-collapse
