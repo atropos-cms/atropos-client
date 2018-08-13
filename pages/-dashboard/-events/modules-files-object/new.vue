@@ -40,16 +40,23 @@ export default {
     }
   },
 
+  mounted () {
+    this.$store.dispatch('modules/files/index/GetObject', {team: this.event.content.team_id, id: this.event.entity_id, preview: true})
+  },
+
   computed: {
     icon () {
       return this.event.content && this.iconFromMimetype(this.event.content.mime_type)
     },
     fileName () {
-      return this.event.content && this.event.content.name
+      return (this.event.content && this.event.content.name) && (this.entity && this.entity.name)
     },
     isLinkable () {
-      return this.event.content && this.event.content.team_id && this.event.content.parent_id
-    }
+      return this.event.content && this.event.content.team_id
+    },
+    entity () {
+      return this.$store.getters['modules/files/index/object'](this.event.entity_id)
+    },
   },
 
   methods: {
