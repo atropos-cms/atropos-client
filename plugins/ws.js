@@ -40,7 +40,11 @@ function connectToServer (ws) {
 }
 
 function disconnectFromServer (ws) {
-  ws.close()
+  try {
+    ws.close()
+  } catch (e) {
+    // ignore errors in a dying websocket
+  }
 }
 
 // Register a handler for tracking connection
