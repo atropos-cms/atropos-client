@@ -232,7 +232,7 @@ export const actions = {
     if (!state.selectedTeam) return
 
     let parentId = parent !== undefined ? parent : state.parent
-    let teamId = parent !== undefined ? team : state.selectedTeam
+    let teamId = team !== undefined ? team : state.selectedTeam
 
     let data = await GetObjects(teamId, parentId)
     commit('SET_OBJECTS', { team: teamId, parent: parentId, data })
@@ -246,8 +246,10 @@ export const actions = {
     if (object && !object.has_preview) return object
     if (object && preview && object.preview) return object
 
-    await dispatch('GetObjects', {team})
-    let data = await GetObject(state.selectedTeam, id, {preview})
+    let teamId = team !== undefined ? team : state.selectedTeam
+
+    await dispatch('GetObjects', {team: teamId})
+    let data = await GetObject(teamId, id, {preview})
     commit('UPDATE_OBJECT', data)
     return data
   },
