@@ -1,12 +1,15 @@
 <template lang="html">
   <div>
-
-    <el-card shadow="never">
-      <template slot="header">
+    <event-component
+      not-deletable
+      :event="event">
+      <!-- Header -->
+      <template slot="event-name">
         <i class="material-icons text-regular">mail_outline</i>
         <span>{{ $t('modules.mails.send.mail') }}</span>
       </template>
 
+      <!-- Content -->
       <span>{{ $t('events.modules-mails-mail.new', {owner: owner.full_name}) }}</span>
 
       <el-button
@@ -15,7 +18,7 @@
         "{{ subject }}"
       </el-button>
 
-    </el-card>
+    </event-component>
 
     <el-dialog
       :title="subject"

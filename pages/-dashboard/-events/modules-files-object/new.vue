@@ -1,27 +1,26 @@
 <template lang="html">
-  <div>
+  <event-component :event="event">
+    <!-- Header -->
+    <template slot="event-name">
+      <i class="material-icons text-regular">{{ icon }}</i>
+      <span>{{ $t('modules.files.files.file') }}</span>
+    </template>
 
-    <el-card shadow="never">
-      <template slot="header">
-        <i class="material-icons text-regular">{{ icon }}</i>
-        <span>{{ $t('modules.files.files.file') }}</span>
-      </template>
+    <!-- Content -->
+    <span>{{ $t('events.modules-files-file.new', {owner: owner.full_name}) }}</span>
 
-      <span>{{ $t('events.modules-files-file.new', {owner: owner.full_name}) }}</span>
+    <span v-if="!isLinkable">
+      "{{ fileName }}"
+    </span>
 
-      <span v-if="!isLinkable">
-        "{{ fileName }}"
-      </span>
+    <a
+      v-if="isLinkable"
+      class="--has-pointer-cursor"
+      @click="openParent">
+      "{{ fileName }}"
+    </a>
 
-      <a
-        v-if="isLinkable"
-        class="--has-pointer-cursor"
-        @click="openParent">
-        "{{ fileName }}"
-      </a>
-    </el-card>
-
-  </div>
+  </event-component>
 </template>
 
 <script type="text/babel">

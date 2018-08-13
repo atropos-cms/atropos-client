@@ -1,27 +1,24 @@
 <template lang="html">
-  <div>
+  <event-component :event="event">
+    <!-- Header -->
+    <template slot="event-name">
+      <i class="material-icons text-regular">photo_library</i>
+      <span>{{ $t('modules.content.galleries.gallery') }}</span>
+    </template>
 
-    <el-card shadow="never">
-      <template slot="header">
-        <i class="material-icons text-regular">photo_library</i>
-        <span>{{ $t('modules.content.galleries.gallery') }}</span>
-      </template>
+    <!-- Content -->
+    <span>{{ $t('events.modules-content-gallery.new', {owner: owner.full_name}) }}</span>
 
-      <span>{{ $t('events.modules-content-gallery.new', {owner: owner.full_name}) }}</span>
+    <nuxt-link
+      v-if="$can('modules-content-galleries')"
+      :to="{ name: 'modules-content-galleries-id', params: { id: event.entity_id }}">
+      "{{ galleryTitle }}"
+    </nuxt-link>
+    <span v-else>
+      "{{ galleryTitle }}"
+    </span>
 
-      <nuxt-link
-        v-if="$can('modules-content-galleries')"
-        :to="{ name: 'modules-content-galleries-id', params: { id: event.entity_id }}">
-        "{{ galleryTitle }}"
-      </nuxt-link>
-
-      <span v-else>
-        "{{ galleryTitle }}"
-      </span>
-
-    </el-card>
-
-  </div>
+  </event-component>
 </template>
 
 <script type="text/babel">
