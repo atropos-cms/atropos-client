@@ -9,7 +9,7 @@ import { i18nInstance } from '~/plugins/i18n'
 // axios
 const service = axios.create({
   baseURL: process.env.BASE_URL,
-  timeout: 5000
+  timeout: 10000
 })
 
 // request
