@@ -65,17 +65,6 @@
 
       <el-row :gutter="20">
         <el-col :span="8">
-          {{ $t('dashboard.profile.info.last_login') }}:
-        </el-col>
-        <el-col :span="16">
-          <span>
-            {{ profile.last_login | moment('LLL') }}
-          </span>
-        </el-col>
-      </el-row>
-
-      <el-row :gutter="20">
-        <el-col :span="8">
           {{ $t('dashboard.profile.info.email') }}:
         </el-col>
         <el-col :span="16">
