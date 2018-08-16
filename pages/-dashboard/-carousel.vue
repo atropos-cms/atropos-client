@@ -78,6 +78,7 @@ export default {
     } else {
       // otherwise create a slideshow
       try {
+        await this.$store.dispatch('modules/media/browser/GetFiles')
         this.createSlideshow()
       } catch (e) {}
     }
