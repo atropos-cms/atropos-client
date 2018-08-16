@@ -6,6 +6,7 @@ export const state = () => ({
   headerShowBreadcrumb: false,
   headerShowSaveIndicator: false,
   sidebar: SIDEBAR_ROOT,
+  showDashboardCarousel: false,
   sidebarIsCollapsed: false,
   showBrandingLogo: false,
   showFilters: false
@@ -43,6 +44,9 @@ export const getters = {
   },
   showFilters (state) {
     return state.showFilters
+  },
+  showDashboardCarousel (state) {
+    return state.showDashboardCarousel
   }
 }
 
@@ -96,6 +100,9 @@ export const mutations = {
   },
   SET_SHOW_FILTERS (state, status) {
     state.showFilters = status
+  },
+  SET_SHOW_DASHBOARD_CAROUSEL (state, status) {
+    state.showDashboardCarousel = status
   }
 }
 

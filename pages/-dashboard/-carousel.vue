@@ -10,7 +10,7 @@
         :interval="5000">
 
         <el-carousel-item
-          v-for="(item, index) in carousel"
+          v-for="(item, index) in slideshow"
           :key="index">
 
           <div
@@ -41,59 +41,22 @@
 
 <script type="text/babel">
 import moment from 'moment'
-import Random from '~/utils/random'
-// const { version } = require('../../package.json')
+import shuffleSeed from 'shuffle-seed'
 
 export default {
   data () {
     return {
-      showCarousel: false,
-      atropos: {
+      initialIndex: 0,
+      slideshow: [{
         title: this.$t('dashboard.welcome.atropos'),
-        // subtitle: `v${version} - Changelog`,
         img: '/images/backgrounds/release-image.jpeg'
-      }
+      }]
     }
   },
 
   computed: {
-    carousel () {
-      // If we only have 10 images, just show the atropos image
-      if (this.files.length < 10) {
-        return [this.atropos]
-      }
-
-      // Otherwise return an image-of-the-day and some random images
-      return [this.atropos, this.imgeOfTheDay, this.random1, this.random2, this.random3]
-    },
-    initialIndex () {
-      if (this.files.length < 10) {
-        return 0
-      }
-      return 1
-    },
-    imgeOfTheDay () {
-      let randomInstance = new Random(moment().utc().dayOfYear())
-      let index = randomInstance.next() % this.files.length
-
-      return Object.assign(this.imageFromIndex(index), {
-        title: this.$t('dashboard.welcome.image-of-the-day')
-      })
-    },
-    random1 () {
-      let randomInstance = new Random(moment().utc().dayOfYear() * 193)
-      let index = randomInstance.next() % this.files.length
-      return this.imageFromIndex(index)
-    },
-    random2 () {
-      let randomInstance = new Random(moment().utc().dayOfYear() * 149)
-      let index = randomInstance.next() % this.files.length
-      return this.imageFromIndex(index)
-    },
-    random3 () {
-      let randomInstance = new Random(moment().utc().dayOfYear() * 587)
-      let index = randomInstance.next() % this.files.length
-      return this.imageFromIndex(index)
+    showCarousel () {
+      return this.$store.getters['ui/showDashboardCarousel']
     },
     files () {
       return this.$store.getters['modules/media/browser/files'].filter(i => !!i.r[1200])
@@ -101,18 +64,54 @@ export default {
   },
 
   async mounted () {
+    // don't enable the slideshow on the server
     if (process.server) return
+    // or if the carousel already has more than one item
+    if (this.slideshow.length > 1) return
+
+    // wait a bit, to let the client catch a breath
     await this.$timeout(1600)
-    this.showCarousel = true
+
+    // if we have only 10 images, just show the promotion image
+    if (this.files.length < 10) {
+      this.$store.commit('ui/SET_SHOW_DASHBOARD_CAROUSEL', true)
+    } else {
+      // otherwise create a slideshow
+      try {
+        this.createSlideshow()
+      } catch (e) {}
+    }
   },
 
   methods: {
-    imageFromIndex (index) {
-      let image = this.files[index]
+    createSlideshow () {
+      // shuffle all files with the seed of the day
+      let randomSeed = moment().format('YYYYMMDD')
+      let shuffled = shuffleSeed.shuffle(this.files,randomSeed)
 
-      return {
-        img: image.r[1200]
-      }
+      // create a new array of images to add to the slideshow
+      let additionalImages = [{
+        title: this.$t('dashboard.welcome.image-of-the-day'),
+        img: shuffled[0].r[1200]
+      }, {
+        img: shuffled[1].r[1200]
+      }, {
+        img: shuffled[2].r[1200]
+      }, {
+        img: shuffled[3].r[1200]
+      }, {
+        img: shuffled[4].r[1200]
+      }]
+
+      // add the images to the slideshow
+      this.slideshow = this.slideshow.concat(additionalImages)
+
+      // set the initial index to 1,
+      // so we dont start on the promotion slide
+      this.initialIndex = 1
+
+      // enable the slideshow
+      this.$store.commit('ui/SET_SHOW_DASHBOARD_CAROUSEL', true)
     }
   }
 }
