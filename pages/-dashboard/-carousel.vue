@@ -66,13 +66,13 @@ export default {
   async mounted () {
     // don't enable the slideshow on the server
     if (process.server) return
-    // or if the carousel already has more than one item
-    if (this.slideshow.length > 1) return
 
-    // wait a bit, to let the client catch a breath
-    await this.$timeout(1600)
+    // if we just loaded the page wait a bit, to let the client catch a breath
+    if (this.files.length < 10) {
+      await this.$timeout(1600)
+    }
 
-    // if we have only 10 images, just show the promotion image
+    // if there are still no more than 10 images, just show the promotion image
     if (this.files.length < 10) {
       this.$store.commit('ui/SET_SHOW_DASHBOARD_CAROUSEL', true)
     } else {
