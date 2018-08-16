@@ -33,12 +33,15 @@ export function setAuth (auth, rememberMe = false) {
     EventBus.$emit('auth--user-logged-in')
   }, 10)
 
+  // set cookie
   let options = { expires: rememberMe ? rememberMeExpiration : noRememberExpiration }
   return Cookies.set(AuthKey, auth, options)
 }
 
 export function removeAuth () {
   EventBus.$emit('auth--user-logged-out')
+
+  // reset the cookie and the cached auth token
   cachedAuth = null
   return Cookies.remove(AuthKey)
 }
@@ -47,8 +50,18 @@ export async function setUser (user) {
   Raven.setUserContext({
     ...user
   })
+
+  Raven.captureBreadcrumb({
+    message: 'User logged in',
+    category: 'auth'
+  })
 }
 
 export async function resetUser () {
   Raven.setUserContext()
+
+  Raven.captureBreadcrumb({
+    message: 'User logged out',
+    category: 'auth'
+  })
 }

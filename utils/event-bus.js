@@ -1,2 +1,5 @@
 import Vue from 'vue'
-export default new Vue()
+
+// create a new vue instance that acts as an event bus
+const EventBus = new Vue()
+export default EventBus
