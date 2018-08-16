@@ -18,10 +18,10 @@
 import avatar from './userAvatar'
 
 export default {
-
   components: {
     avatar
   },
+
   props: {
     id: {
       type: String,
@@ -51,6 +51,12 @@ export default {
 
   async mounted () {
     return this.$apiWithoutErrorReporting(() => this.$store.dispatch('administration/users/GetUser', this.id))
+  },
+
+  watch: {
+    id () {
+      this.$store.dispatch('administration/users/GetUser', this.id)
+    }
   }
 }
 </script>
