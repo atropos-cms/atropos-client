@@ -121,7 +121,7 @@ export default {
       this.refreshInterval = setInterval(async () => {
         this.$apiDisableErrorReporting()
         await this.$store.dispatch('modules/files/index/ReloadFolder')
-        this.redirectAfterSucessfulLogin()
+        this.$apiEnableErrorReporting()
       }, 10 * 1000)
     },
     stopRefreshInterval () {
