@@ -6,6 +6,7 @@ const { version } = require('../package.json')
 Raven
   .config(process.env.SENTRY_DNS, {
     release: version,
+    environment: process.env.NODE_ENV,
     shouldSendCallback (data) {
       // Do not report error if...
 
