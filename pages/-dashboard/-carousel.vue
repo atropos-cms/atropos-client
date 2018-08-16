@@ -41,7 +41,7 @@
 
 <script type="text/babel">
 import moment from 'moment'
-import shuffleSeed from 'shuffle-seed'
+import seededShuffle from 'seededshuffle'
 
 export default {
   data () {
@@ -88,7 +88,7 @@ export default {
     createSlideshow () {
       // shuffle all files with the seed of the day
       let randomSeed = moment().format('YYYYMMDD')
-      let shuffled = shuffleSeed.shuffle(this.files,randomSeed)
+      let shuffled = seededShuffle.shuffle(this.files, randomSeed, true)
 
       // create a new array of images to add to the slideshow
       let additionalImages = [{

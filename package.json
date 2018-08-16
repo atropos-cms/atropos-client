@@ -36,7 +36,7 @@
     "quill-image-resize-module": "^3.0.0",
     "quill-magic-url": "^1.0.0",
     "raven-js": "^3.26.4",
-    "shuffle-seed": "^1.1.6",
+    "seededshuffle": "^0.2.0",
     "timeout-as-promise": "^1.0.0",
     "vue-async-computed": "^3.3.1",
     "vue-chartjs": "^3.3.2",
