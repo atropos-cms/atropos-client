@@ -55,7 +55,7 @@ export default {
 
   watch: {
     id () {
-      this.$store.dispatch('administration/users/GetUser', this.id)
+      this.$apiWithoutErrorReporting(() => this.$store.dispatch('administration/users/GetUser', this.id))
     }
   }
 }
