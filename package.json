@@ -1,6 +1,6 @@
 {
   "name": "atropos-client",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Atropos Community Software Client",
   "author": "Ralph Huwiler <ralph@huwiler.rocks>",
   "private": true,
