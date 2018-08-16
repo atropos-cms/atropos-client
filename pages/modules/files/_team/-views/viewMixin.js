@@ -118,8 +118,10 @@ export default {
       await this.$store.dispatch('modules/files/index/SelectObject', selection.filter(s => s !== id))
     },
     startRefreshInterval () {
-      this.refreshInterval = setInterval(() => {
-        this.$store.dispatch('modules/files/index/ReloadFolder')
+      this.refreshInterval = setInterval(async () => {
+        this.$apiDisableErrorReporting()
+        await this.$store.dispatch('modules/files/index/ReloadFolder')
+        this.redirectAfterSucessfulLogin()
       }, 10 * 1000)
     },
     stopRefreshInterval () {
