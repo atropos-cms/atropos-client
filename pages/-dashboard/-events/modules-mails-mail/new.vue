@@ -22,7 +22,6 @@
 
     <!-- Mail dialog -->
     <el-dialog
-      width="60%"
       :title="$t('events.modules-mails-mail.new', {owner: owner.full_name})"
       :visible.sync="dialogVisible"
       class="modules-mails-preview-dialog">

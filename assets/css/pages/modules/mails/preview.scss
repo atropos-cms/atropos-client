@@ -1,4 +1,16 @@
 .modules-mails-preview-dialog {
+  .el-dialog {
+    width: 80%;
+    margin-top: 5vh !important;
+  }
+
+  @media only screen and (min-width: 1920px) {
+    .el-dialog {
+      width: 60%;
+      margin-top: 10vh !important;
+    }
+  }
+
   .el-dialog__body {
     background-color: $--color-body;
     border-bottom: 1px solid $--color-separation-border;
@@ -23,4 +35,5 @@
   max-width: 600px;
   margin: 20px auto;
   padding: 30px 20px;
+  overflow-x: auto;
 }
