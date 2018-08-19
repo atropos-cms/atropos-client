@@ -8,6 +8,7 @@ Raven
     release: version,
     environment: process.env.NODE_ENV,
     shouldSendCallback (data) {
+      console.log(data)
       // Do not report error if...
 
       // There is no usefull message, caused by failed formvalidation
@@ -22,6 +23,11 @@ Raven
 
       // It was a canceled message dialog
       if (data.extra.unhandledPromiseRejection && checkMessage(data, /(cancel)/)) {
+        return false
+      }
+
+      // When the websocket is closed but a ping message is still pending.
+      if (checkMessage(data, /(Cannot read property 'readyState' of null)/)) {
         return false
       }
 
