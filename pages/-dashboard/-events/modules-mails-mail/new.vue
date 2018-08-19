@@ -20,13 +20,37 @@
 
     </event-component>
 
+    <!-- Mail dialog -->
     <el-dialog
-      :title="subject"
-      :visible.sync="dialogVisible">
+      width="60%"
+      :title="$t('events.modules-mails-mail.new', {owner: owner.full_name})"
+      :visible.sync="dialogVisible"
+      class="modules-mails-preview-dialog">
 
-      <span
-        class="--is-selectable"
-        v-html="content"/>
+      <div class="modules-mails-preview-header">
+        <el-row :gutter="20">
+          <el-col :span="2">{{ $t('modules.mails.send.from') }}</el-col>
+          <el-col :span="22">
+            <user :id="event.content.sender_id" />
+          </el-col>
+        </el-row>
+        <el-row :gutter="20">
+          <el-col :span="2">{{ $t('modules.mails.send.subject') }}</el-col>
+          <el-col :span="22">{{ subject }}</el-col>
+        </el-row>
+      </div>
+
+      <div class="modules-mails-preview-logo">
+        <logo :icon="false"/>
+      </div>
+
+      <div class="modules-mails-preview-content">
+
+        <span
+          class="--is-selectable"
+          v-html="content"/>
+
+      </div>
 
       <span
         slot="footer"
@@ -39,10 +63,17 @@
 </template>
 
 <script type="text/babel">
+import logo from '~/components/logo'
+import User from '~/components/user'
 import eventMixin from '../eventMixin.js'
 import UsesFileMimetype from '~/mixins/usesFileMimetype'
 
 export default {
+  components: {
+    logo,
+    User
+  },
+
   mixins: [eventMixin, UsesFileMimetype],
 
   props: {
@@ -55,7 +86,7 @@ export default {
 
   data () {
     return {
-      dialogVisible: false
+      dialogVisible: true
     }
   },
 

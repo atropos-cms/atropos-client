@@ -116,11 +116,11 @@ import EventBus from '~/utils/event-bus.js'
 import UsesFileMimetype from '~/mixins/usesFileMimetype'
 
 export default {
-
   components: {
     Icon,
     User
   },
+  
   mixins: [UsesFileMimetype],
 
   data () {

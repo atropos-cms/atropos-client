@@ -450,6 +450,7 @@
         "users": "Benutzer"
       },
       "send": {
+        "from": "Von:",
         "manage-lists": "Listen verwalten",
         "mail": "E-Mail",
         "members-count": "Keine Mitglieder | Ein Mitglied | {count} Mitglieder",

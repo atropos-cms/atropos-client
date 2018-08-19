@@ -455,6 +455,7 @@
         "users": "Users"
       },
       "send": {
+        "from": "From:",
         "mail": "Mail",
         "manage-lists": "Manage List",
         "members-count": "No Users | One User | {count} Users",
