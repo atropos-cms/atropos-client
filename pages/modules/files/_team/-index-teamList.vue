@@ -30,11 +30,11 @@ export default {
 
   computed: {
     teams () {
-      let teams = this.$store.getters['modules/files/index/teams']
+      let teams = this.$store.getters['modules/files/teams']
       return teams.filter(team => this.canReadInTeam(team.id))
     },
     selectedTeam () {
-      return this.$store.getters['modules/files/index/selectedTeam']
+      return this.$store.getters['modules/files/selectedTeam']
     },
     hasMoreThanOneTeam () {
       return this.teams.length > 1

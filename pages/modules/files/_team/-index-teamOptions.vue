@@ -34,7 +34,7 @@ export default {
       return 'stared'
     },
     selectedTeam () {
-      return this.$store.getters['modules/files/index/selectedTeam']
+      return this.$store.getters['modules/files/selectedTeam']
     }
   },
 

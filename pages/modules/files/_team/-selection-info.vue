@@ -131,11 +131,11 @@ export default {
 
   computed: {
     selectionId () {
-      let selection = this.$store.getters['modules/files/index/selectedObjects']
+      let selection = this.$store.getters['modules/files/selectedObjects']
       return selection[selection.length - 1]
     },
     selection () {
-      return this.$store.getters['modules/files/index/object'](this.selectionId)
+      return this.$store.getters['modules/files/object'](this.selectionId)
     },
     hasSelection () {
       return !!this.selection
@@ -182,13 +182,13 @@ export default {
       if (!this.selectionId) return
       if (id !== this.selectionId) return
 
-      await this.$store.dispatch('modules/files/index/GetObject', {id: this.selectionId, preview: true})
+      await this.$store.dispatch('modules/files/GetObject', {id: this.selectionId, preview: true})
     },
     mouseenter () {
-      this.$store.dispatch('modules/files/index/LockObjectSelection', true)
+      this.$store.dispatch('modules/files/LockObjectSelection', true)
     },
     mouseleave () {
-      this.$store.dispatch('modules/files/index/LockObjectSelection', false)
+      this.$store.dispatch('modules/files/LockObjectSelection', false)
     }
   }
 }

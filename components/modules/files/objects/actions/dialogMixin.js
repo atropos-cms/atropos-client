@@ -64,7 +64,7 @@ export default {
       if (this.objectCopy) return
 
       // otherwise, try and set the object from the store
-      let file = this.$store.getters['modules/files/index/object'](this.objectId)
+      let file = this.$store.getters['modules/files/object'](this.objectId)
       this.objectCopy = _.cloneDeep(file)
     }
   }

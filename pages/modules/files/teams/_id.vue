@@ -62,8 +62,8 @@ export default {
   ],
 
   async asyncData ({store, params}) {
-    await store.dispatch('modules/files/index/GetTeams')
-    return {team: _.cloneDeep(store.getters['modules/files/index/team'](params.id))}
+    await store.dispatch('modules/files/GetTeams')
+    return {team: _.cloneDeep(store.getters['modules/files/team'](params.id))}
   },
 
   data () {
@@ -75,12 +75,12 @@ export default {
 
   methods: {
     async setTeam () {
-      this.team = _.cloneDeep(_.cloneDeep(this.$store.getters['modules/files/index/team'](this.$route.params.id)))
+      this.team = _.cloneDeep(_.cloneDeep(this.$store.getters['modules/files/team'](this.$route.params.id)))
     },
 
     async save () {
       await this.saveInTransaction(
-        () => this.$store.dispatch('modules/files/index/UpdateTeam', this.team)
+        () => this.$store.dispatch('modules/files/UpdateTeam', this.team)
       )
       this.setTeam()
     },

@@ -118,7 +118,7 @@ export default {
 
   computed: {
     info () {
-      return this.$store.getters['modules/files/index/info']
+      return this.$store.getters['modules/files/info']
     },
     showNewFolder () {
       return !this.hasSelected && this.canWrite
@@ -202,42 +202,42 @@ export default {
     },
 
     star () {
-      let selectedObjects = this.$store.getters['modules/files/index/selectedObjects']
+      let selectedObjects = this.$store.getters['modules/files/selectedObjects']
       for (let selected of selectedObjects) {
         EventBus.$emit('modules-files-objects--star-object', selected)
       }
       this.closeContextMenu()
     },
     unstar () {
-      let selectedObjects = this.$store.getters['modules/files/index/selectedObjects']
+      let selectedObjects = this.$store.getters['modules/files/selectedObjects']
       for (let selected of selectedObjects) {
         EventBus.$emit('modules-files-objects--unstar-object', selected)
       }
       this.closeContextMenu()
     },
     rename () {
-      let selected = this.$store.getters['modules/files/index/selectedObjects']
+      let selected = this.$store.getters['modules/files/selectedObjects']
       if (!selected.length === 1) return
       EventBus.$emit('modules-files-objects--rename-object', selected[0])
       this.closeContextMenu()
     },
     move () {
-      let selected = this.$store.getters['modules/files/index/selectedObjects']
+      let selected = this.$store.getters['modules/files/selectedObjects']
       if (!selected.length === 1) return
       EventBus.$emit('modules-files-objects--move-object', selected[0])
       this.closeContextMenu()
     },
     trash () {
-      let selectedObjects = this.$store.getters['modules/files/index/selectedObjects']
+      let selectedObjects = this.$store.getters['modules/files/selectedObjects']
       EventBus.$emit('modules-files-objects--delete-object', selectedObjects)
       this.closeContextMenu()
     },
     openInfo () {
-      let info = this.$store.getters['modules/files/index/info']
-      this.$store.dispatch('modules/files/index/ShowInfo', !info)
+      let info = this.$store.getters['modules/files/info']
+      this.$store.dispatch('modules/files/ShowInfo', !info)
     },
     download () {
-      let selectedObjects = this.$store.getters['modules/files/index/selectedObjects']
+      let selectedObjects = this.$store.getters['modules/files/selectedObjects']
       EventBus.$emit('modules-files-objects--download-object', selectedObjects)
       this.closeContextMenu()
     },

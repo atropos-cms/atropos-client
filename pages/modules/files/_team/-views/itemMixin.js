@@ -18,7 +18,7 @@ export default {
 
   computed: {
     isSelected () {
-      return this.$store.getters['modules/files/index/selectedObjects'].includes(this.file.id)
+      return this.$store.getters['modules/files/selectedObjects'].includes(this.file.id)
     },
     isFolder () {
       return this.file.kind === 'folder'
@@ -48,13 +48,13 @@ export default {
       EventBus.$emit('modules-files-objects--open-contextmenu', event)
     },
     open () {
-      let teamId = this.$store.getters['modules/files/index/selectedTeam']
+      let teamId = this.$store.getters['modules/files/selectedTeam']
 
       if (this.isFolder) {
         return this.$router.push({ name: 'modules-files-team-parent', params: { team: teamId, parent: this.file.id } })
       }
       if (this.isObject) {
-        let selectedObjects = this.$store.getters['modules/files/index/selectedObjects']
+        let selectedObjects = this.$store.getters['modules/files/selectedObjects']
         return EventBus.$emit('modules-files-objects--download-object', selectedObjects)
       }
     }

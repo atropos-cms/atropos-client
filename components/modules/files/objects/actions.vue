@@ -95,12 +95,12 @@ export default {
   methods: {
     lockObjectSelection () {
       EventBus.$emit('modules-files-objects--close-contextmenu')
-      this.$store.dispatch('modules/files/index/LockObjectSelection', true)
+      this.$store.dispatch('modules/files/LockObjectSelection', true)
     },
     unlockObjectSelection (done = () => {}) {
       done()
       this.$nextTick(() => {
-        this.$store.dispatch('modules/files/index/LockObjectSelection', false)
+        this.$store.dispatch('modules/files/LockObjectSelection', false)
       })
     },
 
@@ -133,7 +133,7 @@ export default {
     // Create a Folder
     openCreateFolderDialog () {
       this.lockObjectSelection()
-      this.objectId = this.$store.getters['modules/files/index/parent']
+      this.objectId = this.$store.getters['modules/files/parent']
 
       this.showCreateFolderDialog = true
     },
@@ -146,14 +146,14 @@ export default {
     // Star Object
     async starObject (fileId) {
       this.lockObjectSelection()
-      let file = this.$store.getters['modules/files/index/object'](fileId)
-      await this.$store.dispatch('modules/files/index/StarObject', file)
+      let file = this.$store.getters['modules/files/object'](fileId)
+      await this.$store.dispatch('modules/files/StarObject', file)
       this.unlockObjectSelection()
     },
     async unstarObject (fileId) {
       this.lockObjectSelection()
-      let file = this.$store.getters['modules/files/index/object'](fileId)
-      await this.$store.dispatch('modules/files/index/UnstarObject', file)
+      let file = this.$store.getters['modules/files/object'](fileId)
+      await this.$store.dispatch('modules/files/UnstarObject', file)
       this.unlockObjectSelection()
     },
 
@@ -162,7 +162,7 @@ export default {
       this.lockObjectSelection()
 
       let text
-      let files = selectedObjects.map(id => this.$store.getters['modules/files/index/object'](id))
+      let files = selectedObjects.map(id => this.$store.getters['modules/files/object'](id))
 
       if (selectedObjects.length === 1) {
         text = files[0].kind === 'folder'
@@ -180,7 +180,7 @@ export default {
         })
 
         for (let file of files) {
-          this.$store.dispatch('modules/files/index/DeleteObject', file)
+          this.$store.dispatch('modules/files/DeleteObject', file)
         }
       } catch (e) {}
 

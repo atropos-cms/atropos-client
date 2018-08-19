@@ -4,8 +4,8 @@ export default {
   methods: {
     // Download Object
     async downloadObject (fileId) {
-      let selectedTeamId = this.$store.getters['modules/files/index/selectedTeam']
-      let file = this.$store.getters['modules/files/index/object'](fileId[0])
+      let selectedTeamId = this.$store.getters['modules/files/selectedTeam']
+      let file = this.$store.getters['modules/files/object'](fileId[0])
 
       if (file.status !== 'ready') return
 

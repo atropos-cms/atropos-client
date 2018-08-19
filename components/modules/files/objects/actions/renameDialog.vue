@@ -75,7 +75,7 @@ export default {
       await this.$refs.renameForm.validate()
 
       this.loading = true
-      await this.$store.dispatch('modules/files/index/UpdateObject', this.objectCopy)
+      await this.$store.dispatch('modules/files/UpdateObject', this.objectCopy)
       this.loading = false
     }
   }

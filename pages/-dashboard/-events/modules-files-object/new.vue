@@ -39,8 +39,8 @@ export default {
     }
   },
 
-  mounted () {
-    this.$store.dispatch('modules/files/index/GetObject', {team: this.event.content.team_id, id: this.event.entity_id, preview: true})
+  async mounted () {
+    await this.$store.dispatch('modules/files/GetObject', {team: this.event.content.team_id, id: this.event.entity_id, preview: true})
   },
 
   computed: {
@@ -54,7 +54,7 @@ export default {
       return this.event.content && this.event.content.team_id
     },
     entity () {
-      return this.$store.getters['modules/files/index/object'](this.event.entity_id)
+      return this.$store.getters['modules/files/object'](this.event.entity_id)
     },
   },
 

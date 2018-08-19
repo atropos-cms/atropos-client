@@ -81,7 +81,7 @@ export default {
       await this.$refs.createForm.validate()
 
       this.loading = true
-      await this.$store.dispatch('modules/files/index/CreateObject', this.objectCopy)
+      await this.$store.dispatch('modules/files/CreateObject', this.objectCopy)
       this.loading = false
     }
   }

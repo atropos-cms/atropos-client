@@ -1,24 +1,24 @@
 export default {
   computed: {
     hasSelected () {
-      let selected = this.$store.getters['modules/files/index/selectedObjects']
+      let selected = this.$store.getters['modules/files/selectedObjects']
       return selected && selected.length >= 1
     },
     oneSelected () {
-      let selected = this.$store.getters['modules/files/index/selectedObjects']
+      let selected = this.$store.getters['modules/files/selectedObjects']
       return selected && selected.length === 1
     },
     selectedObjects () {
-      let selectedIds = this.$store.getters['modules/files/index/selectedObjects']
-      return selectedIds.map(id => this.$store.getters['modules/files/index/object'](id)).filter(o => o !== undefined)
+      let selectedIds = this.$store.getters['modules/files/selectedObjects']
+      return selectedIds.map(id => this.$store.getters['modules/files/object'](id)).filter(o => o !== undefined)
     },
     isDownloadable () {
       if (!this.selectedObjects) return
       return this.selectedObjects.reduce((carry, object) => carry && object.status === 'ready', true)
     },
     availableTags () {
-      let selectedTeamId = this.$store.getters['modules/files/index/selectedTeam']
-      let team = this.$store.getters['modules/files/index/team'](selectedTeamId)
+      let selectedTeamId = this.$store.getters['modules/files/selectedTeam']
+      let team = this.$store.getters['modules/files/team'](selectedTeamId)
       return team.tags
     },
     allSelectedStared () {

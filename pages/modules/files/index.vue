@@ -12,12 +12,12 @@ export default {
 
   computed: {
     selectedTeam () {
-      return this.$store.getters['modules/files/index/selectedTeam']
+      return this.$store.getters['modules/files/selectedTeam']
     }
   },
 
   async created () {
-    let teams = await this.$store.dispatch('modules/files/index/GetTeams')
+    let teams = await this.$store.dispatch('modules/files/GetTeams')
 
     for (let team of teams) {
       if (this.canReadInTeam(team.id)) {

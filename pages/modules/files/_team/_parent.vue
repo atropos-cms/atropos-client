@@ -91,24 +91,24 @@ export default {
   ],
 
   async fetch ({ store, params }) {
-    await store.dispatch('modules/files/index/GetTeams')
+    await store.dispatch('modules/files/GetTeams')
     try {
-      await store.dispatch('modules/files/index/SelectTeam', params.team)
-      await store.dispatch('modules/files/index/OpenFolder', params.parent || 'null')
+      await store.dispatch('modules/files/SelectTeam', params.team)
+      await store.dispatch('modules/files/OpenFolder', params.parent || 'null')
     } catch (e) {}
   },
 
   computed: {
     currentView () {
-      let view = this.$store.getters['modules/files/index/view']
+      let view = this.$store.getters['modules/files/view']
       return `view-${view}`
     },
     teams () {
-      let teams = this.$store.getters['modules/files/index/teams']
+      let teams = this.$store.getters['modules/files/teams']
       return teams.filter(team => this.canReadInTeam(team.id))
     },
     showInfo () {
-      return this.$store.getters['modules/files/index/info']
+      return this.$store.getters['modules/files/info']
     }
   },
 
@@ -118,12 +118,12 @@ export default {
   },
 
   mounted () {
-    this.$store.dispatch('modules/files/index/LockObjectSelection', false)
+    this.$store.dispatch('modules/files/LockObjectSelection', false)
   },
 
   methods: {
     setParent () {
-      this.$store.dispatch('modules/files/index/OpenFolder', this.$route.params.parent)
+      this.$store.dispatch('modules/files/OpenFolder', this.$route.params.parent)
     },
     dropWrapped (event) {
       if (!this.canWrite) return

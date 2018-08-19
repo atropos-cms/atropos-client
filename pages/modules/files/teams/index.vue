@@ -84,12 +84,12 @@ export default {
   },
 
   async fetch ({store, params}) {
-    await store.dispatch('modules/files/index/GetTeams')
+    await store.dispatch('modules/files/GetTeams')
   },
 
   computed: {
     teams () {
-      return this.$store.getters['modules/files/index/teams']
+      return this.$store.getters['modules/files/teams']
     }
   },
 
@@ -112,7 +112,7 @@ export default {
         type: 'warning'
       })
 
-      await this.$store.dispatch('modules/files/index/DeleteTeam', team)
+      await this.$store.dispatch('modules/files/DeleteTeam', team)
 
       this.$message({
         type: 'success',

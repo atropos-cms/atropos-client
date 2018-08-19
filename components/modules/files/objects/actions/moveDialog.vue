@@ -111,7 +111,7 @@ export default {
 
   computed: {
     objects () {
-      return this.$store.getters['modules/files/index/objects'](this.parent ? this.parent.id : null)
+      return this.$store.getters['modules/files/objects'](this.parent ? this.parent.id : null)
     },
     canGoBack () {
       return !!this.parent
@@ -127,23 +127,23 @@ export default {
 
   methods: {
     async opened () {
-      let file = this.$store.getters['modules/files/index/object'](this.objectId)
-      let parent = await this.$store.dispatch('modules/files/index/GetObject', {id: file.parent_id})
+      let file = this.$store.getters['modules/files/object'](this.objectId)
+      let parent = await this.$store.dispatch('modules/files/GetObject', {id: file.parent_id})
 
       this.parent = parent
       this.selected = null
 
-      await this.$store.dispatch('modules/files/index/GetObjects', {force: true, parent: this.parent})
+      await this.$store.dispatch('modules/files/GetObjects', {force: true, parent: this.parent})
     },
 
     async action () {
       this.loading = true
 
       // reset selection, since selected elemnt will no longer be in view
-      this.$store.commit('modules/files/index/SET_SELECTED_OBJECTS', null)
+      this.$store.commit('modules/files/SET_SELECTED_OBJECTS', null)
 
       // call delete to remove the object from the local store
-      this.$store.commit('modules/files/index/DELETE_OBJECT', this.objectCopy)
+      this.$store.commit('modules/files/DELETE_OBJECT', this.objectCopy)
 
       // set the new parent
       if (this.selected) {
@@ -153,7 +153,7 @@ export default {
       }
 
       // update object and persist
-      await this.$store.dispatch('modules/files/index/UpdateObject', this.objectCopy)
+      await this.$store.dispatch('modules/files/UpdateObject', this.objectCopy)
       this.loading = false
     },
 
@@ -171,12 +171,12 @@ export default {
     async open (objectId) {
       if (!this.isSelectable(objectId)) return
 
-      let parent = await this.$store.dispatch('modules/files/index/GetObject', {id: objectId})
+      let parent = await this.$store.dispatch('modules/files/GetObject', {id: objectId})
 
       this.parent = parent
       this.selected = null
 
-      await this.$store.dispatch('modules/files/index/GetObjects', {force: true, parent: objectId})
+      await this.$store.dispatch('modules/files/GetObjects', {force: true, parent: objectId})
     },
 
     async backToParent () {
@@ -190,7 +190,7 @@ export default {
       if (!objectId) return true
       if (this.objectId === objectId) return false
 
-      let file = this.$store.getters['modules/files/index/object'](objectId)
+      let file = this.$store.getters['modules/files/object'](objectId)
       return file.kind === 'folder'
     }
   }

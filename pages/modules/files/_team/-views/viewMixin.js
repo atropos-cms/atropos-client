@@ -16,14 +16,14 @@ export default {
 
   computed: {
     selectedTeam () {
-      return this.$store.getters['modules/files/index/selectedTeam']
+      return this.$store.getters['modules/files/selectedTeam']
     },
     parent () {
-      return this.$store.getters['modules/files/index/parent']
+      return this.$store.getters['modules/files/parent']
     },
     objects () {
       if (!this.canRead) return []
-      let objects = this.$store.getters['modules/files/index/objects']()
+      let objects = this.$store.getters['modules/files/objects']()
 
       if (!objects) return []
       return objects.filter(o => o.status === 'ready')
@@ -64,7 +64,7 @@ export default {
     async loadObjects () {
       this.isLoadingObjects = true
 
-      await this.$store.dispatch('modules/files/index/GetObjects')
+      await this.$store.dispatch('modules/files/GetObjects')
       await this.selectObjectFromQuery()
 
       this.isLoadingObjects = false
@@ -72,12 +72,12 @@ export default {
     async deselect (event) {
       event.stopPropagation()
       EventBus.$emit('modules-files-objects--close-contextmenu', event)
-      await this.$store.dispatch('modules/files/index/SelectObject', null)
+      await this.$store.dispatch('modules/files/SelectObject', null)
     },
     async contextMenu (event) {
       event.stopPropagation()
       event.preventDefault()
-      await this.$store.dispatch('modules/files/index/SelectObject', null)
+      await this.$store.dispatch('modules/files/SelectObject', null)
       EventBus.$emit('modules-files-objects--open-contextmenu', event)
     },
     async selectObject ({event, id}) {
@@ -90,7 +90,7 @@ export default {
       }
     },
     async selectToggleOne ({event, id}) {
-      let selection = this.$store.getters['modules/files/index/selectedObjects']
+      let selection = this.$store.getters['modules/files/selectedObjects']
       let isSelected = selection.includes(id)
 
       if (isSelected) {
@@ -99,10 +99,10 @@ export default {
         selection = [...selection, id]
       }
 
-      await this.$store.dispatch('modules/files/index/SelectObject', selection)
+      await this.$store.dispatch('modules/files/SelectObject', selection)
     },
     async selectFromArray ({ids}) {
-      await this.$store.dispatch('modules/files/index/SelectObject', [...ids])
+      await this.$store.dispatch('modules/files/SelectObject', [...ids])
       this.lastSelected = ids.slice(-1).pop()
     },
     async selectMultiple ({event, id}) {
@@ -111,15 +111,15 @@ export default {
 
       let selectionRange = this.objects.slice(Math.min(startIndex, endIndex), Math.max(startIndex, endIndex) + 1)
 
-      await this.$store.dispatch('modules/files/index/SelectObject', selectionRange.map(o => o.id))
+      await this.$store.dispatch('modules/files/SelectObject', selectionRange.map(o => o.id))
     },
     async deselectObject ({event, id}) {
-      let selection = this.$store.getters['modules/files/index/selectedObjects']
-      await this.$store.dispatch('modules/files/index/SelectObject', selection.filter(s => s !== id))
+      let selection = this.$store.getters['modules/files/selectedObjects']
+      await this.$store.dispatch('modules/files/SelectObject', selection.filter(s => s !== id))
     },
     startRefreshInterval () {
       this.refreshInterval = setInterval(() => {
-        this.$apiWithoutErrorReporting(() => this.$store.dispatch('modules/files/index/ReloadFolder'))
+        this.$apiWithoutErrorReporting(() => this.$store.dispatch('modules/files/ReloadFolder'))
       }, 10 * 1000)
     },
     stopRefreshInterval () {

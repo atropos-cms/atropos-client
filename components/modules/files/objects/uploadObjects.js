@@ -10,7 +10,7 @@ export default {
 
   computed: {
     parent () {
-      return this.$store.getters['modules/files/index/parent']
+      return this.$store.getters['modules/files/parent']
     }
   },
 
@@ -59,7 +59,7 @@ export default {
 
       // This entry is a directory, we have to go deeper
       if (entry.isDirectory) {
-        let directory = await this.$store.dispatch('modules/files/index/CreateObject', {
+        let directory = await this.$store.dispatch('modules/files/CreateObject', {
           kind: 'folder',
           parent: parent,
           name: entry.name

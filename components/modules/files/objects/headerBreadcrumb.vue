@@ -43,17 +43,17 @@
 export default {
   computed: {
     hasSelected () {
-      return !!this.$store.getters['modules/files/index/selectedObject']
+      return !!this.$store.getters['modules/files/selectedObject']
     },
     team () {
-      let selectedTeam = this.$store.getters['modules/files/index/selectedTeam']
-      return this.$store.getters['modules/files/index/team'](selectedTeam)
+      let selectedTeam = this.$store.getters['modules/files/selectedTeam']
+      return this.$store.getters['modules/files/team'](selectedTeam)
     }
   },
 
   asyncComputed: {
     async pathStack () {
-      let parentId = this.$store.getters['modules/files/index/parent']
+      let parentId = this.$store.getters['modules/files/parent']
       return this.getParents(parentId)
     }
   },
@@ -63,7 +63,7 @@ export default {
       if (parentId === null) return carry
 
       try {
-        let file = await this.$store.dispatch('modules/files/index/GetObject', {id: parentId})
+        let file = await this.$store.dispatch('modules/files/GetObject', {id: parentId})
         if (!file) return carry
 
         // check the length of the path
@@ -88,11 +88,11 @@ export default {
       return carry
     },
     navigateToTeam () {
-      let teamId = this.$store.getters['modules/files/index/selectedTeam']
+      let teamId = this.$store.getters['modules/files/selectedTeam']
       return this.$router.push({ name: 'modules-files-team-parent', params: { team: teamId, parent: null } })
     },
     navigateToFolder (id) {
-      let teamId = this.$store.getters['modules/files/index/selectedTeam']
+      let teamId = this.$store.getters['modules/files/selectedTeam']
       return this.$router.push({ name: 'modules-files-team-parent', params: { team: teamId, parent: id } })
     }
   }

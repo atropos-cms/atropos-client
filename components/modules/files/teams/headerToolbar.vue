@@ -69,7 +69,7 @@ export default {
     },
     async createTeam () {
       this.loading = true
-      let team = await this.$store.dispatch('modules/files/index/CreateTeam', this.teamCopy)
+      let team = await this.$store.dispatch('modules/files/CreateTeam', this.teamCopy)
       this.loading = false
       this.closeCreateTeamDialog()
       this.$router.push({ name: 'modules-files-teams-id', params: { id: team.id } })

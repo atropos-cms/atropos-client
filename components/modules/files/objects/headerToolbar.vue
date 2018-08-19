@@ -185,23 +185,23 @@ export default {
       return this.canWrite
     },
     view () {
-      return this.$store.getters['modules/files/index/view']
+      return this.$store.getters['modules/files/view']
     }
   },
 
   methods: {
     mouseenter () {
-      this.$store.dispatch('modules/files/index/LockObjectSelection', true)
+      this.$store.dispatch('modules/files/LockObjectSelection', true)
     },
     mouseleave () {
-      this.$store.dispatch('modules/files/index/LockObjectSelection', false)
+      this.$store.dispatch('modules/files/LockObjectSelection', false)
     },
     changeView (view) {
-      this.$store.dispatch('modules/files/index/ChangeView', view)
+      this.$store.dispatch('modules/files/ChangeView', view)
     },
     showInfo () {
-      let info = this.$store.getters['modules/files/index/info']
-      this.$store.dispatch('modules/files/index/ShowInfo', !info)
+      let info = this.$store.getters['modules/files/info']
+      this.$store.dispatch('modules/files/ShowInfo', !info)
     },
 
     navigateToTeams () {
@@ -226,33 +226,33 @@ export default {
       }
     },
     star () {
-      let selectedObjects = this.$store.getters['modules/files/index/selectedObjects']
+      let selectedObjects = this.$store.getters['modules/files/selectedObjects']
       for (let selected of selectedObjects) {
         EventBus.$emit('modules-files-objects--star-object', selected)
       }
     },
     unstar () {
-      let selectedObjects = this.$store.getters['modules/files/index/selectedObjects']
+      let selectedObjects = this.$store.getters['modules/files/selectedObjects']
       for (let selected of selectedObjects) {
         EventBus.$emit('modules-files-objects--unstar-object', selected)
       }
     },
     rename () {
-      let selected = this.$store.getters['modules/files/index/selectedObjects']
+      let selected = this.$store.getters['modules/files/selectedObjects']
       if (!selected.length === 1) return
       EventBus.$emit('modules-files-objects--rename-object', selected[0])
     },
     move () {
-      let selected = this.$store.getters['modules/files/index/selectedObjects']
+      let selected = this.$store.getters['modules/files/selectedObjects']
       if (!selected.length === 1) return
       EventBus.$emit('modules-files-objects--move-object', selected[0])
     },
     trash () {
-      let selectedObjects = this.$store.getters['modules/files/index/selectedObjects']
+      let selectedObjects = this.$store.getters['modules/files/selectedObjects']
       EventBus.$emit('modules-files-objects--delete-object', selectedObjects)
     },
     download () {
-      let selectedObjects = this.$store.getters['modules/files/index/selectedObjects']
+      let selectedObjects = this.$store.getters['modules/files/selectedObjects']
       EventBus.$emit('modules-files-objects--download-object', selectedObjects)
     },
 

@@ -4,8 +4,8 @@ export default {
       return this.$store.getters['profile/id']
     },
     team () {
-      let selectedTeam = this.$store.getters['modules/files/index/selectedTeam']
-      return this.$store.getters['modules/files/index/team'](selectedTeam)
+      let selectedTeam = this.$store.getters['modules/files/selectedTeam']
+      return this.$store.getters['modules/files/team'](selectedTeam)
     },
     canRead () {
       if (!this.team) return false
@@ -18,12 +18,12 @@ export default {
   },
   methods: {
     canReadInTeam (id) {
-      let team = this.$store.getters['modules/files/index/team'](id)
+      let team = this.$store.getters['modules/files/team'](id)
       if (!team) return false
       return team.canRead
     },
     canWriteInTeam (id) {
-      let team = this.$store.getters['modules/files/index/team'](id)
+      let team = this.$store.getters['modules/files/team'](id)
       if (!team) return false
       return team.canWrite
     }

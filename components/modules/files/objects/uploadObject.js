@@ -25,7 +25,7 @@ export default {
     },
 
     async _createObjectEntity ({file, parent}) {
-      let parentId = parent || this.$store.getters['modules/files/index/parent']
+      let parentId = parent || this.$store.getters['modules/files/parent']
 
       let name = file.name.lastIndexOf('.') > 0 ? file.name.substr(0, file.name.lastIndexOf('.')) : file.name
       let extension = file.name.lastIndexOf('.') > 0 ? file.name.substr(file.name.lastIndexOf('.')) : ''
@@ -41,8 +41,8 @@ export default {
         modified_at: new Date(file.lastModifiedDate)
       }
 
-      let uploadObject = await this.$store.dispatch('modules/files/index/CreateObject', fileObject)
-      await this.$store.dispatch('modules/files/index/SelectObject', [uploadObject.id])
+      let uploadObject = await this.$store.dispatch('modules/files/CreateObject', fileObject)
+      await this.$store.dispatch('modules/files/SelectObject', [uploadObject.id])
 
       return uploadObject
     },
@@ -73,12 +73,12 @@ export default {
     async _removeObjectEntity (fileEntity) {
       await this.$store.dispatch('modules/files/upload/RemoveUpload', fileEntity)
 
-      await this.$store.commit('modules/files/index/SET_SELECTED_OBJECTS', null)
-      await this.$store.commit('modules/files/index/DELETE_OBJECT', fileEntity)
+      await this.$store.commit('modules/files/SET_SELECTED_OBJECTS', null)
+      await this.$store.commit('modules/files/DELETE_OBJECT', fileEntity)
     },
 
     async _updateObjectEntity (fileEntity) {
-      await this.$store.commit('modules/files/index/UPDATE_OBJECT', fileEntity)
+      await this.$store.commit('modules/files/UPDATE_OBJECT', fileEntity)
     },
 
     async _queueObject (fileEntity) {
