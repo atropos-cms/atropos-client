@@ -27,16 +27,46 @@
       class="modules-mails-preview-dialog">
 
       <div class="modules-mails-preview-header">
-        <el-row :gutter="20">
+
+        <el-row
+          :gutter="20"
+          type="flex"
+          align="middle">
           <el-col :span="2">{{ $t('modules.mails.send.from') }}</el-col>
           <el-col :span="22">
-            <user :id="event.content.sender_id" />
+            <b><user :id="event.content.sender_id" /></b>
           </el-col>
         </el-row>
-        <el-row :gutter="20">
+
+        <el-row
+          :gutter="20"
+          type="flex"
+          align="middle">
           <el-col :span="2">{{ $t('modules.mails.send.subject') }}</el-col>
-          <el-col :span="22">{{ subject }}</el-col>
+          <el-col :span="22">
+            <b>{{ subject }}</b>
+          </el-col>
         </el-row>
+
+        <el-row
+          v-if="attachments"
+          :gutter="20"
+          type="flex"
+          align="middle">
+          <el-col :span="2">{{ $t('modules.mails.send.attachments') }}</el-col>
+          <el-col :span="22">
+
+            <el-tag
+              v-for="attachment in attachments"
+              :key="attachment.id"
+              class="--has-pointer-cursor"
+              @click.native="downloadMediaFile(attachment.id)">
+              {{ attachment.name }}
+            </el-tag>
+
+          </el-col>
+        </el-row>
+
       </div>
 
       <div class="modules-mails-preview-logo">
@@ -66,6 +96,7 @@ import logo from '~/components/logo'
 import User from '~/components/user'
 import eventMixin from '../eventMixin.js'
 import UsesFileMimetype from '~/mixins/usesFileMimetype'
+import downloadMediaFile from '~/mixins/downloadMediaFile'
 
 export default {
   components: {
@@ -73,7 +104,7 @@ export default {
     User
   },
 
-  mixins: [eventMixin, UsesFileMimetype],
+  mixins: [eventMixin, UsesFileMimetype, downloadMediaFile],
 
   props: {
     event: {
@@ -95,6 +126,13 @@ export default {
     },
     content () {
       return this.event.content && this.event.content.content
+    },
+    attachments () {
+      if (!this.event.content || !this.event.content.attachments) return null
+
+      return this.event.content.attachments.map(a => {
+        return this.$store.getters['modules/media/browser/file'](a)
+      })
     }
   },
 
