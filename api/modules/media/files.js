@@ -1,8 +1,9 @@
 import fetch from '~/utils/fetch'
 
-export async function GetFiles () {
+export async function GetFiles (options = {page: 1}) {
   let {data} = await fetch({
     url: `/modules/media/files`,
+    params: options,
     method: 'get'
   })
   return data

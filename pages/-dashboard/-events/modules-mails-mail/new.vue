@@ -132,7 +132,7 @@ export default {
 
       return this.event.content.attachments.map(a => {
         return this.$store.getters['modules/media/browser/file'](a)
-      })
+      }).filter(e => !!e)
     }
   },
 

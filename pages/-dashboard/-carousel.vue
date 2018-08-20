@@ -1,7 +1,6 @@
 <template lang="html">
   <transition name="fade">
     <el-card
-      v-if="showCarousel"
       :body-style="{padding: 0}"
       class="box-card">
 
@@ -55,9 +54,6 @@ export default {
   },
 
   computed: {
-    showCarousel () {
-      return this.$store.getters['ui/showDashboardCarousel']
-    },
     files () {
       return this.$store.getters['modules/media/browser/files'].filter(i => !!i.r[1200])
     }
@@ -67,21 +63,15 @@ export default {
     // don't enable the slideshow on the server
     if (process.server) return
 
-    // if we just loaded the page wait a bit, to let the client catch a breath
-    if (this.files.length < 10) {
-      await this.$timeout(1600)
-    }
+    await this.$store.dispatch('modules/media/browser/GetFiles')
 
     // if there are still no more than 10 images, just show the promotion image
-    if (this.files.length < 10) {
-      this.$store.commit('ui/SET_SHOW_DASHBOARD_CAROUSEL', true)
-    } else {
-      // otherwise create a slideshow
-      try {
-        await this.$store.dispatch('modules/media/browser/GetFiles')
-        this.createSlideshow()
-      } catch (e) {}
-    }
+    if (this.files.length < 10) return
+
+    // otherwise create a slideshow
+    try {
+      this.createSlideshow()
+    } catch (e) {}
   },
 
   methods: {
@@ -110,9 +100,6 @@ export default {
       // set the initial index to 1,
       // so we dont start on the promotion slide
       this.initialIndex = 1
-
-      // enable the slideshow
-      this.$store.commit('ui/SET_SHOW_DASHBOARD_CAROUSEL', true)
     }
   }
 }
