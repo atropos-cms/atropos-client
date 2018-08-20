@@ -40,7 +40,9 @@ export default {
   },
 
   async mounted () {
-    await this.$store.dispatch('modules/files/GetObject', {team: this.event.content.team_id, id: this.event.entity_id, preview: true})
+    return this.$apiWithoutErrorReporting(() => {
+      this.$store.dispatch('modules/files/GetObject', {team: this.event.content.team_id, id: this.event.entity_id, preview: true})
+    })
   },
 
   computed: {
