@@ -48,7 +48,7 @@ export default {
       return this.event.content && this.iconFromMimetype(this.event.content.mime_type)
     },
     fileName () {
-      return (this.event.content && this.event.content.name) && (this.entity && this.entity.name)
+      return (this.entity && this.entity.name) || (this.event.content && this.event.content.name)
     },
     isLinkable () {
       return this.event.content && this.event.content.team_id

@@ -59,7 +59,7 @@ export default {
   },
 
   async mounted () {
-    await this.$timeout(1800)
+    await this.$timeout(800)
     await this.$store.dispatch('administration/events/GetEvents')
   }
 }
