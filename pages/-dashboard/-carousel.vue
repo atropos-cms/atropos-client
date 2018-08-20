@@ -63,6 +63,9 @@ export default {
     // don't enable the slideshow on the server
     if (process.server) return
 
+    // don't load files if the user does not have permission
+    if (!this.$can('modules-media-browser')) return
+
     await this.$store.dispatch('modules/media/browser/GetFiles')
 
     // if there are still no more than 10 images, just show the promotion image
