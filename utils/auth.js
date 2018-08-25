@@ -4,7 +4,7 @@ import Raven from 'raven-js'
 import EventBus from '~/utils/event-bus.js'
 
 const AuthKey = 'user-auth'
-const rememberMeExpiration = 180
+const rememberMeExpiration = 90
 
 let cachedAuth = null
 
