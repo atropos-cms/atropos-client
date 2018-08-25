@@ -34,7 +34,7 @@ export const mutations = {
 export const actions = {
   async LoginByUid ({commit, dispatch}, userInfo) {
     const data = await loginByUid(userInfo.uid, userInfo.password)
-    setAuth(data.token.token, userInfo.rememberMe)
+    setAuth(data.token.token)
     commit('SET_TOKEN', data.token.token)
     await dispatch('GetProfile')
     await dispatch('administration/settings/GetSettings', undefined, { root: true })

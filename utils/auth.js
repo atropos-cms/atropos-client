@@ -5,7 +5,6 @@ import EventBus from '~/utils/event-bus.js'
 
 const AuthKey = 'user-auth'
 const rememberMeExpiration = 180
-const noRememberExpiration = 1
 
 let cachedAuth = null
 
@@ -26,7 +25,7 @@ export function getAuthFromRequest (req) {
   return jwtCookie[AuthKey]
 }
 
-export function setAuth (auth, rememberMe = false) {
+export function setAuth (auth) {
   // When the user loggs in, emit an event after 10ms
   // This allows the authentication process to finish first.
   setTimeout(() => {
@@ -34,7 +33,7 @@ export function setAuth (auth, rememberMe = false) {
   }, 10)
 
   // set cookie
-  let options = { expires: rememberMe ? rememberMeExpiration : noRememberExpiration }
+  let options = { expires: rememberMeExpiration }
   return Cookies.set(AuthKey, auth, options)
 }
 

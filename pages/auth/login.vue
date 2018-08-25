@@ -57,19 +57,22 @@
                 @keyup.enter.native="handleLogin"/>
             </el-form-item>
 
+            <el-button
+              :loading="loading"
+              type="primary"
+              class="login-submit-button"
+              native-type="submit"
+              @click.native.prevent="validateInput">
+              {{ $t('auth.login') }}
+            </el-button>
+
+            <!-- Remember me button -->
             <el-row
               :gutter="20"
               type="flex"
               class="--flex-wrap">
-              <el-col :md="12">
-
-                <el-checkbox v-model="loginForm.rememberMe">
-                  {{ $t('auth.remember-me') }}
-                </el-checkbox>
-
-              </el-col>
               <el-col
-                :md="12"
+                :md="24"
                 align="right">
 
                 <nuxt-link
@@ -81,14 +84,6 @@
               </el-col>
             </el-row>
 
-            <el-button
-              :loading="loading"
-              type="primary"
-              class="login-submit-button"
-              native-type="submit"
-              @click.native.prevent="validateInput">
-              {{ $t('auth.login') }}
-            </el-button>
           </el-form>
         </el-card>
       </div>
@@ -149,8 +144,7 @@ export default {
       hideLoginForm: true,
       loginForm: {
         uid: '',
-        password: '',
-        rememberMe: false
+        password: ''
       },
       loginRules: {
         uid: [{required: true, message: this.$t('validation.login-email.required'), trigger: 'change'}],
