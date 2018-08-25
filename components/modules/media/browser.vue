@@ -215,15 +215,14 @@ export default {
     EventBus.$off('modules-media-browser-open', this.openMediaBrowser)
   },
 
-  async mounted () {
-    await this.$store.dispatch('modules/media/browser/GetFiles')
-  },
-
   methods: {
     // Rename File
     openMediaBrowser (options = {}) {
       this.options = {...defaultOptions, ...options}
       this.showMediaBrowserDialog = true
+
+      // load files from the server
+      this.$store.dispatch('modules/media/browser/GetFiles')
     },
     closeMediaBrowser () {
       this.selectedFiles = []
