@@ -29,11 +29,11 @@ export const getters = {
 
 export const mutations = {
   // Files
-  SET_FILES: (state, data) => {
-    state.files = data
-  },
   ADD_FILES: (state, data) => {
-    state.files = state.files.concat(data)
+    let filesInStore = state.files.map(f => f.id)
+    let newFiles = data.filter(f => !filesInStore.includes(f.id))
+
+    state.files = state.files.concat(newFiles)
   },
   UPDATE_FILE: (state, file) => {
     let fileIndex = state.files.findIndex(t => t.id === file.id)
@@ -65,7 +65,7 @@ export const actions = {
     let {data, pagination} = await GetFiles({page: currentPage})
     let lastPage = pagination.lastPage
 
-    commit('SET_FILES', data)
+    commit('ADD_FILES', data)
 
     while (currentPage !== lastPage) {
       ++currentPage
