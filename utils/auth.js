@@ -4,6 +4,7 @@ import Raven from 'raven-js'
 import EventBus from '~/utils/event-bus.js'
 
 const AuthKey = 'user-auth'
+const AuthRefreshTokenKey = 'user-refresh-auth'
 const rememberMeExpiration = 90
 
 let cachedAuth = null
@@ -32,9 +33,27 @@ export function setAuth (auth) {
     EventBus.$emit('auth--user-logged-in')
   }, 10)
 
+  // set cached key
+  cachedAuth = auth
+
   // set cookie
   let options = { expires: rememberMeExpiration }
   return Cookies.set(AuthKey, auth, options)
+}
+
+export function getRefresh (req) {
+  if (req) {
+    const jwtCookie = CookieParser.parse(req.headers.cookie)
+    return jwtCookie[AuthRefreshTokenKey]
+  }
+
+  return Cookies.get(AuthRefreshTokenKey)
+}
+
+export function setRefresh (refreshToken) {
+  // set cookie
+  let options = { expires: rememberMeExpiration }
+  return Cookies.set(AuthRefreshTokenKey, refreshToken, options)
 }
 
 export function removeAuth () {

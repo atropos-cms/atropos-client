@@ -1,8 +1,9 @@
 import MobileDetect from 'mobile-detect'
+import { refreshToken } from '~/api/login'
 import { getMeta } from '~/api/meta'
 import { getTenant } from '~/utils/tenant'
 import { i18nInstance } from '~/plugins/i18n'
-import { getAuth, removeAuth, setUser } from '~/utils/auth'
+import { setAuth, getAuth, removeAuth, setUser, getRefresh, setRefresh } from '~/utils/auth'
 import { updateApplicationSettings } from '~/utils/application'
 
 export const state = () => ({
@@ -43,11 +44,11 @@ export const actions = {
 
     getTenant(req)
 
-    let auth = getAuth(req)
+    let auth = await dispatch('refreshJWTToken', req)
 
-    commit('profile/SET_TOKEN', auth)
     if (auth) {
       try {
+        await commit('profile/SET_TOKEN', auth)
         await dispatch('profile/GetProfile', { serverInit: true })
         await dispatch('administration/settings/GetSettings')
       } catch (error) {
@@ -61,8 +62,11 @@ export const actions = {
   },
 
   async nuxtClientInit ({commit, dispatch, getters}) {
+    let authToken = getters['profile/token']
     // user is authenticated
-    if (getters['profile/token']) {
+    if (authToken) {
+      setAuth(authToken)
+
       let user = await dispatch('profile/GetProfile')
       setUser(user)
     } else {
@@ -77,6 +81,21 @@ export const actions = {
 
   async refreshApiStatus ({commit, dispatch}) {
     commit('SET_APIMETA', await getMeta())
+  },
+
+  async refreshJWTToken ({commit, dispatch, getters}, req) {
+    if (!getAuth(req)) return
+
+    let token = getRefresh(req)
+
+    try {
+      let response = await refreshToken(token)
+
+      setAuth(response.token.token)
+      setRefresh(response.token.refreshToken)
+
+      return response.token.token
+    } catch (e) {}
   },
 
   setRouteMeta ({commit}, routeMeta) {

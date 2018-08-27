@@ -1,6 +1,6 @@
 import { getProfile, updateProfile, loginByUid, logout, sendEmailVerification, verifyEmail } from '~/api/login'
 import { sendPasswordReset, ResetPassword } from '~/api/password-reset'
-import { removeAuth, setAuth, setUser, resetUser } from '~/utils/auth'
+import { removeAuth, setAuth, setUser, resetUser, setRefresh } from '~/utils/auth'
 
 export const state = () => ({
   token: null,
@@ -34,7 +34,10 @@ export const mutations = {
 export const actions = {
   async LoginByUid ({commit, dispatch}, userInfo) {
     const data = await loginByUid(userInfo.uid, userInfo.password)
+
     setAuth(data.token.token)
+    setRefresh(data.token.refreshToken)
+
     commit('SET_TOKEN', data.token.token)
     await dispatch('GetProfile')
     await dispatch('administration/settings/GetSettings', undefined, { root: true })

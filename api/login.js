@@ -14,6 +14,15 @@ export async function loginByUid (uid, password, pvq) {
   return data
 }
 
+export async function refreshToken (refreshToken) {
+  let {data} = await fetch({
+    url: '/auth/refresh',
+    method: 'post',
+    data: {refreshToken}
+  })
+  return data
+}
+
 export async function logout () {
   let {data} = await fetch({
     url: '/auth/logout',
