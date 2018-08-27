@@ -37,7 +37,7 @@ export function setAuth (auth) {
   cachedAuth = auth
 
   // set cookie
-  let options = { expires: rememberMeExpiration }
+  let options = { expires: rememberMeExpiration, secure: process.env.NODE_ENV === 'production' }
   return Cookies.set(AuthKey, auth, options)
 }
 
@@ -52,7 +52,7 @@ export function getRefresh (req) {
 
 export function setRefresh (refreshToken) {
   // set cookie
-  let options = { expires: rememberMeExpiration }
+  let options = { expires: rememberMeExpiration, secure: process.env.NODE_ENV === 'production' }
   return Cookies.set(AuthRefreshTokenKey, refreshToken, options)
 }
 
