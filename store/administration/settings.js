@@ -1,7 +1,9 @@
 import { GetSettings, UpdateSettings } from '~/api/administration/settings'
 
 export const state = () => ({
-  settings: {}
+  settings: {
+    locale: process.env.LANG
+  }
 })
 
 export const getters = {

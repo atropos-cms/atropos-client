@@ -4,7 +4,7 @@ import { refreshToken } from '~/api/login'
 import { resetTenantCache, getTenant } from '~/utils/tenant'
 import { i18nInstance } from '~/plugins/i18n'
 import { resetAuthCache, setAuth, getAuth, removeAuth, setUser, getRefresh, setRefresh } from '~/utils/auth'
-import { updateApplicationSettings } from '~/utils/application'
+import { resetApplicationSetting, updateApplicationSettings } from '~/utils/application'
 
 export const state = () => ({
   apiMeta: null,
@@ -38,13 +38,11 @@ export const mutations = {
 
 export const actions = {
   async nuxtServerInit ({commit, dispatch, getters}, {req}) {
-    // reset the cached authtoken and tenant on each request,
+    // reset the cached tokens and settings on each request,
     // so we do not leak information between requests
     resetAuthCache()
     resetTenantCache()
-
-    // reset locale
-    commit('administration/settings/SET_SETTINGS', {locale: process.env.LANG})
+    resetApplicationSetting()
 
     // fetch the tennant from the request
     getTenant(req)
