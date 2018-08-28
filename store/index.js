@@ -69,6 +69,9 @@ export const actions = {
 
       let user = await dispatch('profile/GetProfile')
       setUser(user)
+
+      // fetch all media files
+      dispatch('modules/media/browser/GetFiles')
     } else {
       // user is not authenticated
       removeAuth()

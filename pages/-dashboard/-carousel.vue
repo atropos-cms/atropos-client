@@ -60,24 +60,25 @@ export default {
   },
 
   async mounted () {
-    // don't enable the slideshow on the server
-    if (process.server) return
-
-    // don't load files if the user does not have permission
-    if (!this.$can('modules-media-browser')) return
-
-    await this.$store.dispatch('modules/media/browser/GetFiles')
-
-    // if there are still no more than 10 images, just show the promotion image
-    if (this.files.length < 10) return
-
-    // otherwise create a slideshow
-    try {
-      this.createSlideshow()
-    } catch (e) {}
+    this.init()
   },
 
   methods: {
+    init () {
+      // don't enable the slideshow on the server
+      if (process.server) return
+
+      // don't load files if the user does not have permission
+      if (!this.$can('modules-media-browser')) return
+
+      // if there are still no more than 10 images, just show the promotion image
+      if (this.files.length < 10) return
+
+      // otherwise create a slideshow
+      try {
+        this.createSlideshow()
+      } catch (e) {}
+    },
     createSlideshow () {
       // shuffle all files with the seed of the day
       let randomSeed = moment().format('YYYYMMDD')
@@ -99,10 +100,12 @@ export default {
 
       // add the images to the slideshow
       this.slideshow = this.slideshow.concat(additionalImages)
+    }
+  },
 
-      // set the initial index to 1,
-      // so we dont start on the promotion slide
-      this.initialIndex = 1
+  watch: {
+    files () {
+      this.init()
     }
   }
 }
