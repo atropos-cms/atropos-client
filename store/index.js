@@ -2,7 +2,6 @@ import MobileDetect from 'mobile-detect'
 import { refreshToken } from '~/api/login'
 import { getMeta } from '~/api/meta'
 import { getTenant } from '~/utils/tenant'
-import { i18nInstance } from '~/plugins/i18n'
 import { setAuth, getAuth, removeAuth, setUser, getRefresh, setRefresh } from '~/utils/auth'
 import { updateApplicationSettings } from '~/utils/application'
 
@@ -40,7 +39,7 @@ export const actions = {
   async nuxtServerInit ({commit, dispatch, getters}, {req}) {
     commit('SET_APIMETA', await getMeta())
 
-    commit('administration/settings/SET_SETTINGS', {locale: i18nInstance.locale})
+    commit('administration/settings/SET_SETTINGS', {locale: process.env.LANG})
 
     getTenant(req)
 
