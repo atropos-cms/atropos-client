@@ -57,6 +57,9 @@ export default {
   computed: {
     files () {
       return this.$store.getters['modules/media/browser/files'].filter(i => !!i.r[1200])
+    },
+    filesLoaded () {
+      return this.$store.getters['modules/media/browser/filesLoaded']
     }
   },
 
@@ -107,7 +110,7 @@ export default {
   },
 
   watch: {
-    files () {
+    filesLoaded () {
       this.init()
     }
   }

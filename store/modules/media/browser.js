@@ -4,7 +4,8 @@ import _ from 'lodash'
 export const state = () => ({
   // Files
   files: [],
-  selectedFile: null
+  selectedFile: null,
+  filesLoaded: false
 })
 
 export const getters = {
@@ -21,6 +22,9 @@ export const getters = {
   },
   selectedFile (state) {
     return state.selectedFile
+  },
+  filesLoaded (state) {
+    return state.filesLoaded
   },
   download: (state, getters) => (id, type = null, size = null) => {
     return DownloadURL(id, type, size)
@@ -53,6 +57,9 @@ export const mutations = {
   },
   SET_SELECTED_FILE: (state, file) => {
     state.selectedFile = file
+  },
+  SET_FILES_LOADED: (state, filesLoaded) => {
+    state.filesLoaded = filesLoaded
   }
 }
 
@@ -73,6 +80,8 @@ export const actions = {
       let {data} = await GetFiles({page: currentPage})
       commit('ADD_FILES', data)
     }
+
+    commit('SET_FILES_LOADED', true)
 
     return data
   },
