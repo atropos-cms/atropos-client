@@ -1,7 +1,8 @@
 import MobileDetect from 'mobile-detect'
-import { refreshToken } from '~/api/login'
 import { getMeta } from '~/api/meta'
+import { refreshToken } from '~/api/login'
 import { getTenant } from '~/utils/tenant'
+import { i18nInstance } from '~/plugins/i18n'
 import { resetCache, setAuth, getAuth, removeAuth, setUser, getRefresh, setRefresh } from '~/utils/auth'
 import { updateApplicationSettings } from '~/utils/application'
 
@@ -41,6 +42,7 @@ export const actions = {
     // so we do not leak information between requests
     resetCache()
 
+    // reset locale
     commit('administration/settings/SET_SETTINGS', {locale: process.env.LANG})
 
     getTenant(req)
@@ -52,8 +54,11 @@ export const actions = {
         await commit('profile/SET_TOKEN', auth)
         await dispatch('profile/GetProfile', { serverInit: true })
 
+        // request meta data from the server
+        // this will also update the locale on the i18n instance
         commit('SET_APIMETA', await getMeta())
-
+        // update the locale in the store
+        commit('administration/settings/SET_SETTINGS', {locale: i18nInstance.locale})
         await dispatch('administration/settings/GetSettings')
       } catch (error) {
         await commit('profile/SET_TOKEN', null)
