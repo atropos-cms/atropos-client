@@ -103,7 +103,7 @@ const shouldNotReportError = (error) => {
   if (error.config.url === `${error.config.baseURL}/meta`) return true
 
   if (!error.response) return false
-  if (error.response.status === 500) return true
+  if (error.response.status === 500) return false
   if (dontReportErrors.includes(error.response.data.error)) return true
 
   return false
