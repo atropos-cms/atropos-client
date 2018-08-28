@@ -9,7 +9,7 @@ const rememberMeExpiration = 90
 
 let cachedAuth = null
 
-export function resetCache () {
+export function resetAuthCache () {
   cachedAuth = null
 }
 

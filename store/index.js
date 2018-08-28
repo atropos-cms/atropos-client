@@ -1,9 +1,9 @@
 import MobileDetect from 'mobile-detect'
 import { getMeta } from '~/api/meta'
 import { refreshToken } from '~/api/login'
-import { getTenant } from '~/utils/tenant'
+import { resetTenantCache, getTenant } from '~/utils/tenant'
 import { i18nInstance } from '~/plugins/i18n'
-import { resetCache, setAuth, getAuth, removeAuth, setUser, getRefresh, setRefresh } from '~/utils/auth'
+import { resetAuthCache, setAuth, getAuth, removeAuth, setUser, getRefresh, setRefresh } from '~/utils/auth'
 import { updateApplicationSettings } from '~/utils/application'
 
 export const state = () => ({
@@ -38,13 +38,15 @@ export const mutations = {
 
 export const actions = {
   async nuxtServerInit ({commit, dispatch, getters}, {req}) {
-    // reset the cached authtoken on each request,
+    // reset the cached authtoken and tenant on each request,
     // so we do not leak information between requests
-    resetCache()
+    resetAuthCache()
+    resetTenantCache()
 
     // reset locale
     commit('administration/settings/SET_SETTINGS', {locale: process.env.LANG})
 
+    // fetch the tennant from the request
     getTenant(req)
 
     let auth = await dispatch('refreshJWTToken', req)
@@ -53,17 +55,17 @@ export const actions = {
       try {
         await commit('profile/SET_TOKEN', auth)
         await dispatch('profile/GetProfile', { serverInit: true })
-
-        // request meta data from the server
-        // this will also update the locale on the i18n instance
-        commit('SET_APIMETA', await getMeta())
-        // update the locale in the store
-        commit('administration/settings/SET_SETTINGS', {locale: i18nInstance.locale})
         await dispatch('administration/settings/GetSettings')
       } catch (error) {
         await commit('profile/SET_TOKEN', null)
       }
     }
+
+    // request meta data from the server
+    // this will also update the locale on the i18n instance
+    commit('SET_APIMETA', await getMeta())
+    // update the locale in the store
+    commit('administration/settings/SET_SETTINGS', {locale: i18nInstance.locale})
 
     // Collaps Sidebar if we are on a mobile device
     let md = new MobileDetect(req.headers['user-agent'])
