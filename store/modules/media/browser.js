@@ -67,7 +67,8 @@ export const actions = {
 
     commit('ADD_FILES', data)
 
-    while (currentPage !== lastPage) {
+    // if there are more pages left, iterate through all pages
+    while (currentPage < lastPage) {
       ++currentPage
       let {data} = await GetFiles({page: currentPage})
       commit('ADD_FILES', data)
