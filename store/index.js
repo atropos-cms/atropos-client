@@ -2,7 +2,7 @@ import MobileDetect from 'mobile-detect'
 import { refreshToken } from '~/api/login'
 import { getMeta } from '~/api/meta'
 import { getTenant } from '~/utils/tenant'
-import { setAuth, getAuth, removeAuth, setUser, getRefresh, setRefresh } from '~/utils/auth'
+import { resetCache, setAuth, getAuth, removeAuth, setUser, getRefresh, setRefresh } from '~/utils/auth'
 import { updateApplicationSettings } from '~/utils/application'
 
 export const state = () => ({
@@ -37,7 +37,9 @@ export const mutations = {
 
 export const actions = {
   async nuxtServerInit ({commit, dispatch, getters}, {req}) {
-    commit('SET_APIMETA', await getMeta())
+    // reset the cached authtoken on each request,
+    // so we do not leak information between requests
+    resetCache()
 
     commit('administration/settings/SET_SETTINGS', {locale: process.env.LANG})
 
@@ -49,6 +51,9 @@ export const actions = {
       try {
         await commit('profile/SET_TOKEN', auth)
         await dispatch('profile/GetProfile', { serverInit: true })
+
+        commit('SET_APIMETA', await getMeta())
+
         await dispatch('administration/settings/GetSettings')
       } catch (error) {
         await commit('profile/SET_TOKEN', null)

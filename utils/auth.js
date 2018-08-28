@@ -9,6 +9,10 @@ const rememberMeExpiration = 90
 
 let cachedAuth = null
 
+export function resetCache () {
+  cachedAuth = null
+}
+
 export function getAuth (req) {
   if (req) {
     cachedAuth = getAuthFromRequest(req)
