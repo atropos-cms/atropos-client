@@ -49,7 +49,6 @@ service.interceptors.response.use(
 let errorMessageInstance = null
 
 const logError = (error) => {
-  if (!process.client) return
   if (shouldNotReportError(error)) return
 
   Raven.captureException(error)
@@ -104,6 +103,7 @@ const shouldNotReportError = (error) => {
   if (error.config.url === `${error.config.baseURL}/meta`) return true
 
   if (!error.response) return false
+  if (error.response.status === 500) return true
   if (dontReportErrors.includes(error.response.data.error)) return true
 
   return false
