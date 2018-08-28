@@ -46,10 +46,11 @@ export default {
   data () {
     return {
       initialIndex: 0,
-      slideshow: [{
+      atroposSlide: {
         title: this.$t('dashboard.welcome.atropos'),
         img: '/images/backgrounds/release-image.jpeg'
-      }]
+      },
+      slideshow: []
     }
   },
 
@@ -67,6 +68,8 @@ export default {
     init () {
       // don't enable the slideshow on the server
       if (process.server) return
+
+      this.slideshow = [this.atroposSlide]
 
       // don't load files if the user does not have permission
       if (!this.$can('modules-media-browser')) return
