@@ -41,7 +41,7 @@ export const actions = {
     commit('SET_TOKEN', data.token.token)
     await dispatch('GetProfile')
     await dispatch('administration/settings/GetSettings', undefined, { root: true })
-    dispatch('modules/media/browser/GetFiles')
+    dispatch('modules/media/browser/GetFiles', undefined, { root: true })
   },
   async GetProfile ({commit, state}, options = {}) {
     if (state.profile && !options.force) return state.profile
