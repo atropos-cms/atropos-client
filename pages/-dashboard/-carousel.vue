@@ -5,8 +5,10 @@
       class="box-card">
 
       <el-carousel
+        ref="carousel"
         :initial-index="initialIndex"
-        :interval="5000">
+        :interval="slideInterval"
+        :autoplay="autoplay">
 
         <el-carousel-item
           v-for="(item, index) in slideshow"
@@ -46,6 +48,8 @@ export default {
   data () {
     return {
       initialIndex: 0,
+      slideInterval: 5000,
+      autoplay: false,
       atroposSlide: {
         title: this.$t('dashboard.welcome.atropos'),
         img: '/images/backgrounds/release-image.jpeg'
@@ -65,6 +69,16 @@ export default {
 
   async mounted () {
     this.init()
+    // if files are already loaded, switch to second image
+    if (this.slideshow.length > 1) {
+      this.initialIndex = 1
+      return
+    }
+
+    // otherwise set a timer to check again in 3s
+    await this.$timeout(2000)
+    this.autoplay = true
+    this.$nextTick(() => this.$refs.carousel.next())
   },
 
   methods: {
@@ -105,7 +119,7 @@ export default {
       }]
 
       // add the images to the slideshow
-      this.slideshow = this.slideshow.concat(additionalImages)
+      this.slideshow = [this.atroposSlide, ...additionalImages]
     }
   },
 
