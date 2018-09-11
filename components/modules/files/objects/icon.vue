@@ -1,6 +1,7 @@
 <template lang="html">
   <i
     v-if="isFile"
+    :class="iconClass"
     class="material-icons modules-files-objects--file-icon">
     {{ icon }}
   </i>
@@ -37,6 +38,10 @@ export default {
     },
     isFile () {
       return this.file.kind === 'file'
+    },
+    iconClass () {
+      let name = this.nameFromMimetype(this.file.mime_type)
+      return `modules-files-objects--file-icon-${name}`
     }
   }
 }

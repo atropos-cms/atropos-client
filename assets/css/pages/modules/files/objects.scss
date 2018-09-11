@@ -66,3 +66,14 @@
     margin-right: 1em;
   }
 }
+
+// Icon colors
+.modules-files-objects--file-icon-music {
+  color: mix($--color-text-secondary, $--color-primary, 60%)
+}
+.modules-files-objects--file-icon-image {
+  color: mix($--color-text-secondary, $--color-success, 60%)
+}
+.modules-files-objects--file-icon-pdf {
+  color: mix($--color-text-secondary, $--color-danger, 60%)
+}
