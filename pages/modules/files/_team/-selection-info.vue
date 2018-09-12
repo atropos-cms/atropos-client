@@ -18,35 +18,30 @@
 
         <h5 class="--file-name">
           <icon :file="selection"/>
-          <span>{{ selection.name }}</span>
+          <span>{{ selection.name | truncate }}</span>
         </h5>
 
         <el-collapse
           v-model="activeNames">
 
-          <el-collapse-transition>
-            <el-collapse-item
-              v-if="hasPreview"
-              :title="$t('modules.files.files.preview')"
-              name="preview">
-
-              <div class="modules-files-objects--info-preview">
-                <transition
-                  name="el-fade-in"
-                  mode="out-in">
-                  <img
-                    v-if="previewSrc"
-                    :src="previewSrc"
-                    draggable="false">
-                </transition>
-              </div>
-
-            </el-collapse-item>
-          </el-collapse-transition>
+          <preview 
+            v-if="hasSelection"
+            :selection="selection"
+            @fetchPreview="fetchPreview"/>
 
           <el-collapse-item
             :title="$t('modules.files.files.info')"
             name="info">
+
+            <!-- Name -->
+            <div class="modules-files-objects--info-row">
+              <div class="modules-files-objects--info-title">
+                {{ $t('modules.files.files.name') }}
+              </div>
+              <div class="modules-files-objects--info-content">
+                <span>{{ selection.name }}{{ selection.file_extension }}</span>
+              </div>
+            </div>
 
             <!-- Type -->
             <div class="modules-files-objects--info-row">
@@ -110,6 +105,7 @@
 </template>
 
 <script type="text/babel">
+import preview from './-previews/preview'
 import User from '~/components/user'
 import Icon from '~/components/modules/files/objects/icon'
 import EventBus from '~/utils/event-bus.js'
@@ -118,7 +114,8 @@ import UsesFileMimetype from '~/mixins/usesFileMimetype'
 export default {
   components: {
     Icon,
-    User
+    User,
+    preview
   },
 
   mixins: [UsesFileMimetype],
@@ -140,14 +137,6 @@ export default {
     hasSelection () {
       return !!this.selection
     },
-    hasPreview () {
-      if (!this.hasSelection) return false
-      return this.selection.has_preview
-    },
-    previewSrc () {
-      if (!this.hasPreview) return null
-      return this.selection.preview
-    },
     fileType () {
       if (this.selection.kind === 'folder') return this.$t('modules.files.files.folder')
 
@@ -155,13 +144,6 @@ export default {
       if (!type) return this.$t('modules.files.files.file')
 
       return this.$t(`mime-types.${type}`)
-    }
-  },
-
-  watch: {
-    hasPreview () {
-      if (this.hasPreview && this.previewSrc) return
-      this.fetchPreview({id: this.selectionId})
     }
   },
 
