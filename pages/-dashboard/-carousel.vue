@@ -84,7 +84,7 @@ export default {
     // otherwise set a timer to check again in 3s
     await this.$timeout(2000)
     this.autoplay = true
-    this.$nextTick(() => this.$refs.carousel.next())
+    this.$nextTick(() => this.$refs.carousel && this.$refs.carousel.next())
   },
 
   methods: {
