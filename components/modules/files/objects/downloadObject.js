@@ -17,7 +17,9 @@ export default {
         throw Error(`waitForDownloadToken: could not locate file with id: ${fileId}`)
       }
 
-      if (file.status !== 'ready') return
+      if (file.status !== 'ready') {
+        throw Error(`waitForDownloadToken: file is not yet ready for download`)
+      }
 
       let token = await this.requestObjectDownload(selectedTeamId, file, type)
       token = await this._isReadyForDownload(token, file)

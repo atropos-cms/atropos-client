@@ -1,5 +1,7 @@
 <template>
-  <div class="preview-audio-player">
+  <div 
+    v-if="url"
+    class="preview-audio-player">
 
     <vue-plyr
       :options="playerOptions">
@@ -49,12 +51,15 @@ export default {
       // reset file url
       this.url = null
 
-      // request a download token of type preview
-      let {token} = await this.waitForDownloadToken(this.file.id, 'preview')
-      if (!token || !token.url) return
+      try {
+        // request a download token of type preview
+        let {token} = await this.waitForDownloadToken(this.file.id, 'preview')
+        if (!token || !token.url) return
 
-      // grab the url from the token
-      this.url = token.url
+        // grab the url from the token
+        this.url = token.url
+      } catch (e) {}
+
     }
   },
 

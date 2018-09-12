@@ -48,8 +48,8 @@ export default {
 
   computed: {
     hasPreview () {
-      return (this.selection.has_preview && this.previewImage) || 
-        this.previewAudio
+      if (this.selection.status !== 'ready') return false
+      return (this.selection.has_preview && this.previewImage) || this.previewAudio
     },
     previewSrc () {
       if (!this.hasPreview) return null
