@@ -5,7 +5,7 @@ import _ from 'lodash'
 export const state = () => ({
   // View
   view: 'list',
-  info: false,
+  info: true,
 
   // Teams
   teams: null,

@@ -5,8 +5,8 @@ export default ({ store }) => {
     key: 'atropos',
     paths: [
       'ui.acceptedGdpr',
-      'modules.files.index.view',
-      'modules.files.index.info'
+      'modules.files.view',
+      'modules.files.info'
     ]
   })(store)
 }
