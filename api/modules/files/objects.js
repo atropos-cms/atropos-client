@@ -61,10 +61,13 @@ export async function UnstarObject (teamId, post) {
   return data
 }
 
-export async function RequestDownloadToken (teamId, fileId) {
+export async function RequestDownloadToken (teamId, fileId, type = undefined) {
   let {data} = await fetch({
     url: `/modules/files/${teamId}/objects/${fileId}/download`,
-    method: 'post'
+    method: 'post',
+    data: {
+      type
+    }
   })
   return data
 }

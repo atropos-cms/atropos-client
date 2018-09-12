@@ -2,7 +2,7 @@ export default {
   methods: {
     iconFromMimetype (mimeType) {
       switch (this._mimetypeMap(mimeType)) {
-        case 'music':
+        case 'audio':
           return 'library_music'
 
         case 'image':
@@ -30,7 +30,7 @@ export default {
         case 'audio/ogg':
         case 'audio/midi':
         case 'audio/wav':
-          return 'music'
+          return 'audio'
 
         case 'image/jpeg':
         case 'image/png':

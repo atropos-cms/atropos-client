@@ -323,7 +323,7 @@
     "ws-connection-recovered-title": "Connection recovered."
   },
   "mime-types": {
-    "music": "Music",
+    "audio": "Music",
     "image": "Image",
     "pdf": "PDF",
     "archive": "Archive"

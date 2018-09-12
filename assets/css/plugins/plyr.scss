@@ -1,0 +1,16 @@
+.plyr.plyr--full-ui.plyr--audio {
+  input[type=range] {
+    color: $--color-primary;
+  }
+  .plyr__progress__buffer {
+    color:$--color-info;
+  }
+  .plyr__control.plyr__tab-focus, .plyr__control:hover, .plyr__control[aria-expanded=true] {
+    background: $--color-primary;
+  }
+  .plyr__control.plyr__tab-focus {
+    background: $--color-primary-light-2;
+    box-shadow: none;
+    outline: 0;
+  }
+}

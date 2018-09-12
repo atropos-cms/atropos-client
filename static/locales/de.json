@@ -318,7 +318,7 @@
     "ws-connection-recovered-title": "Verbindung widerhergestellt."
   },
   "mime-types": {
-    "music": "Musik",
+    "audio": "Musik",
     "image": "Bild",
     "pdf": "PDF",
     "archive": "Archiv"

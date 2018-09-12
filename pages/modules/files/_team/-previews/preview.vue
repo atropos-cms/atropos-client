@@ -10,10 +10,13 @@
           name="el-fade-in"
           mode="out-in">
 
-          <img
-            v-if="previewSrc"
-            :src="previewSrc"
-            draggable="false">
+          <image-preview
+            v-if="previewImage"
+            :preview-src="previewSrc"/>
+
+          <audio-preview 
+            v-if="previewAudio"
+            :file="selection"/>
             
         </transition>
       </div>
@@ -22,8 +25,19 @@
   </el-collapse-transition>
 </template>
 
-<script  type="text/babel">
+<script type="text/babel">
+import audioPreview from './audio'
+import imagePreview from './image'
+import UsesFileMimetype from '~/mixins/usesFileMimetype'
+
 export default {
+  components: {
+    audioPreview,
+    imagePreview,
+  },
+
+  mixins: [UsesFileMimetype],
+
   props: {
     selection: {
       type: Object,
@@ -34,11 +48,21 @@ export default {
 
   computed: {
     hasPreview () {
-      return this.selection.has_preview
+      return (this.selection.has_preview && this.previewImage) || 
+        this.previewAudio
     },
     previewSrc () {
       if (!this.hasPreview) return null
       return this.selection.preview
+    },
+    previewType () {
+      return this.nameFromMimetype(this.selection.mime_type)
+    },
+    previewImage () {
+      return this.previewType === 'image' || this.previewType === 'pdf'
+    },
+    previewAudio () {
+      return this.previewType === 'audio'
     }
   },
 

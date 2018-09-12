@@ -4,23 +4,32 @@ export default {
   methods: {
     // Download Object
     async downloadObject (fileId) {
+      let {token, file} = await this.waitForDownloadToken(fileId)
+      this.downloadObjectBlob(token, file)
+    },
+
+    async waitForDownloadToken (fileId, type = undefined) {
+      let id = (typeof fileId === 'object') ? fileId[0] : fileId
       let selectedTeamId = this.$store.getters['modules/files/selectedTeam']
-      let file = this.$store.getters['modules/files/object'](fileId[0])
+      let file = this.$store.getters['modules/files/object'](id)
+
+      if (!file) {
+        throw Error(`waitForDownloadToken: could not locate file with id: ${fileId}`)
+      }
 
       if (file.status !== 'ready') return
 
-      let token = await this.requestObjectDownload(selectedTeamId, file)
-
+      let token = await this.requestObjectDownload(selectedTeamId, file, type)
       token = await this._isReadyForDownload(token, file)
         .catch(token => {
           this.$message.error(this.$t('errors.error-while-preparing-download'))
         })
 
-      this.downloadObjectBlob(token, file)
+      return {token, file}
     },
 
-    async requestObjectDownload (selectedTeamId, file) {
-      return RequestDownloadToken(selectedTeamId, file.id)
+    async requestObjectDownload (selectedTeamId, file, type) {
+      return RequestDownloadToken(selectedTeamId, file.id, type)
     },
 
     async statusObjectDownload (file) {

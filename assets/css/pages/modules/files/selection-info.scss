@@ -48,16 +48,18 @@
   align-items: center;
   justify-content: center;
   margin: auto;
-  width: 260px;
   height: 220px;
   
-
   img {
     border-radius: 4px;
     overflow: hidden;
     max-width: 260px;
     max-height: 220px;
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+  }
+
+  .preview-audio-player {
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .2);
   }
 }
 
