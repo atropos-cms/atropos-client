@@ -24,7 +24,6 @@
 </template>
 
 <script type="text/babel">
-import EventBus from '~/utils/event-bus.js'
 import eventMixin from '../eventMixin.js'
 import UsesFileMimetype from '~/mixins/usesFileMimetype'
 
@@ -39,12 +38,6 @@ export default {
     }
   },
 
-  async mounted () {
-    return this.$apiWithoutErrorReporting(() => {
-      this.$store.dispatch('modules/files/GetObject', {team: this.event.content.team_id, id: this.event.entity_id, preview: true})
-    })
-  },
-
   computed: {
     icon () {
       return this.event.content && this.iconFromMimetype(this.event.content.mime_type)
@@ -57,12 +50,18 @@ export default {
     },
     entity () {
       return this.$store.getters['modules/files/object'](this.event.entity_id)
-    },
+    }
+  },
+
+  async mounted () {
+    return this.$apiWithoutErrorReporting(() => {
+      this.$store.dispatch('modules/files/GetObject', {team: this.event.content.team_id, id: this.event.entity_id, preview: true})
+    })
   },
 
   methods: {
     openParent () {
-      this.$router.push({ name: 'modules-files-team-parent', params: { team: this.event.content.team_id, parent: this.event.content.parent_id }, query: { selected: this.event.entity_id} })
+      this.$router.push({ name: 'modules-files-team-parent', params: { team: this.event.content.team_id, parent: this.event.content.parent_id }, query: { selected: this.event.entity_id } })
     }
   }
 }

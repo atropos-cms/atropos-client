@@ -10,7 +10,6 @@
 </template>
 
 <script type="text/babel">
-import _ from 'lodash'
 import StorageChart from '~/components/administration/settings/storageChart'
 
 export default {

@@ -67,6 +67,12 @@ export default {
     }
   },
 
+  watch: {
+    filesLoaded () {
+      this.init()
+    }
+  },
+
   async mounted () {
     this.init()
     // if files are already loaded, switch to second image
@@ -120,12 +126,6 @@ export default {
 
       // add the images to the slideshow
       this.slideshow = [this.atroposSlide, ...additionalImages]
-    }
-  },
-
-  watch: {
-    filesLoaded () {
-      this.init()
     }
   }
 }

@@ -8,10 +8,10 @@
         <!-- This error message will be rendered on the server, to inform the user that javascript is disabled -->
         <noscript inline-template>
           <el-alert
-            :title="$t('errors.javascript-disabled')"
-            :closable="false"
-            type="error"
-            show-icon>
+          :title="$t('errors.javascript-disabled')"
+          :closable="false"
+          type="error"
+          show-icon>
           </el-alert>
         </noscript>
 

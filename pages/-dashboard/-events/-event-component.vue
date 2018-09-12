@@ -10,32 +10,38 @@
 
         <!-- Event Name -->
         <div class="dashboard--event-header-name">
-          <slot name="event-name"></slot>
+          <slot name="event-name"/>
         </div>
 
         <!-- Delete event -->
         <el-popover
           v-if="showDelete"
-          placement="top"
-          v-model="showPopup">
+          v-model="showPopup"
+          placement="top">
           <p>{{ $t('dashboard.events.delete-events') }}</p>
           <div style="text-align: right; margin: 0">
-            <el-button size="mini" type="text" @click="closePopup">{{ $t('general.cancel') }}</el-button>
-            <el-button type="danger" size="mini" @click="deleteEvent">{{ $t('general.delete') }}</el-button>
+            <el-button
+              size="mini"
+              type="text"
+              @click="closePopup">{{ $t('general.cancel') }}</el-button>
+            <el-button
+              type="danger"
+              size="mini"
+              @click="deleteEvent">{{ $t('general.delete') }}</el-button>
           </div>
 
           <i
-          slot="reference"
-          class="material-icons text-secondary --has-pointer-cursor"
-          style="font-size: 0.8em">
-          close
+            slot="reference"
+            class="material-icons text-secondary --has-pointer-cursor"
+            style="font-size: 0.8em">
+            close
           </i>
         </el-popover>
       </div>
 
     </template>
 
-    <slot></slot>
+    <slot/>
 
   </el-card>
 </template>

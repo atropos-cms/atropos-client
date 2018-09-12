@@ -31,7 +31,9 @@
         :class="{'logged-in': loggedIn}"
         class="app-content">
 
-        <div class="app-scrollbar-container" v-bar>
+        <div
+          v-bar
+          class="app-scrollbar-container">
           <div class="app-scrollbar-view">
             <slot/>
           </div>

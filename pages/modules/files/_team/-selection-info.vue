@@ -120,7 +120,7 @@ export default {
     Icon,
     User
   },
-  
+
   mixins: [UsesFileMimetype],
 
   data () {

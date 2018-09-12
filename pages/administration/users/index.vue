@@ -31,9 +31,9 @@
 
       <el-table-column
         :label="$t('administration.user.last_action')"
+        :sort-method="sortByLastAction"
         property="last_action"
         min-width="200"
-        :sort-method="sortByLastAction"
         sortable>
         <template slot-scope="scope">
           <span v-if="scope.row.last_action">{{ scope.row.last_action | moment("from") }}</span>

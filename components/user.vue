@@ -49,14 +49,14 @@ export default {
     }
   },
 
-  async mounted () {
-    return this.$apiWithoutErrorReporting(() => this.$store.dispatch('administration/users/GetUser', this.id))
-  },
-
   watch: {
     id () {
       this.$apiWithoutErrorReporting(() => this.$store.dispatch('administration/users/GetUser', this.id))
     }
+  },
+
+  async mounted () {
+    return this.$apiWithoutErrorReporting(() => this.$store.dispatch('administration/users/GetUser', this.id))
   }
 }
 </script>

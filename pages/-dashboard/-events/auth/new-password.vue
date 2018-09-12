@@ -1,7 +1,7 @@
 <template lang="html">
   <event-component
-    not-deletable
-    :event="event">
+    :event="event"
+    not-deletable>
     <!-- Content -->
     <i class="material-icons text-regular">lock</i>
     <span>{{ $t('events.auth.new-password') }}</span>

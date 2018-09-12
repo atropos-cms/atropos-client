@@ -1,8 +1,8 @@
 <template lang="html">
   <div>
     <event-component
-      not-deletable
-      :event="event">
+      :event="event"
+      not-deletable>
       <!-- Header -->
       <template slot="event-name">
         <i class="material-icons text-regular">mail_outline</i>
