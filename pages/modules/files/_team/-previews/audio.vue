@@ -12,7 +12,6 @@
 <script type="text/babel">
 import 'vue-plyr'
 import 'vue-plyr/dist/vue-plyr.css'
-
 import downloadObject from '~/components/modules/files/objects/downloadObject'
 
 export default {
@@ -39,10 +38,30 @@ export default {
     await this.fetchAudio()
   },
 
+  computed: {
+    fileId () {
+      return this.file.id
+    }
+  },
+
   methods: {
     async fetchAudio () {
+      // reset file url
+      this.url = null
+
+      // request a download token of type preview
       let {token} = await this.waitForDownloadToken(this.file.id, 'preview')
+      if (!token || !token.url) return
+
+      // grab the url from the token
       this.url = token.url
+    }
+  },
+
+  watch: {
+    async fileId () {
+      // every time the selected file changes, reload the file
+      await this.fetchAudio()
     }
   }
 }
