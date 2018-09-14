@@ -21,15 +21,15 @@ module.exports = {
       lang: 'en'
     },
     meta: [
-      {charset: 'utf-8'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid: 'description', name: 'description', content: 'Atropos Community Software Client'},
-      {'http-equiv': 'x-ua-compatible', content: 'ie=edge,chrome=1'}
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: 'Atropos Community Software Client' },
+      { 'http-equiv': 'x-ua-compatible', content: 'ie=edge,chrome=1' }
     ],
     link: [
-      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
-      {rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons'},
-      {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans:300,400'}
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans:300,400' }
     ]
   },
 
@@ -46,7 +46,7 @@ module.exports = {
   /*
   ** Customize the progress bar color
   */
-  loading: {color: '#69b3ff'},
+  loading: { color: '#69b3ff' },
 
   /*
   ** Router options
@@ -64,22 +64,22 @@ module.exports = {
    * Plugins
    */
   plugins: [
-    {src: '~/plugins/sentry.js', ssr: false},
-    {src: '~/plugins/element-ui.js', ssr: true},
-    {src: '~/plugins/i18n.js', ssr: true},
-    {src: '~/plugins/portal-vue.js', ssr: true},
-    {src: '~/plugins/vue-clipboard2.js', ssr: true},
-    {src: '~/plugins/vue-moment.js', ssr: true},
-    {src: '~/plugins/vue-filters.js', ssr: true},
-    {src: '~/plugins/vue-truncate.js', ssr: true},
-    {src: '~/plugins/vue-async-computed.js', ssr: true},
-    {src: '~/plugins/vue-click-outside.js', ssr: true},
-    {src: '~/plugins/vuebar.js', ssr: true},
-    {src: '~/plugins/nuxt-client-init', ssr: false},
-    {src: '~/plugins/vue-quill-editor', ssr: false},
-    {src: '~/plugins/atropos.js', ssr: true},
-    {src: '~/plugins/ws.js', ssr: false},
-    {src: '~/plugins/local-storage.js', ssr: false}
+    { src: '~/plugins/sentry.js', ssr: false },
+    { src: '~/plugins/element-ui.js', ssr: true },
+    { src: '~/plugins/i18n.js', ssr: true },
+    { src: '~/plugins/portal-vue.js', ssr: true },
+    { src: '~/plugins/vue-clipboard2.js', ssr: true },
+    { src: '~/plugins/vue-moment.js', ssr: true },
+    { src: '~/plugins/vue-filters.js', ssr: true },
+    { src: '~/plugins/vue-truncate.js', ssr: true },
+    { src: '~/plugins/vue-async-computed.js', ssr: true },
+    { src: '~/plugins/vue-click-outside.js', ssr: true },
+    { src: '~/plugins/vuebar.js', ssr: true },
+    { src: '~/plugins/nuxt-client-init', ssr: false },
+    { src: '~/plugins/vue-quill-editor', ssr: false },
+    { src: '~/plugins/atropos.js', ssr: true },
+    { src: '~/plugins/ws.js', ssr: false },
+    { src: '~/plugins/local-storage.js', ssr: false }
   ],
 
   /*
@@ -118,7 +118,7 @@ module.exports = {
     /*
     ** Run ESLint on save
     */
-    extend (config, {isDev}) {
+    extend (config, { isDev }) {
       config.module.rules.push({
         test: /\.js$/,
         loader: 'imports-loader?window.Quill=quill',

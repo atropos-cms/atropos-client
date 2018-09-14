@@ -140,8 +140,8 @@ export default {
       try {
         this.$apiDisableErrorReporting()
         await this.$store.dispatch('profile/ResetPassword', data)
-        this.$router.replace({path: '/'})
-      } catch ({response}) {
+        this.$router.replace({ path: '/' })
+      } catch ({ response }) {
         this.handleError(response.data.error)
       } finally {
         this.loading = false
@@ -149,7 +149,7 @@ export default {
       }
     },
 
-    handleError ({message}) {
+    handleError ({ message }) {
       if (message.match(/The token is invalid or expired/g)) {
         return this.$message({
           message: this.$t('errors.reset-token-invalid'),

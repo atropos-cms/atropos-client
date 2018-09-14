@@ -68,10 +68,10 @@ const logError = (error) => {
   })
 }
 
-const handleErrorMessage = ({message, status, headers}) => {
+const handleErrorMessage = ({ message, status, headers }) => {
   if (status === 429) {
     return Message({
-      message: i18nInstance.t('errors.too-many-requests', {retryAfter: headers['retry-after']}),
+      message: i18nInstance.t('errors.too-many-requests', { retryAfter: headers['retry-after'] }),
       type: 'error',
       duration: 5 * 1000
     })

@@ -98,7 +98,7 @@ export default {
     HeaderToolbar
   },
 
-  async fetch ({store, params}) {
+  async fetch ({ store, params }) {
     await store.dispatch('administration/users/GetUsers')
   },
 
@@ -109,7 +109,7 @@ export default {
   },
 
   methods: {
-    handleCommand ({command, data}) {
+    handleCommand ({ command, data }) {
       switch (command) {
         case 'edit':
           return this.editUser(data)
@@ -123,7 +123,7 @@ export default {
       this.$router.push(`/administration/users/${user.id}`)
     },
     async toggleActivateUser (user) {
-      this.$store.dispatch('administration/users/UpdateUser', {...user, activated: !user.activated})
+      this.$store.dispatch('administration/users/UpdateUser', { ...user, activated: !user.activated })
     },
     async deleteUser (user) {
       await this.$confirm(this.$t('message.delete-user'), this.$t('general.warning'), {

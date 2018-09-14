@@ -43,14 +43,14 @@ export const mutations = {
 }
 
 export const actions = {
-  async GetLists ({commit, state}) {
+  async GetLists ({ commit, state }) {
     if (state.list) return state.list
 
     let data = await GetLists()
     commit('SET_LISTS', data)
     return data
   },
-  async GetList ({commit, dispatch, state, getters}, id) {
+  async GetList ({ commit, dispatch, state, getters }, id) {
     let list = getters.get(id)
     if (list) return list
 
@@ -59,17 +59,17 @@ export const actions = {
     commit('UPDATE_LIST', data)
     return getters.get(id)
   },
-  async CreateList ({commit, state}, list) {
+  async CreateList ({ commit, state }, list) {
     let data = await CreateList(list)
     commit('ADD_LIST', data)
     return data
   },
-  async UpdateList ({commit, state}, list) {
+  async UpdateList ({ commit, state }, list) {
     let data = await UpdateList(list)
     commit('UPDATE_LIST', data)
     return data
   },
-  async DeleteList ({commit, state}, list) {
+  async DeleteList ({ commit, state }, list) {
     let data = await DeleteList(list)
     commit('REMOVE_LIST', list)
     return data

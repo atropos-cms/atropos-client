@@ -21,8 +21,8 @@ export default {
     StorageChart
   },
 
-  async fetch ({store, params}) {
-    await store.dispatch('administration/settings/GetSettings', {stats: true})
+  async fetch ({ store, params }) {
+    await store.dispatch('administration/settings/GetSettings', { stats: true })
   },
 
   computed: {

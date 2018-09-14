@@ -73,7 +73,7 @@ export default {
   },
   methods: {
     paginationChanged (currentPage) {
-      this.$store.dispatch('modules/blog/articles/UpdatePagination', Object.assign({}, this.pagination, {currentPage}))
+      this.$store.dispatch('modules/blog/articles/UpdatePagination', Object.assign({}, this.pagination, { currentPage }))
     }
   }
 }

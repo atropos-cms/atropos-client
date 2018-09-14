@@ -175,7 +175,7 @@ export default {
 
   mixins: [saveOnInterval],
 
-  async asyncData ({store, params, redirect}) {
+  async asyncData ({ store, params, redirect }) {
     let article = await store.dispatch('modules/blog/articles/GetArticle', params.id).catch(e => {})
 
     if (!article) redirect({ name: 'modules-blog-articles' })
@@ -205,7 +205,7 @@ export default {
     articleChanged () {
       this._hasUnsavedChanges = true
     },
-    articleContentChanged ({html}) {
+    articleContentChanged ({ html }) {
       this.article.content = html
       this.articleChanged()
     },

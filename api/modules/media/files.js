@@ -1,7 +1,7 @@
 import fetch from '~/utils/fetch'
 
-export async function GetFiles (options = {page: 1}) {
-  let {data} = await fetch({
+export async function GetFiles (options = { page: 1 }) {
+  let { data } = await fetch({
     url: `/modules/media/files`,
     params: options,
     method: 'get'
@@ -10,7 +10,7 @@ export async function GetFiles (options = {page: 1}) {
 }
 
 export async function GetFile (id) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/modules/media/files/${id}`,
     method: 'get'
   })
@@ -18,7 +18,7 @@ export async function GetFile (id) {
 }
 
 export async function CreateFile (post) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/modules/media/files`,
     method: 'post',
     data: post
@@ -27,7 +27,7 @@ export async function CreateFile (post) {
 }
 
 export async function UpdateFile (post) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/modules/media/files/${post.id}`,
     method: 'put',
     data: post
@@ -36,7 +36,7 @@ export async function UpdateFile (post) {
 }
 
 export async function DeleteFile (post) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/modules/media/files/${post.id}`,
     method: 'delete'
   })

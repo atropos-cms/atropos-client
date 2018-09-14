@@ -5,7 +5,7 @@ export async function sendPasswordReset (uid) {
     uid
   }
 
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: '/auth/password-reset',
     method: 'post',
     data: post
@@ -14,7 +14,7 @@ export async function sendPasswordReset (uid) {
 }
 
 export async function ResetPassword (post) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/auth/password-reset`,
     method: 'put',
     data: post

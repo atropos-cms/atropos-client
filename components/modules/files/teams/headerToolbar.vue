@@ -53,7 +53,7 @@ export default {
     return {
       loading: false,
       showCreateTeamDialog: false,
-      teamCopy: {name: ''}
+      teamCopy: { name: '' }
     }
   },
 
@@ -65,7 +65,7 @@ export default {
     closeCreateTeamDialog () {
       this.showCreateTeamDialog = false
       this.loading = false
-      this.teamCopy = {name: ''}
+      this.teamCopy = { name: '' }
     },
     async createTeam () {
       this.loading = true

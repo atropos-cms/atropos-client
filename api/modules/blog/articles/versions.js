@@ -1,7 +1,7 @@
 import fetch from '~/utils/fetch'
 
 export async function GetVersions (articleID) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/modules/blog/articles/${articleID}/versions`,
     method: 'get'
   })
@@ -9,7 +9,7 @@ export async function GetVersions (articleID) {
 }
 
 export async function GetVersion (articleID, id) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/modules/blog/articles/${articleID}/versions/${id}`,
     method: 'get'
   })
@@ -17,7 +17,7 @@ export async function GetVersion (articleID, id) {
 }
 
 export async function RestoreVersion (articleID, id) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/modules/blog/articles/${articleID}/versions/${id}`,
     method: 'put'
   })

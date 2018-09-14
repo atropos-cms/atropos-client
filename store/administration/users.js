@@ -53,14 +53,14 @@ export const mutations = {
 }
 
 export const actions = {
-  async GetUsers ({commit, state, getters}) {
+  async GetUsers ({ commit, state, getters }) {
     if (state.listLoaded) return state.list
 
     let data = await GetUsers()
     commit('SET_USERS', data)
     return getters.list
   },
-  async GetUser ({commit, state, getters}, id) {
+  async GetUser ({ commit, state, getters }, id) {
     if (!id) return nullUser
     if (getters.get(id) !== nullUser) return getters.get(id)
 
@@ -68,23 +68,23 @@ export const actions = {
     commit('UPDATE_USER', data)
     return data
   },
-  async CreateUser ({commit, state}, user) {
+  async CreateUser ({ commit, state }, user) {
     let data = await CreateUser(user)
     commit('ADD_USER', data)
     return data
   },
-  async UpdateUser ({commit, state, dispatch, rootGetters}, user) {
+  async UpdateUser ({ commit, state, dispatch, rootGetters }, user) {
     let data = await UpdateUser(user)
     commit('UPDATE_USER', data)
 
     // check if the user is updating their own user,
     if (rootGetters['profile/id'] === data.id) {
-      dispatch('profile/GetProfile', {force: true}, { root: true })
+      dispatch('profile/GetProfile', { force: true }, { root: true })
     }
 
     return data
   },
-  async DeleteUser ({commit, state}, user) {
+  async DeleteUser ({ commit, state }, user) {
     let data = await DeleteUser(user)
     commit('DELETE_USER', user)
     return data

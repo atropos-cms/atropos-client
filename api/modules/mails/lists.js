@@ -1,7 +1,7 @@
 import fetch from '~/utils/fetch'
 
 export async function GetLists () {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: '/modules/mails/lists',
     method: 'get'
   })
@@ -9,7 +9,7 @@ export async function GetLists () {
 }
 
 export async function GetList (id) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/modules/mails/lists/${id}`,
     method: 'get'
   })
@@ -17,7 +17,7 @@ export async function GetList (id) {
 }
 
 export async function CreateList (post) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/modules/mails/lists`,
     method: 'post',
     data: post
@@ -26,7 +26,7 @@ export async function CreateList (post) {
 }
 
 export async function UpdateList (post) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/modules/mails/lists/${post.id}`,
     method: 'put',
     data: post
@@ -35,7 +35,7 @@ export async function UpdateList (post) {
 }
 
 export async function DeleteList (post) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/modules/mails/lists/${post.id}`,
     method: 'delete'
   })

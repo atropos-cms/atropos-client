@@ -93,10 +93,10 @@ export default {
       }
     },
     navigateLogout () {
-      this.$router.push({path: '/auth/logout'})
+      this.$router.push({ path: '/auth/logout' })
     },
     navigatePofile () {
-      this.$router.push({path: '/profile'})
+      this.$router.push({ path: '/profile' })
     }
   }
 }

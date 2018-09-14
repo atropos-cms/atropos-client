@@ -80,16 +80,16 @@ export default {
       await this.$store.dispatch('modules/files/SelectObject', null)
       EventBus.$emit('modules-files-objects--open-contextmenu', event)
     },
-    async selectObject ({event, id}) {
+    async selectObject ({ event, id }) {
       if (event.shiftKey && this.lastSelected) {
-        this.selectMultiple({event, id})
+        this.selectMultiple({ event, id })
       } else if (event.ctrlKey) {
-        this.selectToggleOne({event, id})
+        this.selectToggleOne({ event, id })
       } else {
-        this.selectFromArray({ids: [id]})
+        this.selectFromArray({ ids: [id] })
       }
     },
-    async selectToggleOne ({event, id}) {
+    async selectToggleOne ({ event, id }) {
       let selection = this.$store.getters['modules/files/selectedObjects']
       let isSelected = selection.includes(id)
 
@@ -101,11 +101,11 @@ export default {
 
       await this.$store.dispatch('modules/files/SelectObject', selection)
     },
-    async selectFromArray ({ids}) {
+    async selectFromArray ({ ids }) {
       await this.$store.dispatch('modules/files/SelectObject', [...ids])
       this.lastSelected = ids.slice(-1).pop()
     },
-    async selectMultiple ({event, id}) {
+    async selectMultiple ({ event, id }) {
       let startIndex = this.objects.findIndex(o => o.id === id)
       let endIndex = this.objects.findIndex(o => o.id === this.lastSelected)
 
@@ -113,7 +113,7 @@ export default {
 
       await this.$store.dispatch('modules/files/SelectObject', selectionRange.map(o => o.id))
     },
-    async deselectObject ({event, id}) {
+    async deselectObject ({ event, id }) {
       let selection = this.$store.getters['modules/files/selectedObjects']
       await this.$store.dispatch('modules/files/SelectObject', selection.filter(s => s !== id))
     },
@@ -128,7 +128,7 @@ export default {
     selectObjectFromQuery () {
       if (!this.$route.query.selected) return
       let selection = this.$route.query.selected.split(',')
-      this.selectFromArray({ids: selection})
+      this.selectFromArray({ ids: selection })
     }
   }
 }

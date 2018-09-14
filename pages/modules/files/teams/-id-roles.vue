@@ -159,7 +159,7 @@ export default {
       let roles = this.team.roles
       roles.splice(1, 0, this.newRole)
 
-      this.$emit('update:team', {...this.team, roles: roles})
+      this.$emit('update:team', { ...this.team, roles: roles })
 
       this.closeModal()
     },
@@ -170,7 +170,7 @@ export default {
       let roles = this.team.roles
       roles.splice(removeIndex, 1)
 
-      this.$emit('update:team', {...this.team, roles: roles})
+      this.$emit('update:team', { ...this.team, roles: roles })
     }
   }
 }

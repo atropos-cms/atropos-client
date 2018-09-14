@@ -50,12 +50,12 @@ export default {
 
   methods: {
     inputName (value) {
-      this.$emit('update:team', {...this.team, name: value})
+      this.$emit('update:team', { ...this.team, name: value })
     },
     handleClose (tag) {
       let tags = this.team.tags.filter(t => t.id !== tag.id)
 
-      this.$emit('update:team', {...this.team, tags: tags})
+      this.$emit('update:team', { ...this.team, tags: tags })
     },
 
     showInput () {
@@ -70,7 +70,7 @@ export default {
       if (inputValue) {
         let tags = this.team.tags
         tags.push({ name: inputValue })
-        this.$emit('update:team', {...this.team, tags: tags})
+        this.$emit('update:team', { ...this.team, tags: tags })
       }
       this.inputVisible = false
       this.inputValue = ''

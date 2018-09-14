@@ -46,7 +46,7 @@ export default {
     return {
       loading: false,
       showCreateListDialog: false,
-      listCopy: {name: ''}
+      listCopy: { name: '' }
     }
   },
 

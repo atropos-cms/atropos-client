@@ -83,7 +83,7 @@ export default {
     HeaderToolbar
   },
 
-  async fetch ({store, params}) {
+  async fetch ({ store, params }) {
     await store.dispatch('modules/files/GetTeams')
   },
 
@@ -94,7 +94,7 @@ export default {
   },
 
   methods: {
-    handleCommand ({command, data}) {
+    handleCommand ({ command, data }) {
       switch (command) {
         case 'edit':
           return this.editTeam(data)
@@ -103,7 +103,7 @@ export default {
       }
     },
     async editTeam (team) {
-      this.$router.push({ name: 'modules-files-teams-id', params: {id: team.id} })
+      this.$router.push({ name: 'modules-files-teams-id', params: { id: team.id } })
     },
     async deleteTeam (team) {
       await this.$confirm(this.$t('message.modules-files-teams-delete'), this.$t('general.warning'), {

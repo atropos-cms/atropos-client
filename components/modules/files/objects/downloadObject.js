@@ -4,7 +4,7 @@ export default {
   methods: {
     // Download Object
     async downloadObject (fileId) {
-      let {token, file} = await this.waitForDownloadToken(fileId)
+      let { token, file } = await this.waitForDownloadToken(fileId)
       this.downloadObjectBlob(token, file)
     },
 
@@ -27,7 +27,7 @@ export default {
           this.$message.error(this.$t('errors.error-while-preparing-download'))
         })
 
-      return {token, file}
+      return { token, file }
     },
 
     async requestObjectDownload (selectedTeamId, file, type) {
@@ -47,7 +47,7 @@ export default {
           backgroundTask = await this.$store.dispatch('ui/addBackgroundTask', {
             type: 'preparing-downloads',
             name: 'zipping',
-            params: {name: file.name}
+            params: { name: file.name }
           })
         }
 

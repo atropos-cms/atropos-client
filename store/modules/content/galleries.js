@@ -44,14 +44,14 @@ export const mutations = {
 }
 
 export const actions = {
-  async GetGalleries ({commit, state}) {
+  async GetGalleries ({ commit, state }) {
     if (state.list) return state.list
 
     let data = await GetGalleries()
     commit('SET_GALLERIES', data)
     return data
   },
-  async GetGallery ({commit, dispatch, state, getters}, id) {
+  async GetGallery ({ commit, dispatch, state, getters }, id) {
     let gallery = getters.get(id)
     if (gallery && gallery.images) return gallery
 
@@ -60,17 +60,17 @@ export const actions = {
     commit('UPDATE_GALLERY', data)
     return getters.get(id)
   },
-  async CreateGallery ({commit, state}, gallery) {
+  async CreateGallery ({ commit, state }, gallery) {
     let data = await CreateGallery(gallery)
     commit('ADD_GALLERY', data)
     return data
   },
-  async UpdateGallery ({commit, state}, gallery) {
+  async UpdateGallery ({ commit, state }, gallery) {
     let data = await UpdateGallery(gallery)
     commit('UPDATE_GALLERY', data)
     return data
   },
-  async DeleteGallery ({commit, state}, gallery) {
+  async DeleteGallery ({ commit, state }, gallery) {
     let data = await DeleteGallery(gallery)
     commit('REMOVE_GALLERY', gallery)
     return data

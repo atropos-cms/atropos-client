@@ -91,14 +91,14 @@ export const mutations = {
 }
 
 export const actions = {
-  async GetArticles ({commit, state}) {
+  async GetArticles ({ commit, state }) {
     if (state.list) return state.list
 
     let data = await GetArticles()
     commit('SET_ARTICLES', data)
     return data
   },
-  async GetArticle ({commit, dispatch, state, getters}, id) {
+  async GetArticle ({ commit, dispatch, state, getters }, id) {
     let article = getters.get(id)
     if (article && article.content) return article
 
@@ -107,23 +107,23 @@ export const actions = {
     commit('UPDATE_ARTICLE', data)
     return getters.get(id)
   },
-  async CreateArticle ({commit, state}, article) {
+  async CreateArticle ({ commit, state }, article) {
     let data = await CreateArticle(article)
     commit('ADD_ARTICLE', data)
     return data
   },
-  async UpdateArticle ({commit, state}, article) {
+  async UpdateArticle ({ commit, state }, article) {
     let data = await UpdateArticle(article)
     commit('UPDATE_ARTICLE', data)
     return data
   },
-  async DeleteArticle ({commit, state}, article) {
+  async DeleteArticle ({ commit, state }, article) {
     let data = await DeleteArticle(article)
     commit('REMOVE_ARTICLE', article)
     return data
   },
 
-  async GetArticleVersions ({commit, dispatch, state, getters}, articleId) {
+  async GetArticleVersions ({ commit, dispatch, state, getters }, articleId) {
     let article = await dispatch('GetArticle', articleId)
     if (article && article.versions) return article.versions
 
@@ -136,17 +136,17 @@ export const actions = {
     return getters.getVersions(articleId)
   },
 
-  async RestoreArticleVersion ({commit, dispatch, state, getters}, {articleId, versionId}) {
+  async RestoreArticleVersion ({ commit, dispatch, state, getters }, { articleId, versionId }) {
     let article = await RestoreVersion(articleId, versionId)
 
     commit('UPDATE_ARTICLE', article)
   },
 
-  async UpdateFilters ({commit, state}, filters) {
+  async UpdateFilters ({ commit, state }, filters) {
     commit('SET_FILTERS', filters)
   },
 
-  async UpdatePagination ({commit, state}, pagination) {
+  async UpdatePagination ({ commit, state }, pagination) {
     commit('SET_PAGINATION', pagination)
   }
 }

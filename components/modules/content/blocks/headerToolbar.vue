@@ -73,7 +73,7 @@ export default {
       loading: false,
       showHelpTooltip: false,
       showCreateBlockDialog: false,
-      blockCopy: {title: ''},
+      blockCopy: { title: '' },
       rules: {
         title: [
           { required: true, message: this.$t('validation.title.required'), trigger: 'change' }
@@ -100,7 +100,7 @@ export default {
     closeCreateBlockDialog () {
       this.showCreateBlockDialog = false
       this.loading = false
-      this.blockCopy = {title: ''}
+      this.blockCopy = { title: '' }
     },
     async createBlock () {
       await this.$refs.form.validate()

@@ -3,10 +3,10 @@ import fetch from '~/utils/fetch'
 export default {
   methods: {
     // Upload Object
-    async uploadObject ({file, parent}) {
+    async uploadObject ({ file, parent }) {
       if (!(await this._validate(file))) return
 
-      let fileEntity = await this._createObjectEntity({file, parent})
+      let fileEntity = await this._createObjectEntity({ file, parent })
 
       await this._queueObject(fileEntity)
 
@@ -24,7 +24,7 @@ export default {
       }
     },
 
-    async _createObjectEntity ({file, parent}) {
+    async _createObjectEntity ({ file, parent }) {
       let parentId = parent || this.$store.getters['modules/files/parent']
 
       let name = file.name.lastIndexOf('.') > 0 ? file.name.substr(0, file.name.lastIndexOf('.')) : file.name
@@ -52,19 +52,19 @@ export default {
       let formdata = new FormData()
       formdata.append('file', file)
 
-      let {data} = await fetch({
+      let { data } = await fetch({
         url: `/modules/files/upload/${fileEntity.upload_token}`,
         method: 'post',
         data: formdata,
         timeout: 3600000,
         onUploadProgress: async (progressEvent) => {
           let percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total)
-          await this._updateConcurrency({id: fileEntity.id, progress: percentCompleted, loaded: progressEvent.loaded})
+          await this._updateConcurrency({ id: fileEntity.id, progress: percentCompleted, loaded: progressEvent.loaded })
           await this._progressBackgroundTask(backgroundTask, percentCompleted)
         }
       })
 
-      await this._completeUpload({id: fileEntity.id})
+      await this._completeUpload({ id: fileEntity.id })
       await this._completeBackgroundTask(backgroundTask)
 
       return data

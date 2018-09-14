@@ -2,7 +2,7 @@ import fetch from '~/utils/fetch'
 
 export async function GetUsers () {
   try {
-    let {data} = await fetch({
+    let { data } = await fetch({
       url: `/administration/users`,
       method: 'get'
     })
@@ -13,7 +13,7 @@ export async function GetUsers () {
 
 export async function GetUser (id) {
   try {
-    let {data} = await fetch({
+    let { data } = await fetch({
       url: `/administration/users/${id}`,
       method: 'get'
     })
@@ -23,7 +23,7 @@ export async function GetUser (id) {
 }
 
 export async function CreateUser (post) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/administration/users`,
     method: 'post',
     data: post
@@ -32,7 +32,7 @@ export async function CreateUser (post) {
 }
 
 export async function UpdateUser (post) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/administration/users/${post.id}`,
     method: 'put',
     data: post
@@ -41,7 +41,7 @@ export async function UpdateUser (post) {
 }
 
 export async function DeleteUser (post) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/administration/users/${post.id}`,
     method: 'delete'
   })

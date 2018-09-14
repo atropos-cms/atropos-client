@@ -57,7 +57,7 @@ export const mutations = {
 }
 
 export const actions = {
-  async AddUpload ({commit, state}, entity) {
+  async AddUpload ({ commit, state }, entity) {
     let object = {
       id: entity.id,
       status: 'queued',
@@ -70,7 +70,7 @@ export const actions = {
     commit('ADD_UPLOAD', object)
     return object
   },
-  async UpdateConcurrency ({commit, state}, entity) {
+  async UpdateConcurrency ({ commit, state }, entity) {
     commit('UPDATE_PROGRESS', entity)
 
     let updatedEntity = state.list.find(u => u.id === entity.id)
@@ -80,11 +80,11 @@ export const actions = {
 
     return entity
   },
-  async FinishUpload ({commit, state}, entity) {
+  async FinishUpload ({ commit, state }, entity) {
     commit('FINISH_UPLOAD', entity)
     return entity
   },
-  async RemoveUpload ({commit, state}, entity) {
+  async RemoveUpload ({ commit, state }, entity) {
     commit('REMOVE_UPLOAD', entity)
     return entity
   }

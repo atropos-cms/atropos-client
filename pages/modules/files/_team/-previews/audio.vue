@@ -1,11 +1,13 @@
 <template>
-  <div 
+  <div
     v-if="url"
     class="preview-audio-player">
 
     <vue-plyr
       :options="playerOptions">
-      <audio :src="url" :type="file.mime_type" />
+      <audio
+        :src="url"
+        :type="file.mime_type" />
     </vue-plyr>
 
   </div>
@@ -17,6 +19,8 @@ import 'vue-plyr/dist/vue-plyr.css'
 import downloadObject from '~/components/modules/files/objects/downloadObject'
 
 export default {
+
+  mixins: [downloadObject],
   props: {
     file: {
       type: Object,
@@ -24,8 +28,6 @@ export default {
       default: () => ({})
     }
   },
-
-  mixins: [downloadObject],
 
   data () {
     return {
@@ -36,14 +38,21 @@ export default {
     }
   },
 
-  async mounted () {
-    await this.fetchAudio()
-  },
-
   computed: {
     fileId () {
       return this.file.id
     }
+  },
+
+  watch: {
+    async fileId () {
+      // every time the selected file changes, reload the file
+      await this.fetchAudio()
+    }
+  },
+
+  async mounted () {
+    await this.fetchAudio()
   },
 
   methods: {
@@ -53,20 +62,12 @@ export default {
 
       try {
         // request a download token of type preview
-        let {token} = await this.waitForDownloadToken(this.file.id, 'preview')
+        let { token } = await this.waitForDownloadToken(this.file.id, 'preview')
         if (!token || !token.url) return
 
         // grab the url from the token
         this.url = token.url
       } catch (e) {}
-
-    }
-  },
-
-  watch: {
-    async fileId () {
-      // every time the selected file changes, reload the file
-      await this.fetchAudio()
     }
   }
 }

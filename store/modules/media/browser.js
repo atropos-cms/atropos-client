@@ -65,11 +65,11 @@ export const mutations = {
 
 export const actions = {
   // Files
-  async GetFiles ({commit, state, getters}) {
+  async GetFiles ({ commit, state, getters }) {
     if (state.files.length) return getters.files
 
     let currentPage = 1
-    let {data, pagination} = await GetFiles({page: currentPage})
+    let { data, pagination } = await GetFiles({ page: currentPage })
     let lastPage = pagination.lastPage
 
     commit('ADD_FILES', data)
@@ -77,7 +77,7 @@ export const actions = {
     // if there are more pages left, iterate through all pages
     while (currentPage < lastPage) {
       ++currentPage
-      let {data} = await GetFiles({page: currentPage})
+      let { data } = await GetFiles({ page: currentPage })
       commit('ADD_FILES', data)
     }
 
@@ -85,7 +85,7 @@ export const actions = {
 
     return data
   },
-  async GetFile ({commit, dispatch, state, getters}, id) {
+  async GetFile ({ commit, dispatch, state, getters }, id) {
     let file = getters.file(id)
     if (file) return file
 
@@ -94,23 +94,23 @@ export const actions = {
     commit('UPDATE_FILE', data)
     return data
   },
-  async UpdateFile ({commit, state}, file) {
+  async UpdateFile ({ commit, state }, file) {
     let data = await UpdateFile(file)
     commit('UPDATE_FILE', data)
     return data
   },
-  async CreateFile ({commit, state}, file) {
+  async CreateFile ({ commit, state }, file) {
     let data = await CreateFile(file)
     commit('UPDATE_FILE', data)
     return data
   },
-  async DeleteFile ({commit, state}, file) {
+  async DeleteFile ({ commit, state }, file) {
     let data = await DeleteFile(file)
     commit('DELETE_FILE', file)
     commit('SET_SELECTED_FILE', null)
     return data
   },
-  async SelectFile ({commit, state}, file) {
+  async SelectFile ({ commit, state }, file) {
     commit('SET_SELECTED_FILE', file)
   }
 }

@@ -32,7 +32,7 @@ export const mutations = {
 }
 
 export const actions = {
-  async LoginByUid ({commit, dispatch}, userInfo) {
+  async LoginByUid ({ commit, dispatch }, userInfo) {
     const data = await loginByUid(userInfo.uid, userInfo.password)
 
     setAuth(data.token.token)
@@ -43,7 +43,7 @@ export const actions = {
     await dispatch('administration/settings/GetSettings', undefined, { root: true })
     dispatch('modules/media/browser/GetFiles', undefined, { root: true })
   },
-  async GetProfile ({commit, state}, options = {}) {
+  async GetProfile ({ commit, state }, options = {}) {
     if (state.profile && !options.force) return state.profile
 
     let data = await getProfile()
@@ -55,12 +55,12 @@ export const actions = {
 
     return data
   },
-  async UpdateProfile ({commit, state}, profile) {
+  async UpdateProfile ({ commit, state }, profile) {
     let data = await updateProfile(profile)
     commit('SET_PROFILE', data)
     return data
   },
-  async LogOut ({commit, state}) {
+  async LogOut ({ commit, state }) {
     commit('SET_TOKEN', null)
     commit('SET_PROFILE', null)
 
@@ -69,16 +69,16 @@ export const actions = {
     removeAuth()
     resetUser()
   },
-  async SendEmailVerification ({commit, dispatch}) {
+  async SendEmailVerification ({ commit, dispatch }) {
     await sendEmailVerification()
   },
-  async VerifyEmail ({commit, dispatch}, token) {
+  async VerifyEmail ({ commit, dispatch }, token) {
     await verifyEmail(token)
   },
-  async SendPasswordReset ({commit, dispatch}, userInfo) {
+  async SendPasswordReset ({ commit, dispatch }, userInfo) {
     await sendPasswordReset(userInfo.uid)
   },
-  async ResetPassword ({commit, dispatch}, data) {
+  async ResetPassword ({ commit, dispatch }, data) {
     await ResetPassword(data)
   }
 }

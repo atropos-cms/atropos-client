@@ -96,7 +96,7 @@ export default {
 
   mixins: [saveOnInterval],
 
-  async asyncData ({store, params, redirect}) {
+  async asyncData ({ store, params, redirect }) {
     let block = await store.dispatch('modules/content/blocks/GetBlock', params.id).catch(e => {})
 
     if (!block) redirect({ name: 'modules-content-blocks' })
@@ -123,7 +123,7 @@ export default {
     blockChanged () {
       this._hasUnsavedChanges = true
     },
-    blockContentChanged ({html}) {
+    blockContentChanged ({ html }) {
       this.block.content = html
       this.blockChanged()
     },

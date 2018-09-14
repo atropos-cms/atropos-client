@@ -141,7 +141,7 @@ export default {
       let roles = this.list.roles
       roles.splice(1, 0, this.newRole)
 
-      this.$emit('update:list', {...this.list, roles: roles})
+      this.$emit('update:list', { ...this.list, roles: roles })
 
       this.closeModal()
     },
@@ -152,7 +152,7 @@ export default {
       let roles = this.list.roles
       roles.splice(removeIndex, 1)
 
-      this.$emit('update:list', {...this.list, roles: roles})
+      this.$emit('update:list', { ...this.list, roles: roles })
     }
   }
 }

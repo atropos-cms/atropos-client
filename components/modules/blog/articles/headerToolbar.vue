@@ -85,7 +85,7 @@ export default {
       loading: false,
       showHelpTooltip: false,
       showCreateArticleDialog: false,
-      articleCopy: {title: ''},
+      articleCopy: { title: '' },
       rules: {
         title: [
           { required: true, message: this.$t('validation.title.required'), trigger: 'change' }
@@ -112,7 +112,7 @@ export default {
     closeCreateArticleDialog () {
       this.showCreateArticleDialog = false
       this.loading = false
-      this.articleCopy = {title: ''}
+      this.articleCopy = { title: '' }
     },
     async createArticle () {
       await this.$refs.form.validate()

@@ -100,7 +100,7 @@ export default {
       }
 
       let html = this.atroposEditor.container.querySelector('.ql-editor').innerHTML
-      this.$emit('input', {html})
+      this.$emit('input', { html })
     }
   }
 }

@@ -54,7 +54,7 @@ export default {
     async traverseEntryTree (entry, parent = null) {
       // This entry is a file, so we are done here
       if (entry.isFile) {
-        entry.file(file => EventBus.$emit('modules-files-objects--upload-object', {file, parent}))
+        entry.file(file => EventBus.$emit('modules-files-objects--upload-object', { file, parent }))
       }
 
       // This entry is a directory, we have to go deeper

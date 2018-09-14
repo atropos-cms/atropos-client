@@ -62,9 +62,9 @@ export default {
     saveInTransaction
   ],
 
-  async asyncData ({store, params}) {
+  async asyncData ({ store, params }) {
     await store.dispatch('modules/mails/lists/GetLists')
-    return {list: _.cloneDeep(store.getters['modules/mails/lists/get'](params.id))}
+    return { list: _.cloneDeep(store.getters['modules/mails/lists/get'](params.id)) }
   },
 
   data () {

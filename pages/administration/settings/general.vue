@@ -154,9 +154,9 @@ export default {
 
   mixins: [saveInTransaction],
 
-  async asyncData ({store, params}) {
-    await store.dispatch('administration/settings/GetSettings', {stats: true})
-    return {settings: _.cloneDeep(store.getters['administration/settings/all'])}
+  async asyncData ({ store, params }) {
+    await store.dispatch('administration/settings/GetSettings', { stats: true })
+    return { settings: _.cloneDeep(store.getters['administration/settings/all']) }
   },
 
   data () {

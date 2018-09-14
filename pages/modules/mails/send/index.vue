@@ -133,7 +133,7 @@ export default {
     attachementItem
   },
 
-  async fetch ({store, params}) {
+  async fetch ({ store, params }) {
     await store.dispatch('modules/mails/lists/GetLists')
     await store.dispatch('administration/users/GetUsers')
   },
@@ -171,7 +171,7 @@ export default {
   },
 
   methods: {
-    mailContentChanged ({html}) {
+    mailContentChanged ({ html }) {
       this.mail.content = html
     },
 

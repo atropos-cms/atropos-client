@@ -2,7 +2,7 @@ import fetch from '~/utils/fetch'
 
 export async function GetRoles () {
   try {
-    let {data} = await fetch({
+    let { data } = await fetch({
       url: `/administration/roles`,
       method: 'get'
     })
@@ -13,7 +13,7 @@ export async function GetRoles () {
 
 export async function GetRole (id) {
   try {
-    let {data} = await fetch({
+    let { data } = await fetch({
       url: `/administration/roles/${id}`,
       method: 'get'
     })
@@ -23,7 +23,7 @@ export async function GetRole (id) {
 }
 
 export async function CreateRole (post) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/administration/roles`,
     method: 'post',
     data: post
@@ -32,7 +32,7 @@ export async function CreateRole (post) {
 }
 
 export async function UpdateRole (post) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/administration/roles/${post.id}`,
     method: 'put',
     data: post
@@ -41,7 +41,7 @@ export async function UpdateRole (post) {
 }
 
 export async function DeleteRole (post) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/administration/roles/${post.id}`,
     method: 'delete'
   })

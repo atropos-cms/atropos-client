@@ -61,9 +61,9 @@ export default {
     saveInTransaction
   ],
 
-  async asyncData ({store, params}) {
+  async asyncData ({ store, params }) {
     await store.dispatch('modules/files/GetTeams')
-    return {team: _.cloneDeep(store.getters['modules/files/team'](params.id))}
+    return { team: _.cloneDeep(store.getters['modules/files/team'](params.id)) }
   },
 
   data () {

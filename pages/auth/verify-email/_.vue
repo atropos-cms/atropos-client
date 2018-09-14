@@ -26,9 +26,9 @@ export default {
         })
       }
 
-      await this.$store.dispatch('profile/GetProfile', {force: true})
+      await this.$store.dispatch('profile/GetProfile', { force: true })
 
-      this.$router.replace({name: 'index'})
+      this.$router.replace({ name: 'index' })
     }
   }
 }

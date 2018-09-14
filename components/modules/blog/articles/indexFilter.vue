@@ -90,7 +90,7 @@ export default {
 
   methods: {
     filterChanged () {
-      this.$store.dispatch('modules/blog/articles/UpdatePagination', Object.assign({}, this.pagination, {currentPage: 1}))
+      this.$store.dispatch('modules/blog/articles/UpdatePagination', Object.assign({}, this.pagination, { currentPage: 1 }))
       this.$store.dispatch('modules/blog/articles/UpdateFilters', Object.assign({}, this.filterForm))
     }
   }

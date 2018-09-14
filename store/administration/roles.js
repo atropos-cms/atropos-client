@@ -49,14 +49,14 @@ export const mutations = {
 }
 
 export const actions = {
-  async GetRoles ({commit, state, getters}, {force} = {}) {
+  async GetRoles ({ commit, state, getters }, { force } = {}) {
     if (state.listLoaded && !force) return state.list
 
     let data = await GetRoles()
     commit('SET_ROLES', data)
     return getters.list
   },
-  async GetRole ({commit, state, getters}, id) {
+  async GetRole ({ commit, state, getters }, id) {
     if (!id) return nullRole
     if (getters.get(id) !== nullRole) return getters.get(id)
 
@@ -64,17 +64,17 @@ export const actions = {
     commit('UPDATE_ROLE', data)
     return data
   },
-  async CreateRole ({commit, state}, role) {
+  async CreateRole ({ commit, state }, role) {
     let data = await CreateRole(role)
     commit('ADD_ROLE', data)
     return data
   },
-  async UpdateRole ({commit, state}, role) {
+  async UpdateRole ({ commit, state }, role) {
     let data = await UpdateRole(role)
     commit('UPDATE_ROLE', data)
     return data
   },
-  async DeleteRole ({commit, state}, role) {
+  async DeleteRole ({ commit, state }, role) {
     let data = await DeleteRole(role)
     commit('DELETE_ROLE', role)
     return data

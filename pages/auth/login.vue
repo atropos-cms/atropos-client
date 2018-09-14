@@ -147,8 +147,8 @@ export default {
         password: ''
       },
       loginRules: {
-        uid: [{required: true, message: this.$t('validation.login-email.required'), trigger: 'change'}],
-        password: [{required: true, message: this.$t('validation.login-password.required'), trigger: 'change'}]
+        uid: [{ required: true, message: this.$t('validation.login-email.required'), trigger: 'change' }],
+        password: [{ required: true, message: this.$t('validation.login-password.required'), trigger: 'change' }]
       },
       pwdType: 'password',
       loading: false,
@@ -216,7 +216,7 @@ export default {
       }
     },
 
-    handleError ({message, status, headers}) {
+    handleError ({ message, status, headers }) {
       if (message.match(/E_ACCOUNT_NOT_ACTIVATED:.*/g)) {
         return this.$message({
           message: this.$t('errors.login-account-not-activated'),
@@ -243,7 +243,7 @@ export default {
 
       if (status === 429) {
         return this.$message({
-          message: this.$t('errors.too-many-requests', {retryAfter: headers['retry-after']}),
+          message: this.$t('errors.too-many-requests', { retryAfter: headers['retry-after'] }),
           type: 'error',
           duration: 8 * 1000
         })
@@ -265,7 +265,7 @@ export default {
     },
 
     redirectAfterSucessfulLogin () {
-      let route = {name: 'index'}
+      let route = { name: 'index' }
 
       if (this.$route.query.redirect) {
         route = this.$route.query.redirect

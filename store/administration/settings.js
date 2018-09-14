@@ -21,25 +21,25 @@ export const getters = {
 
 export const mutations = {
   SET_SETTINGS: (state, settings) => {
-    state.settings = {...state.settings, ...settings}
+    state.settings = { ...state.settings, ...settings }
   }
 }
 
 export const actions = {
-  async GetSettings ({commit, state}, {stats} = {stats: false}) {
-    let data = await GetSettings({stats})
+  async GetSettings ({ commit, state }, { stats } = { stats: false }) {
+    let data = await GetSettings({ stats })
     commit('SET_SETTINGS', data)
 
     return data
   },
-  async GetSetting ({dispatch, state, getters}, key) {
+  async GetSetting ({ dispatch, state, getters }, key) {
     if (!key) return null
     if (getters.loaded) return getters.get(key)
 
     await dispatch('GetSettings')
     return getters.get(key)
   },
-  async UpdateSettings ({commit, state}, settings) {
+  async UpdateSettings ({ commit, state }, settings) {
     let data = await UpdateSettings(settings)
     commit('SET_SETTINGS', data)
 

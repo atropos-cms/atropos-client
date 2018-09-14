@@ -103,7 +103,7 @@ export const mutations = {
 }
 
 export const actions = {
-  addBackgroundTask ({commit}, task) {
+  addBackgroundTask ({ commit }, task) {
     let taskObject = {
       id: Math.random().toString(36).substr(2, 9),
       type: task.type || 'background-task',
@@ -116,35 +116,35 @@ export const actions = {
     commit('ADD_BACKGROUNDTASK', taskObject)
     return taskObject
   },
-  updateBackgroundTask ({commit}, task) {
+  updateBackgroundTask ({ commit }, task) {
     commit('UPDATE_BACKGROUNDTASK', task)
   },
-  removeBackgroundTask ({commit, state}, task) {
+  removeBackgroundTask ({ commit, state }, task) {
     let taskID = task.id || task
 
     let taskObject = state.backgroundTasks.find(t => t.id === taskID)
 
-    commit('UPDATE_BACKGROUNDTASK', {...taskObject, removed: true})
+    commit('UPDATE_BACKGROUNDTASK', { ...taskObject, removed: true })
 
     setTimeout(() => {
       commit('REMOVE_BACKGROUNDTASK', taskID)
     }, 500)
   },
-  openSubmenu ({commit}, name) {
+  openSubmenu ({ commit }, name) {
     commit('CLOSE_ALL_SUBMENU')
     commit('OPEN_SUBMENU', name)
   },
-  closeSubmenu ({commit}, name) {
+  closeSubmenu ({ commit }, name) {
     commit('CLOSE_SUBMENU', name)
   },
-  toggleSubmenu ({commit}, name) {
+  toggleSubmenu ({ commit }, name) {
     commit('CLOSE_ALL_SUBMENU')
     commit('TOGGLE_SUBMENU', name)
   },
-  toggleSidebarCollapse ({commit}) {
+  toggleSidebarCollapse ({ commit }) {
     commit('TOGGLE_SIDEBAR_COLLAPSED')
   },
-  toggleShowFilters ({commit}) {
+  toggleShowFilters ({ commit }) {
     commit('TOGGLE_SHOW_FILTERS')
   }
 }

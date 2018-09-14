@@ -32,18 +32,18 @@ export default {
     async select (event) {
       event.stopPropagation()
       EventBus.$emit('modules-files-objects--close-contextmenu', event)
-      EventBus.$emit('modules-files-objects--select-object', {event, id: this.file.id})
+      EventBus.$emit('modules-files-objects--select-object', { event, id: this.file.id })
     },
     async deselect (event) {
       event.stopPropagation()
       EventBus.$emit('modules-files-objects--close-contextmenu', event)
-      EventBus.$emit('modules-files-objects--deselect-object', {event, id: this.file.id})
+      EventBus.$emit('modules-files-objects--deselect-object', { event, id: this.file.id })
     },
     async contextMenu (event) {
       event.stopPropagation()
       event.preventDefault()
       if (!this.isSelected) {
-        EventBus.$emit('modules-files-objects--select-object', {event, id: this.file.id})
+        EventBus.$emit('modules-files-objects--select-object', { event, id: this.file.id })
       }
       EventBus.$emit('modules-files-objects--open-contextmenu', event)
     },

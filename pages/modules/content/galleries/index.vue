@@ -35,7 +35,7 @@ export default {
 
   mixins: [saveOnInterval],
 
-  async asyncData ({store, params, redirect}) {
+  async asyncData ({ store, params, redirect }) {
     await store.dispatch('modules/content/galleries/GetGalleries')
     let galleries = store.getters['modules/content/galleries/list']
 
@@ -52,7 +52,7 @@ export default {
 
   methods: {
     sorted (newList) {
-      this.galleries = newList.map((gallery, index) => ({...gallery, order: index}))
+      this.galleries = newList.map((gallery, index) => ({ ...gallery, order: index }))
       this.galleryChanged()
     },
 

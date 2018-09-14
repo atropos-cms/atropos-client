@@ -94,7 +94,7 @@ export default {
 
     fileIsTooLarge () {
       this.$message({
-        message: this.$t('message.upload-file-button--file-too-large', {size: this.$options.filters.filesize(this.maxUploadSize)}),
+        message: this.$t('message.upload-file-button--file-too-large', { size: this.$options.filters.filesize(this.maxUploadSize) }),
         type: 'warning'
       })
     }

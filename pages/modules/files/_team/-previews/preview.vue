@@ -14,10 +14,10 @@
             v-if="previewImage"
             :preview-src="previewSrc"/>
 
-          <audio-preview 
+          <audio-preview
             v-if="previewAudio"
             :file="selection"/>
-            
+
         </transition>
       </div>
 
@@ -33,7 +33,7 @@ import UsesFileMimetype from '~/mixins/usesFileMimetype'
 export default {
   components: {
     audioPreview,
-    imagePreview,
+    imagePreview
   },
 
   mixins: [UsesFileMimetype],
@@ -69,7 +69,7 @@ export default {
   watch: {
     hasPreview () {
       if (this.hasPreview && this.previewSrc) return
-      this.$emit('fetchPreview', {id: this.selectionId})
+      this.$emit('fetchPreview', { id: this.selectionId })
     }
   }
 }

@@ -79,7 +79,7 @@ export default {
     closeCreateListDialog () {
       this.showCreateListDialog = false
       this.loading = false
-      this.listCopy = {name: ''}
+      this.listCopy = { name: '' }
     },
     async createList () {
       await this.$refs.form.validate()

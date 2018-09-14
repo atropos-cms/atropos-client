@@ -34,12 +34,12 @@ export const mutations = {
 }
 
 export const actions = {
-  async GetEvents ({commit, state}) {
+  async GetEvents ({ commit, state }) {
     let data = await GetEvents()
     commit('SET_EVENTS', data)
     return data
   },
-  async GetEvent ({commit, state, getters}, id) {
+  async GetEvent ({ commit, state, getters }, id) {
     if (!id) return null
     if (getters.get(id) !== null) return getters.get(id)
 
@@ -47,7 +47,7 @@ export const actions = {
     commit('UPDATE_EVENT', data)
     return data
   },
-  async DeleteEvent ({commit, state}, event) {
+  async DeleteEvent ({ commit, state }, event) {
     let data = await DeleteEvent(event)
     commit('DELETE_EVENT', event)
     return data

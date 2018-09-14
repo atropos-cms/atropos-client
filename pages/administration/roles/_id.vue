@@ -57,9 +57,9 @@ export default {
     rolePermissions
   },
 
-  async asyncData ({store, params}) {
+  async asyncData ({ store, params }) {
     await store.dispatch('administration/roles/GetRoles')
-    return {role: store.getters['administration/roles/get'](params.id)}
+    return { role: store.getters['administration/roles/get'](params.id) }
   },
 
   data () {

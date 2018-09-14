@@ -196,7 +196,7 @@ export default {
     // Fired then the openObjectDialog has a selected file
     handleObjectChange (event) {
       for (var i = 0; i < event.target.files.length; i++) {
-        EventBus.$emit('modules-files-objects--upload-object', {file: event.target.files.item(i), parent: null})
+        EventBus.$emit('modules-files-objects--upload-object', { file: event.target.files.item(i), parent: null })
       }
       this.$refs.fileForm.reset()
     }

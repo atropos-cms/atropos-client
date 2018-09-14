@@ -72,7 +72,7 @@ export default {
       loading: false,
       showHelpTooltip: false,
       showCreateGalleryDialog: false,
-      galleryCopy: {title: ''},
+      galleryCopy: { title: '' },
       rules: {
         title: [
           { required: true, message: this.$t('validation.title.required'), trigger: 'change' }
@@ -99,7 +99,7 @@ export default {
     closeCreateGalleryDialog () {
       this.showCreateGalleryDialog = false
       this.loading = false
-      this.galleryCopy = {title: ''}
+      this.galleryCopy = { title: '' }
     },
     async createGallery () {
       await this.$refs.form.validate()

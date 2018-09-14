@@ -98,7 +98,7 @@ export default {
 
       this.showUploadProgress = true
 
-      let {data} = await fetch({
+      let { data } = await fetch({
         url: `/modules/media/upload/${fileEntity.upload_token}`,
         method: 'post',
         data: formdata,

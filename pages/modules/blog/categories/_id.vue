@@ -74,7 +74,7 @@ export default {
 
   mixins: [saveOnInterval],
 
-  async asyncData ({store, params, redirect}) {
+  async asyncData ({ store, params, redirect }) {
     let category = await store.dispatch('modules/blog/categories/GetCategory', params.id).catch(e => {})
 
     if (!category) redirect({ name: 'modules-blog-categories' })

@@ -97,7 +97,7 @@ export default {
     userSecurity
   },
 
-  async fetch ({store}) {
+  async fetch ({ store }) {
     await store.dispatch('administration/users/GetUsers')
   },
 

@@ -28,7 +28,7 @@ export default function ({ store, redirect, route, error }) {
   let name = route.name.replace('-id', '')
   let meta = route.meta[0] || {}
 
-  if (meta && !checkPermission({store}, meta, name)) {
+  if (meta && !checkPermission({ store }, meta, name)) {
     error({ statusCode: 403, message: 'errors.permission-to-page-denied' })
   }
 }

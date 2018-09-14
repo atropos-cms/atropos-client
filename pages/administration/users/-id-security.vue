@@ -153,12 +153,12 @@ export default {
       this.sendingResetLink = true
 
       await Promise.all([
-        this.$store.dispatch('profile/SendPasswordReset', {uid: this.user.email}),
+        this.$store.dispatch('profile/SendPasswordReset', { uid: this.user.email }),
         this.$timeout(800)
       ])
 
       this.$message({
-        message: this.$t('message.password-reset-sent-title', {email: this.user.email}),
+        message: this.$t('message.password-reset-sent-title', { email: this.user.email }),
         type: 'success',
         duration: 3 * 1000
       })

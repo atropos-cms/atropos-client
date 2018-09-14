@@ -14,7 +14,7 @@ export default {
 
   computed: {
     route () {
-      return this.$router.resolve({name: this.item.name}).route.path
+      return this.$router.resolve({ name: this.item.name }).route.path
     },
 
     title () {

@@ -71,7 +71,7 @@ export default {
 
   mixins: [saveOnInterval],
 
-  async asyncData ({store, params, redirect}) {
+  async asyncData ({ store, params, redirect }) {
     let gallery = await store.dispatch('modules/content/galleries/GetGallery', params.id).catch(e => {})
 
     if (!gallery) redirect({ name: 'modules-content-galleries' })
@@ -103,7 +103,7 @@ export default {
 
       // map images to an object with id,
       // filter all images that are already in the gallery
-      let filesToAdd = files.map((image, index) => ({id: image.id, order: index}))
+      let filesToAdd = files.map((image, index) => ({ id: image.id, order: index }))
         .filter(f => !this.gallery.images.find(i => i.id === f.id))
 
       // add all images to the gallery
@@ -113,7 +113,7 @@ export default {
     },
 
     sorted (newList) {
-      this.gallery.images = newList.map((image, index) => ({...image, order: index}))
+      this.gallery.images = newList.map((image, index) => ({ ...image, order: index }))
       this.galleryChanged()
     },
 
@@ -150,7 +150,7 @@ export default {
     },
 
     async deleteSelection () {
-      await this.$confirm(this.$tc('message.modules-content-gallery-delete-images', this.selected.length, {number: this.selected.length}), this.$t('general.warning'), {
+      await this.$confirm(this.$tc('message.modules-content-gallery-delete-images', this.selected.length, { number: this.selected.length }), this.$t('general.warning'), {
         confirmButtonText: this.$t('general.yes'),
         cancelButtonText: this.$t('general.no'),
         type: 'warning'

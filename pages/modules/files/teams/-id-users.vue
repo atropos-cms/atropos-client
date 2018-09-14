@@ -161,7 +161,7 @@ export default {
       let users = this.team.users
       users.splice(1, 0, this.newUser)
 
-      this.$emit('update:team', {...this.team, users: users})
+      this.$emit('update:team', { ...this.team, users: users })
 
       this.closeModal()
     },
@@ -172,7 +172,7 @@ export default {
       let users = this.team.users
       users.splice(removeIndex, 1)
 
-      this.$emit('update:team', {...this.team, users: users})
+      this.$emit('update:team', { ...this.team, users: users })
     }
   }
 }

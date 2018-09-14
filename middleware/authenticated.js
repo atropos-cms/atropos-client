@@ -19,7 +19,7 @@ export default async function ({ store, redirect, route }) {
 
   // Add the current route as parameter if it is not ignored
   if (!ignoreRedirect.includes(route.path)) {
-    return redirect('/auth/login', {redirect: route.path})
+    return redirect('/auth/login', { redirect: route.path })
   }
 
   // redirect back to the login page

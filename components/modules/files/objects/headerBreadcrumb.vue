@@ -63,7 +63,7 @@ export default {
       if (parentId === null) return carry
 
       try {
-        let file = await this.$store.dispatch('modules/files/GetObject', {id: parentId})
+        let file = await this.$store.dispatch('modules/files/GetObject', { id: parentId })
         if (!file) return carry
 
         // check the length of the path
@@ -82,7 +82,7 @@ export default {
           await this.getParents(file.parent_id, carry)
         }
       } catch (e) {
-        return this.$router.push({name: 'modules-files-team-parent'})
+        return this.$router.push({ name: 'modules-files-team-parent' })
       }
 
       return carry

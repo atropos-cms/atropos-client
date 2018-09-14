@@ -45,7 +45,7 @@ export default {
     async input (value) {
       await this.$refs.form.validate()
 
-      this.$emit('update:list', {...this.list, name: value})
+      this.$emit('update:list', { ...this.list, name: value })
     }
   }
 }

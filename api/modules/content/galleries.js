@@ -1,7 +1,7 @@
 import fetch from '~/utils/fetch'
 
 export async function GetGalleries () {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: '/modules/content/galleries',
     method: 'get'
   })
@@ -9,7 +9,7 @@ export async function GetGalleries () {
 }
 
 export async function GetGallery (id) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/modules/content/galleries/${id}`,
     method: 'get'
   })
@@ -17,7 +17,7 @@ export async function GetGallery (id) {
 }
 
 export async function CreateGallery (block) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/modules/content/galleries`,
     method: 'post',
     data: block
@@ -26,7 +26,7 @@ export async function CreateGallery (block) {
 }
 
 export async function UpdateGallery (block) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/modules/content/galleries/${block.id}`,
     method: 'put',
     data: block
@@ -35,7 +35,7 @@ export async function UpdateGallery (block) {
 }
 
 export async function DeleteGallery (block) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/modules/content/galleries/${block.id}`,
     method: 'delete'
   })

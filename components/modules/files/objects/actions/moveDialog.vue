@@ -128,12 +128,12 @@ export default {
   methods: {
     async opened () {
       let file = this.$store.getters['modules/files/object'](this.objectId)
-      let parent = await this.$store.dispatch('modules/files/GetObject', {id: file.parent_id})
+      let parent = await this.$store.dispatch('modules/files/GetObject', { id: file.parent_id })
 
       this.parent = parent
       this.selected = null
 
-      await this.$store.dispatch('modules/files/GetObjects', {force: true, parent: this.parent})
+      await this.$store.dispatch('modules/files/GetObjects', { force: true, parent: this.parent })
     },
 
     async action () {
@@ -171,12 +171,12 @@ export default {
     async open (objectId) {
       if (!this.isSelectable(objectId)) return
 
-      let parent = await this.$store.dispatch('modules/files/GetObject', {id: objectId})
+      let parent = await this.$store.dispatch('modules/files/GetObject', { id: objectId })
 
       this.parent = parent
       this.selected = null
 
-      await this.$store.dispatch('modules/files/GetObjects', {force: true, parent: objectId})
+      await this.$store.dispatch('modules/files/GetObjects', { force: true, parent: objectId })
     },
 
     async backToParent () {

@@ -60,7 +60,7 @@ export default {
     return {
       loading: false,
       showCreateCategoryDialog: false,
-      categoryCopy: {title: ''},
+      categoryCopy: { title: '' },
       rules: {
         title: [
           { required: true, message: this.$t('validation.title.required'), trigger: 'change' }
@@ -77,7 +77,7 @@ export default {
     closeCreateCategoryDialog () {
       this.showCreateCategoryDialog = false
       this.loading = false
-      this.categoryCopy = {title: ''}
+      this.categoryCopy = { title: '' }
     },
     async createCategory () {
       await this.$refs.form.validate()

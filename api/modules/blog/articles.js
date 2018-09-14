@@ -1,7 +1,7 @@
 import fetch from '~/utils/fetch'
 
 export async function GetArticles () {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: '/modules/blog/articles',
     method: 'get'
   })
@@ -9,7 +9,7 @@ export async function GetArticles () {
 }
 
 export async function GetArticle (id) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/modules/blog/articles/${id}`,
     method: 'get'
   })
@@ -17,7 +17,7 @@ export async function GetArticle (id) {
 }
 
 export async function CreateArticle (post) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/modules/blog/articles`,
     method: 'post',
     data: post
@@ -26,7 +26,7 @@ export async function CreateArticle (post) {
 }
 
 export async function UpdateArticle (post) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/modules/blog/articles/${post.id}`,
     method: 'put',
     data: post
@@ -35,7 +35,7 @@ export async function UpdateArticle (post) {
 }
 
 export async function DeleteArticle (post) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/modules/blog/articles/${post.id}`,
     method: 'delete'
   })

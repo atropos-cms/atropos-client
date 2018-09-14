@@ -6,7 +6,7 @@ export async function loginByUid (uid, password, pvq) {
     password,
     pvq
   }
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: '/auth/login',
     method: 'post',
     data: post
@@ -15,16 +15,16 @@ export async function loginByUid (uid, password, pvq) {
 }
 
 export async function refreshToken (refreshToken) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: '/auth/refresh',
     method: 'post',
-    data: {refreshToken}
+    data: { refreshToken }
   })
   return data
 }
 
 export async function logout () {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: '/auth/logout',
     method: 'post'
   })
@@ -32,7 +32,7 @@ export async function logout () {
 }
 
 export async function getProfile () {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: '/me',
     method: 'get'
   })
@@ -40,7 +40,7 @@ export async function getProfile () {
 }
 
 export async function updateProfile (post) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: '/me',
     method: 'put',
     data: post
@@ -49,7 +49,7 @@ export async function updateProfile (post) {
 }
 
 export async function sendEmailVerification () {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: '/me/send-email-verification',
     method: 'post'
   })
@@ -57,10 +57,10 @@ export async function sendEmailVerification () {
 }
 
 export async function verifyEmail (token) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/me/verify-email`,
     method: 'post',
-    data: {token}
+    data: { token }
   })
   return data
 }

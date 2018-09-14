@@ -44,7 +44,7 @@ export default {
   methods: {
     async openLink () {
       if (!this.item.link || !this.item.open) return
-      this.$router.push({name: this.item.link})
+      this.$router.push({ name: this.item.link })
     },
     async openSubmenu () {
       await this.$store.dispatch('ui/openSubmenu', this.item.name)

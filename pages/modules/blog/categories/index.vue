@@ -70,7 +70,7 @@ export default {
   },
 
   methods: {
-    handleCommand ({command, data}) {
+    handleCommand ({ command, data }) {
       switch (command) {
         case 'edit':
           return this.editCategory(data)

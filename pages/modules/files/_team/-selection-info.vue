@@ -24,7 +24,7 @@
         <el-collapse
           v-model="activeNames">
 
-          <preview 
+          <preview
             v-if="hasSelection"
             :selection="selection"
             @fetchPreview="fetchPreview"/>
@@ -156,15 +156,15 @@ export default {
   },
 
   mounted () {
-    this.fetchPreview({id: this.selectionId})
+    this.fetchPreview({ id: this.selectionId })
   },
 
   methods: {
-    async fetchPreview ({id}) {
+    async fetchPreview ({ id }) {
       if (!this.selectionId) return
       if (id !== this.selectionId) return
 
-      await this.$store.dispatch('modules/files/GetObject', {id: this.selectionId, preview: true})
+      await this.$store.dispatch('modules/files/GetObject', { id: this.selectionId, preview: true })
     },
     mouseenter () {
       this.$store.dispatch('modules/files/LockObjectSelection', true)

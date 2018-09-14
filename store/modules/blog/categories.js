@@ -44,14 +44,14 @@ export const mutations = {
 }
 
 export const actions = {
-  async GetCategories ({commit, state}) {
+  async GetCategories ({ commit, state }) {
     if (state.list) return state.list
 
     let data = await GetCategories()
     commit('SET_CATEGORIES', data)
     return data
   },
-  async GetCategory ({commit, dispatch, state, getters}, id) {
+  async GetCategory ({ commit, dispatch, state, getters }, id) {
     if (getters.get(id) !== nullCategory) return getters.get(id)
 
     await dispatch('GetCategories')
@@ -59,17 +59,17 @@ export const actions = {
     commit('UPDATE_CATEGORY', data)
     return getters.get(id)
   },
-  async CreateCategory ({commit, state}, category) {
+  async CreateCategory ({ commit, state }, category) {
     let data = await CreateCategory(category)
     commit('ADD_CATEGORY', data)
     return data
   },
-  async UpdateCategory ({commit, state}, category) {
+  async UpdateCategory ({ commit, state }, category) {
     let data = await UpdateCategory(category)
     commit('UPDATE_CATEGORY', data)
     return data
   },
-  async DeleteCategory ({commit, state}, category) {
+  async DeleteCategory ({ commit, state }, category) {
     let data = await DeleteCategory(category)
     commit('REMOVE_CATEGORY', category)
     return data

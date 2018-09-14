@@ -1,7 +1,7 @@
 import fetch from '~/utils/fetch'
 
 export async function GetBlocks () {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: '/modules/content/blocks',
     method: 'get'
   })
@@ -9,7 +9,7 @@ export async function GetBlocks () {
 }
 
 export async function GetBlock (id) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/modules/content/blocks/${id}`,
     method: 'get'
   })
@@ -17,7 +17,7 @@ export async function GetBlock (id) {
 }
 
 export async function CreateBlock (block) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/modules/content/blocks`,
     method: 'post',
     data: block
@@ -26,7 +26,7 @@ export async function CreateBlock (block) {
 }
 
 export async function UpdateBlock (block) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/modules/content/blocks/${block.id}`,
     method: 'put',
     data: block
@@ -35,7 +35,7 @@ export async function UpdateBlock (block) {
 }
 
 export async function DeleteBlock (block) {
-  let {data} = await fetch({
+  let { data } = await fetch({
     url: `/modules/content/blocks/${block.id}`,
     method: 'delete'
   })

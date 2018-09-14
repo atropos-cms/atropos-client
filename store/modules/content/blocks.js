@@ -43,14 +43,14 @@ export const mutations = {
 }
 
 export const actions = {
-  async GetBlocks ({commit, state}) {
+  async GetBlocks ({ commit, state }) {
     if (state.list) return state.list
 
     let data = await GetBlocks()
     commit('SET_BLOCKS', data)
     return data
   },
-  async GetBlock ({commit, dispatch, state, getters}, id) {
+  async GetBlock ({ commit, dispatch, state, getters }, id) {
     let block = getters.get(id)
     if (block && block.content) return block
 
@@ -59,17 +59,17 @@ export const actions = {
     commit('UPDATE_BLOCK', data)
     return getters.get(id)
   },
-  async CreateBlock ({commit, state}, block) {
+  async CreateBlock ({ commit, state }, block) {
     let data = await CreateBlock(block)
     commit('ADD_BLOCK', data)
     return data
   },
-  async UpdateBlock ({commit, state}, block) {
+  async UpdateBlock ({ commit, state }, block) {
     let data = await UpdateBlock(block)
     commit('UPDATE_BLOCK', data)
     return data
   },
-  async DeleteBlock ({commit, state}, block) {
+  async DeleteBlock ({ commit, state }, block) {
     let data = await DeleteBlock(block)
     commit('REMOVE_BLOCK', block)
     return data

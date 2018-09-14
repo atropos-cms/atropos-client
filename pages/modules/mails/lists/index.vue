@@ -62,7 +62,7 @@ export default {
     HeaderToolbar
   },
 
-  async fetch ({store, params}) {
+  async fetch ({ store, params }) {
     await store.dispatch('modules/mails/lists/GetLists')
   },
 
@@ -73,7 +73,7 @@ export default {
   },
 
   methods: {
-    handleCommand ({command, data}) {
+    handleCommand ({ command, data }) {
       switch (command) {
         case 'edit':
           return this.editList(data)
@@ -82,7 +82,7 @@ export default {
       }
     },
     async editList (team) {
-      this.$router.push({ name: 'modules-mails-lists-id', params: {id: team.id} })
+      this.$router.push({ name: 'modules-mails-lists-id', params: { id: team.id } })
     },
     async deleteList (team) {
       await this.$confirm(this.$t('message.modules-mails-lists-delete'), this.$t('general.warning'), {

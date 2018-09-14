@@ -218,7 +218,7 @@ export default {
   methods: {
     // Rename File
     openMediaBrowser (options = {}) {
-      this.options = {...defaultOptions, ...options}
+      this.options = { ...defaultOptions, ...options }
       this.showMediaBrowserDialog = true
 
       // load files from the server

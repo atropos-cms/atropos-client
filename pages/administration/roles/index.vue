@@ -63,8 +63,8 @@ export default {
     HeaderToolbar
   },
 
-  async fetch ({store, params}) {
-    await store.dispatch('administration/roles/GetRoles', {force: true})
+  async fetch ({ store, params }) {
+    await store.dispatch('administration/roles/GetRoles', { force: true })
   },
 
   computed: {
@@ -74,7 +74,7 @@ export default {
   },
 
   methods: {
-    handleCommand ({command, data}) {
+    handleCommand ({ command, data }) {
       switch (command) {
         case 'edit':
           return this.editRole(data)

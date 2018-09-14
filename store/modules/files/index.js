@@ -115,7 +115,7 @@ export const mutations = {
   },
 
   // Objects
-  SET_OBJECTS: (state, {team, parent, data}) => {
+  SET_OBJECTS: (state, { team, parent, data }) => {
     let teamObjects = state.objects.find(t => t.team === team && t.parent === parent)
 
     if (teamObjects) {
@@ -171,15 +171,15 @@ export const mutations = {
 
 export const actions = {
   // View
-  async ChangeView ({commit, state}, view) {
+  async ChangeView ({ commit, state }, view) {
     commit('SET_VIEW', view)
   },
-  async ShowInfo ({commit, state}, info) {
+  async ShowInfo ({ commit, state }, info) {
     commit('SET_INFO', info)
   },
 
   // Teams
-  async GetTeams ({commit, statem, getters}) {
+  async GetTeams ({ commit, statem, getters }) {
     if (state.teams) return state.teams
 
     let data = await GetTeams()
@@ -187,7 +187,7 @@ export const actions = {
 
     return getters.teams
   },
-  async GetTeam ({commit, dispatch, state, getters}, id) {
+  async GetTeam ({ commit, dispatch, state, getters }, id) {
     let team = getters.getTeam(id)
     if (team) return team
 
@@ -196,23 +196,23 @@ export const actions = {
     commit('UPDATE_TEAM', data)
     return getters.getTeam(id)
   },
-  async CreateTeam ({commit, state}, team) {
+  async CreateTeam ({ commit, state }, team) {
     let data = await CreateTeam(team)
     commit('ADD_TEAM', data)
     return data
   },
-  async UpdateTeam ({commit, state}, team) {
+  async UpdateTeam ({ commit, state }, team) {
     let data = await UpdateTeam(team)
     commit('UPDATE_TEAM', data)
     return data
   },
-  async DeleteTeam ({commit, state}, team) {
+  async DeleteTeam ({ commit, state }, team) {
     let data = await DeleteTeam(team)
     commit('DELETE_TEAM', team)
     commit('SET_SELECTED_TEAM', null)
     return data
   },
-  async SelectTeam ({commit, state, getters}, teamId) {
+  async SelectTeam ({ commit, state, getters }, teamId) {
     let team = getters.team(teamId)
 
     if (!team && state.teams.length) {
@@ -226,7 +226,7 @@ export const actions = {
   },
 
   // Objects
-  async GetObjects ({commit, state, getters}, {force, parent, team} = {}) {
+  async GetObjects ({ commit, state, getters }, { force, parent, team } = {}) {
     if (!force && getters.objects(parent)) return getters.objects(parent)
 
     if (!state.selectedTeam) return
@@ -239,7 +239,7 @@ export const actions = {
 
     return data
   },
-  async GetObject ({commit, dispatch, state, getters}, {id, team, preview} = {preview: false}) {
+  async GetObject ({ commit, dispatch, state, getters }, { id, team, preview } = { preview: false }) {
     let object = getters.object(id)
 
     // check for preview
@@ -248,22 +248,22 @@ export const actions = {
 
     let teamId = team !== undefined ? team : state.selectedTeam
 
-    await dispatch('GetObjects', {team: teamId})
-    let data = await GetObject(teamId, id, {preview})
+    await dispatch('GetObjects', { team: teamId })
+    let data = await GetObject(teamId, id, { preview })
     commit('UPDATE_OBJECT', data)
     return data
   },
-  async UpdateObject ({commit, state}, object) {
+  async UpdateObject ({ commit, state }, object) {
     let data = await UpdateObject(state.selectedTeam, object)
     commit('UPDATE_OBJECT', data)
     return data
   },
-  async CreateObject ({commit, state}, object) {
+  async CreateObject ({ commit, state }, object) {
     let data = await CreateObject(state.selectedTeam, object)
     commit('UPDATE_OBJECT', data)
     return data
   },
-  async DeleteObject ({commit, state}, object) {
+  async DeleteObject ({ commit, state }, object) {
     commit('SET_SELECTED_OBJECTS', null)
     commit('DELETE_OBJECT', object)
     try {
@@ -273,21 +273,21 @@ export const actions = {
     }
     return object
   },
-  async StarObject ({commit, state}, object) {
+  async StarObject ({ commit, state }, object) {
     let data = await StarObject(state.selectedTeam, object)
     commit('UPDATE_OBJECT', data)
     return data
   },
-  async UnstarObject ({commit, state}, object) {
+  async UnstarObject ({ commit, state }, object) {
     let data = await UnstarObject(state.selectedTeam, object)
     commit('UPDATE_OBJECT', data)
     return data
   },
-  async SelectObject ({commit, state}, objects) {
+  async SelectObject ({ commit, state }, objects) {
     if (state.lockObjectSelection) return
     commit('SET_SELECTED_OBJECTS', objects)
   },
-  async OpenFolder ({commit, dispatch, state}, parentId) {
+  async OpenFolder ({ commit, dispatch, state }, parentId) {
     parentId = !parentId || parentId === 'null' ? null : parentId
     commit('SET_PARENT', parentId)
     commit('SET_SELECTED_OBJECTS', null)
@@ -297,13 +297,13 @@ export const actions = {
     let data = await GetObjects(state.selectedTeam, state.parent)
     commit('SET_OBJECTS', { team: state.selectedTeam, parent: state.parent, data })
   },
-  async ReloadFolder ({commit, dispatch, state}) {
+  async ReloadFolder ({ commit, dispatch, state }) {
     if (!state.selectedTeam) return
 
     let data = await GetObjects(state.selectedTeam, state.parent)
     commit('SET_OBJECTS', { team: state.selectedTeam, parent: state.parent, data })
   },
-  async LockObjectSelection ({commit, state}, locked) {
+  async LockObjectSelection ({ commit, state }, locked) {
     commit('SET_LOCK_OBJECT_SELECTION', locked)
   }
 }

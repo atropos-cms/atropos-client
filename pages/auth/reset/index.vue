@@ -99,7 +99,7 @@ export default {
         uid: ''
       },
       resetRules: {
-        uid: [{required: true, message: this.$t('validation.reset-email.required'), trigger: 'blur'}]
+        uid: [{ required: true, message: this.$t('validation.reset-email.required'), trigger: 'blur' }]
       },
       loading: false,
       showSuccessMessage: false
@@ -125,14 +125,14 @@ export default {
       try {
         await this.$store.dispatch('profile/SendPasswordReset', this.resetForm)
         this.showSuccessMessage = true
-      } catch ({response}) {
+      } catch ({ response }) {
 
       } finally {
         this.loading = false
       }
     },
     redirectToLogin () {
-      this.$router.replace({name: 'auth-login'})
+      this.$router.replace({ name: 'auth-login' })
     }
   }
 }

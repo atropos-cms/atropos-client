@@ -61,7 +61,7 @@ export default {
     Info
   },
 
-  async asyncData ({store, params, redirect}) {
+  async asyncData ({ store, params, redirect }) {
     let file = await store.dispatch('modules/media/browser/GetFile', params.id).catch(e => {})
 
     if (!file) redirect({ name: 'modules-media-files' })

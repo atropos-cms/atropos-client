@@ -43,5 +43,5 @@ export function paginate (list, { currentPage, pageSize }) {
 
   list = list.slice(currentPage * pageSize, (currentPage + 1) * pageSize)
 
-  return {list, total: total}
+  return { list, total: total }
 }

@@ -143,7 +143,7 @@ export default {
       let users = this.list.users
       users.splice(1, 0, this.newUser)
 
-      this.$emit('update:list', {...this.list, users: users})
+      this.$emit('update:list', { ...this.list, users: users })
 
       this.closeModal()
     },
@@ -154,7 +154,7 @@ export default {
       let users = this.list.users
       users.splice(removeIndex, 1)
 
-      this.$emit('update:list', {...this.list, users: users})
+      this.$emit('update:list', { ...this.list, users: users })
     }
   }
 }

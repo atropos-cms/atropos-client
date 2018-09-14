@@ -37,7 +37,7 @@ export const mutations = {
 }
 
 export const actions = {
-  async nuxtServerInit ({commit, dispatch, getters}, {req}) {
+  async nuxtServerInit ({ commit, dispatch, getters }, { req }) {
     // reset the cached tokens and settings on each request,
     // so we do not leak information between requests
     resetAuthCache()
@@ -63,14 +63,14 @@ export const actions = {
     // this will also update the locale on the i18n instance
     commit('SET_APIMETA', await getMeta())
     // update the locale in the store
-    commit('administration/settings/SET_SETTINGS', {locale: i18nInstance.locale})
+    commit('administration/settings/SET_SETTINGS', { locale: i18nInstance.locale })
 
     // Collaps Sidebar if we are on a mobile device
     let md = new MobileDetect(req.headers['user-agent'])
     commit('ui/SET_SIDEBAR_COLLAPSED', !!md.mobile())
   },
 
-  async nuxtClientInit ({commit, dispatch, getters}) {
+  async nuxtClientInit ({ commit, dispatch, getters }) {
     let authToken = getters['profile/token']
     // user is authenticated
     if (authToken) {
@@ -91,11 +91,11 @@ export const actions = {
     updateApplicationSettings(settings)
   },
 
-  async refreshApiStatus ({commit, dispatch}) {
+  async refreshApiStatus ({ commit, dispatch }) {
     commit('SET_APIMETA', await getMeta())
   },
 
-  async refreshJWTToken ({commit, dispatch, getters}, req) {
+  async refreshJWTToken ({ commit, dispatch, getters }, req) {
     if (!getAuth(req)) return
 
     let token = getRefresh(req)
@@ -110,7 +110,7 @@ export const actions = {
     } catch (e) {}
   },
 
-  setRouteMeta ({commit}, routeMeta) {
+  setRouteMeta ({ commit }, routeMeta) {
     commit('SET_ROUTEMETA', routeMeta)
   }
 }
