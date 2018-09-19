@@ -83,9 +83,10 @@
   },
   "babel": {
     "presets": [
-      "env"
+      "@babel/preset-env"
     ]
   },
+  "browserslist": "> 0.5%, not dead",
   "config": {
     "nuxt": {
       "host": "127.0.0.1",
