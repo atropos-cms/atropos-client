@@ -1,16 +1,23 @@
 <template>
-  <div
-    v-if="url"
-    class="preview-audio-player">
+  <span 
+    v-loading="loading" 
+    style="flex: 1;">
+    <div
+      v-if="url"   
+      class="preview-audio-player">
 
-    <vue-plyr
-      :options="playerOptions">
-      <audio
-        :src="url"
-        :type="file.mime_type" />
-    </vue-plyr>
+      <vue-plyr
+        ref="player"
+        :options="playerOptions"
+        :emit="['canplay']"
+        @canplay="canplay">
+        <audio
+          :src="url"
+          :type="file.mime_type" />
+      </vue-plyr>
 
-  </div>
+    </div>
+  </span>  
 </template>
 
 <script type="text/babel">
@@ -32,6 +39,7 @@ export default {
   data () {
     return {
       url: null,
+      loading: true,
       playerOptions: {
         controls: ['play-large', 'play', 'progress', 'current-time']
       }
@@ -59,7 +67,7 @@ export default {
     async fetchAudio () {
       // reset file url
       this.url = null
-
+  
       try {
         // request a download token of type preview
         let { token } = await this.waitForDownloadToken(this.file.id, 'preview')
@@ -68,6 +76,9 @@ export default {
         // grab the url from the token
         this.url = token.url
       } catch (e) {}
+    },
+    async canplay () {
+      this.loading = false
     }
   }
 }
