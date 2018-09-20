@@ -74,7 +74,6 @@ module.exports = {
     { src: '~/plugins/vue-truncate.js', ssr: true },
     { src: '~/plugins/vue-async-computed.js', ssr: true },
     { src: '~/plugins/vue-click-outside.js', ssr: true },
-    { src: '~/plugins/vuebar.js', ssr: true },
     { src: '~/plugins/nuxt-client-init', ssr: false },
     { src: '~/plugins/vue-quill-editor', ssr: false },
     { src: '~/plugins/atropos.js', ssr: true },

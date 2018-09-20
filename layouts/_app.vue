@@ -3,7 +3,11 @@
     :class="{'--is-drag-over-page': dragIsOverPage}"
     class="app-wrapper"
     @contextmenu="contextMenu">
+
+    <!-- Sidebar -->
     <default-aside/>
+
+    <!-- Main Content -->
     <div
       :class="{'logged-in': loggedIn}"
       class="app-container">
@@ -31,13 +35,7 @@
         :class="{'logged-in': loggedIn}"
         class="app-content">
 
-        <div
-          v-bar
-          class="app-scrollbar-container">
-          <div class="app-scrollbar-view">
-            <slot/>
-          </div>
-        </div>
+        <slot/>
 
       </el-main>
     </div>
