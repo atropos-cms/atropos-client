@@ -42,3 +42,11 @@
     }
   }
 }
+
+.app-container.logged-in {
+  padding-left: 250px;
+  transition: padding-left $--transition-speed;
+}
+.el-aside.el-aside--collapsed + .app-container.logged-in {
+  padding-left: 64px;
+}
