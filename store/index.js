@@ -38,6 +38,11 @@ export const mutations = {
 
 export const actions = {
   async nuxtServerInit ({ commit, dispatch, getters }, { req }) {
+    // Quard against dev-tools requests
+    // If the requested url ends with .js.map it is a request
+    // from dev-tools and we do not need to render a page
+    if (req.url.match(/.*\.js\.map$/)) return
+
     // reset the cached tokens and settings on each request,
     // so we do not leak information between requests
     resetAuthCache()
