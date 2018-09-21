@@ -16,7 +16,7 @@
         v-if="shouldShouwBackgroundImage"
         class="app-container--background">
 
-        <transition name="slow-slide-fade">
+        <transition name="login-background-transition">
           <div v-show="backgroundImageLoaded">
             <div class="app-container--background-overlay"/>
             <img

@@ -11,12 +11,11 @@
     .app-container--background {
       display: flex;
       position: absolute;
-      width: 110vw;
-      height: 110vh;
+      width: 100vw;
+      height: 100vh;
       left: 0;
       top: 0;
-      margin-top: -20px;
-      margin-left: -20px;
+      overflow: hidden;
 
       div {
         display: flex;
@@ -28,8 +27,8 @@
       background: linear-gradient(rgba($--color-white, 0.4), rgba(0, 0, 0, 0)) no-repeat;
       opacity: 1;
       position: absolute;
-      width: 110vw;
-      height: 110vh;
+      width: 100vw;
+      height: 100vh;
       left: 0;
       top: 0;
       z-index: 1;
