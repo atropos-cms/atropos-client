@@ -47,6 +47,10 @@ export default {
       }
       EventBus.$emit('modules-files-objects--open-contextmenu', event)
     },
+    async selectAndOpen (event) {
+      await this.select(event)
+      this.open()
+    },
     open () {
       let teamId = this.$store.getters['modules/files/selectedTeam']
 

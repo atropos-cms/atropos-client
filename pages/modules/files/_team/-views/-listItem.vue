@@ -7,6 +7,7 @@
     type="flex"
     @click.native="select"
     @dblclick.native="open"
+    @touchend.native.prevent="selectAndOpen"
     @contextmenu.native="contextMenu">
 
     <el-col
