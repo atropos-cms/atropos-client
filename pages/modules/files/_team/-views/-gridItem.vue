@@ -8,7 +8,6 @@
     class="modules-files-objects--grid-item"
     @click.native="select"
     @dblclick.native="open"
-    @touchend.native.prevent="selectAndOpen"
     @contextmenu.native.prevent="contextMenu">
 
     <el-card class="box-card">

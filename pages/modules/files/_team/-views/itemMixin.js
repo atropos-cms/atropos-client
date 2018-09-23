@@ -29,6 +29,14 @@ export default {
   },
 
   methods: {
+    async selectOrOpen (event) {
+      if (this.isSelected) {
+        await this.open(event)
+      } else {
+        await this.select(event)
+      }
+    },
+
     async select (event) {
       event.stopPropagation()
       EventBus.$emit('modules-files-objects--close-contextmenu', event)
@@ -39,6 +47,7 @@ export default {
       EventBus.$emit('modules-files-objects--close-contextmenu', event)
       EventBus.$emit('modules-files-objects--deselect-object', { event, id: this.file.id })
     },
+
     async contextMenu (event) {
       event.stopPropagation()
       event.preventDefault()
@@ -47,11 +56,8 @@ export default {
       }
       EventBus.$emit('modules-files-objects--open-contextmenu', event)
     },
-    async selectAndOpen (event) {
-      await this.select(event)
-      this.open()
-    },
-    open () {
+
+    async open () {
       let teamId = this.$store.getters['modules/files/selectedTeam']
 
       if (this.isFolder) {
