@@ -6,9 +6,7 @@
     :xl="6"
     :class="{'--selected': isSelected}"
     class="modules-files-objects--grid-item"
-    @click.native="select"
-    @dblclick.native="open"
-    @touchend.native.prevent="selectAndOpen"
+    @click.native="selectOrOpen"
     @contextmenu.native.prevent="contextMenu">
 
     <el-card class="box-card">

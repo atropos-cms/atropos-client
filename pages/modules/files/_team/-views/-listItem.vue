@@ -5,9 +5,7 @@
     class="modules-files-objects--list-item"
     align="middle"
     type="flex"
-    @click.native="select"
-    @dblclick.native="open"
-    @touchend.native.prevent="selectAndOpen"
+    @click.native="selectOrOpen"
     @contextmenu.native="contextMenu">
 
     <el-col
