@@ -20,6 +20,12 @@
   }
 }
 
+@media only screen and (max-width: 992px) {
+  .modules-files-objects--wrapper {
+    flex-direction: column;
+  }
+}
+
 .modules-files-objects--file-icon,
 .modules-files-objects--folder-icon,
 .modules-files-objects--loading-icon,

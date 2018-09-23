@@ -14,7 +14,7 @@
     <el-row
       v-if="teams.length"
       :gutter="10"
-      class="--flexed-row --flex-wrap">
+      class="modules-files-objects--wrapper --flexed-row --flex-wrap">
       <el-col
         :md="7"
         :lg="5"
