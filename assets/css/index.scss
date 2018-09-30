@@ -1,0 +1,25 @@
+// Libraries
+@import 'normalize.css';
+@import "element-ui/lib/theme-chalk/index.css";
+@import "element-ui/lib/theme-chalk/display.css";
+
+// Color customizations and variables
+@import "variables";
+
+// Styles for plugins
+@import "plugins/index";
+
+// General styles and helpers
+@import "style/index";
+
+// Layout
+@import "layout/index";
+
+// Styles for individual pages
+@import "pages/index";
+
+// Styles for individual compoentns
+@import "components/index";
+
+// Code that is not pretty and should be replaced with a better solution ASAP
+@import "hacks";

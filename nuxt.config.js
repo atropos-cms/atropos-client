@@ -7,9 +7,7 @@ module.exports = {
   * Styles
   */
   css: [
-    '~assets/css/main.scss',
-    'quill/dist/quill.snow.css',
-    'quill/dist/quill.core.css'
+    '~assets/css/index.scss'
   ],
 
   /*
