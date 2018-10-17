@@ -69,7 +69,7 @@ export default {
   watch: {
     hasPreview () {
       if (this.hasPreview && this.previewSrc) return
-      this.$emit('fetchPreview', { id: this.selectionId })
+      this.$emit('fetchPreview', { id: this.selection.id })
     }
   }
 }
