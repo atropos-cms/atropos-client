@@ -21,13 +21,21 @@
 </template>
 
 <script type="text/babel">
-import 'vue-plyr'
-import 'vue-plyr/dist/vue-plyr.css'
 import downloadObject from '~/components/modules/files/objects/downloadObject'
 
-export default {
+// import VuePlyr component
+const VuePlyr = async () => {
+  let {VuePlyr} = await import('vue-plyr')
+  return VuePlyr
+}
 
+export default {
   mixins: [downloadObject],
+
+  components: {
+    'vue-plyr': VuePlyr
+  },
+
   props: {
     file: {
       type: Object,
@@ -60,6 +68,9 @@ export default {
   },
 
   async mounted () {
+    // don't load the preview on the server
+    if (process.server) return
+
     await this.fetchAudio()
   },
 

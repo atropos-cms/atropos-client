@@ -26,15 +26,14 @@
     "chart.js": "^2.7.3",
     "cookie": "^0.3.1",
     "debug": "^4.1.0",
-    "element-ui": "^2.4.10",
+    "element-ui": "^2.4.11",
     "fuzzysearch": "^1.0.3",
     "js-cookie": "^2.2.0",
     "lodash": "^4.17.11",
     "mobile-detect": "^1.4.3",
     "normalize.css": "^8.0.1",
-    "nuxt": "^2.3.1",
-    "plyr": "^3.4.7",
-    "portal-vue": "^1.4.0",
+    "nuxt": "^2.3.4",
+    "portal-vue": "^1.5.0",
     "quill-image-resize-module": "^3.0.0",
     "quill-magic-url": "^1.0.0",
     "raven-js": "^3.27.0",
@@ -45,7 +44,7 @@
     "vue-click-outside": "^1.0.7",
     "vue-clipboard2": "^0.2.1",
     "vue-i18n": "^8.3.2",
-    "vue-meta": "^1.5.5",
+    "vue-meta": "^1.5.6",
     "vue-moment": "^4.0.0",
     "vue-plyr": "^5.0.4",
     "vue-quill-editor": "^3.0.6",
@@ -73,7 +72,7 @@
     "jsdom": "^13.0.0",
     "node-sass": "^4.10.0",
     "sass-loader": "^7.1.0",
-    "vue-eslint-parser": "^3.2.2"
+    "vue-eslint-parser": "^3.3.0"
   },
   "ava": {
     "require": [

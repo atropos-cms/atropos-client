@@ -32,8 +32,8 @@ import UsesFileMimetype from '~/mixins/usesFileMimetype'
 
 export default {
   components: {
-    audioPreview,
-    imagePreview
+    'image-preview': () => (process.client) ? import('./image') : null,
+    'audio-preview': () => (process.client) ? import('./audio') : null
   },
 
   mixins: [UsesFileMimetype],

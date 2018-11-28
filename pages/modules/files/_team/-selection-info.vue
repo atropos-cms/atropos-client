@@ -24,10 +24,12 @@
         <el-collapse
           v-model="activeNames">
 
-          <preview
-            v-if="hasSelection"
-            :selection="selection"
-            @fetchPreview="fetchPreview"/>
+          <no-ssr>
+            <preview
+              v-if="hasSelection"
+              :selection="selection"
+              @fetchPreview="fetchPreview"/>
+          </no-ssr>
 
           <el-collapse-item
             :title="$t('modules.files.files.info')"
