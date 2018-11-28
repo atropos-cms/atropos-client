@@ -5,6 +5,7 @@
     <el-table
       :data="users"
       :default-sort="{prop: 'full_name', order: 'ascending'}"
+      max-height="750"
       stripe>
 
       <el-table-column
@@ -119,12 +120,15 @@ export default {
           return this.deleteUser(data)
       }
     },
+
     async editUser (user) {
       this.$router.push(`/administration/users/${user.id}`)
     },
+
     async toggleActivateUser (user) {
       this.$store.dispatch('administration/users/UpdateUser', { ...user, activated: !user.activated })
     },
+
     async deleteUser (user) {
       await this.$confirm(this.$t('message.delete-user'), this.$t('general.warning'), {
         confirmButtonText: this.$t('general.ok'),
@@ -139,6 +143,7 @@ export default {
         message: this.$t('message.record-successfully-deleted')
       })
     },
+
     sortByLastAction (a, b) {
       if (a.last_action === b.last_action) return 0
       if (a.last_action === null) return 1
