@@ -55,6 +55,10 @@ export default {
     }
   },
 
+  mounted () {
+    this.$store.dispatch('modules/media/browser/GetFile', this.attachmentId)
+  },
+
   computed: {
     attachment () {
       return this.$store.getters['modules/media/browser/file'](this.attachmentId)
