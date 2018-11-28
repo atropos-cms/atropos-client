@@ -6,6 +6,7 @@
     :xl="6"
     :class="{'--selected': isSelected}"
     class="modules-files-objects--grid-item"
+    @touchend.native.prevent="touchend"
     @click.native="select"
     @dblclick.native="open"
     @contextmenu.native.prevent="contextMenu">

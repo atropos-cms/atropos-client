@@ -5,6 +5,7 @@
     class="modules-files-objects--list-item"
     align="middle"
     type="flex"
+    @touchend.native.prevent="touchend"
     @click.native="select"
     @dblclick.native="open"
     @contextmenu.native="contextMenu">

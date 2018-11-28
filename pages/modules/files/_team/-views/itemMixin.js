@@ -29,12 +29,17 @@ export default {
   },
 
   methods: {
-    async selectOrOpen (event) {
+    async touchend (event) {
+      // prevent the click event
+      event.preventDefault()
+
+      // if the item is selected, open it
       if (this.isSelected) {
-        await this.open(event)
-      } else {
-        await this.select(event)
+        return this.open(event)
       }
+
+      // otherwise, select it
+      return this.select(event)
     },
 
     async select (event) {
