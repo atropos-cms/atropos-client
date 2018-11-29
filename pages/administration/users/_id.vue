@@ -86,9 +86,9 @@
 </template>
 
 <script type="text/babel">
-import userAccount from './-id-account'
-import userRoles from './-id-roles'
-import userSecurity from './-id-security'
+import userAccount from './-id/account'
+import userRoles from './-id/roles'
+import userSecurity from './-id/security'
 
 export default {
   components: {

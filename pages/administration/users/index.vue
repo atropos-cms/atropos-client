@@ -57,6 +57,12 @@
         fixed="right"
         width="180"
         align="right">
+        <template slot="header" slot-scope="scope">
+          <el-input
+            v-model="search"
+            size="mini"
+            :placeholder="$t('general.type-to-search')"/>
+        </template>
         <template slot-scope="scope">
           <el-dropdown
             size="medium"
@@ -103,9 +109,16 @@ export default {
     await store.dispatch('administration/users/GetUsers')
   },
 
+  data () {
+    return {
+      search: '',
+    }
+  },
+
   computed: {
     users () {
-      return this.$store.getters['administration/users/list']
+      let users = this.$store.getters['administration/users/list']
+      return users.filter(data => !this.search || data.full_name.toLowerCase().includes(this.search.toLowerCase()))
     }
   },
 
