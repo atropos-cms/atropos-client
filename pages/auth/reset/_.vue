@@ -134,7 +134,7 @@ export default {
 
       let data = {
         ...this.resetForm,
-        token: this.$route.params[0]
+        token: this.$route.params.pathMatch
       }
 
       try {
