@@ -23,11 +23,18 @@
 <script type="text/babel">
 import downloadObject from '~/components/modules/files/objects/downloadObject'
 
+// Extract VuePlyr from the package and return it in a promise
+const VuePlyr = async () => { 
+  const { VuePlyr } = await import('vue-plyr')
+  await import('vue-plyr/dist/vue-plyr.css')
+  return VuePlyr
+}
+
 export default {
   mixins: [downloadObject],
 
   components: {
-    VuePlyr: import('vue-plyr')
+    VuePlyr
   },
 
   props: {
