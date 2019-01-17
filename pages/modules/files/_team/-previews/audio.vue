@@ -23,17 +23,11 @@
 <script type="text/babel">
 import downloadObject from '~/components/modules/files/objects/downloadObject'
 
-// import VuePlyr component
-const VuePlyr = async () => {
-  let {VuePlyr} = await import('vue-plyr')
-  return VuePlyr
-}
-
 export default {
   mixins: [downloadObject],
 
   components: {
-    'vue-plyr': VuePlyr
+    VuePlyr: import('vue-plyr')
   },
 
   props: {
