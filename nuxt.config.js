@@ -7,7 +7,7 @@ module.exports = {
   * Styles
   */
   css: [
-    '~assets/css/index.scss'
+    '~assets/styles/index'
   ],
 
   /*
